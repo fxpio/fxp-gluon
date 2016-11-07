@@ -5,7 +5,7 @@ Sonatra Gluon
 [![Build Status](https://img.shields.io/travis/sonatra/sonatra-gluon/master.svg)](https://travis-ci.org/sonatra/sonatra-gluon)
 [![Coverage Status](https://img.shields.io/coveralls/sonatra/sonatra-gluon/master.svg)](https://coveralls.io/r/sonatra/sonatra-gluon?branch=master)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/sonatra/sonatra-gluon/master.svg)](https://scrutinizer-ci.com/g/sonatra/sonatra-gluon?branch=master)
-[![SensioLabsInsight](https://img.shields.io/sensiolabs/i/f0bf3d98-f059-4251-954b-92bc1f4589dc.svg)](https://insight.sensiolabs.com/projects/f0bf3d98-f059-4251-954b-92bc1f4589dc)
+[![SensioLabsInsight](https://img.shields.io/sensiolabs/i/d790b3f6-a861-4846-850a-a054c2459aeb.svg)](https://insight.sensiolabs.com/projects/d790b3f6-a861-4846-850a-a054c2459aeb)
 
 The Sonatra Gluon is a complet web responsive interface using Twitter Bootstrap.
 
