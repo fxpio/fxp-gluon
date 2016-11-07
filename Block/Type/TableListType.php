@@ -9,19 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonatra\Bundle\GluonBundle\Block\Type;
+namespace Sonatra\Component\Gluon\Block\Type;
 
-use Sonatra\Bundle\BlockBundle\Block\AbstractType;
-use Sonatra\Bundle\BlockBundle\Block\BlockBuilderInterface;
-use Sonatra\Bundle\BlockBundle\Block\BlockFactoryInterface;
-use Sonatra\Bundle\BlockBundle\Block\BlockInterface;
-use Sonatra\Bundle\BlockBundle\Block\BlockView;
-use Sonatra\Bundle\BlockBundle\Block\Exception\InvalidConfigurationException;
-use Sonatra\Bundle\BlockBundle\Block\Util\BlockUtil;
-use Sonatra\Bundle\BootstrapBundle\Block\Type\DropdownItemType;
-use Sonatra\Bundle\BootstrapBundle\Block\Type\DropdownType;
-use Sonatra\Bundle\BootstrapBundle\Block\Type\TableHeaderType;
-use Sonatra\Bundle\BootstrapBundle\Block\Type\TableType;
+use Sonatra\Component\Block\AbstractType;
+use Sonatra\Component\Block\BlockBuilderInterface;
+use Sonatra\Component\Block\BlockFactoryInterface;
+use Sonatra\Component\Block\BlockInterface;
+use Sonatra\Component\Block\BlockView;
+use Sonatra\Component\Block\Exception\InvalidConfigurationException;
+use Sonatra\Component\Block\Util\BlockUtil;
+use Sonatra\Component\Bootstrap\Block\Type\DropdownItemType;
+use Sonatra\Component\Bootstrap\Block\Type\DropdownType;
+use Sonatra\Component\Bootstrap\Block\Type\TableHeaderType;
+use Sonatra\Component\Bootstrap\Block\Type\TableType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**

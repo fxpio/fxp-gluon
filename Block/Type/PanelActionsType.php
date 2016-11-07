@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonatra\Bundle\GluonBundle\Block\Type;
+namespace Sonatra\Component\Gluon\Block\Type;
 
-use Sonatra\Bundle\BlockBundle\Block\AbstractType;
-use Sonatra\Bundle\BlockBundle\Block\BlockInterface;
-use Sonatra\Bundle\BlockBundle\Block\BlockView;
-use Sonatra\Bundle\BlockBundle\Block\Exception\InvalidConfigurationException;
-use Sonatra\Bundle\BlockBundle\Block\Util\BlockUtil;
-use Sonatra\Bundle\BootstrapBundle\Block\Type\ButtonType;
-use Sonatra\Bundle\BootstrapBundle\Block\Type\PanelHeaderType;
+use Sonatra\Component\Block\AbstractType;
+use Sonatra\Component\Block\BlockInterface;
+use Sonatra\Component\Block\BlockView;
+use Sonatra\Component\Block\Exception\InvalidConfigurationException;
+use Sonatra\Component\Block\Util\BlockUtil;
+use Sonatra\Component\Bootstrap\Block\Type\ButtonType;
+use Sonatra\Component\Bootstrap\Block\Type\PanelHeaderType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**

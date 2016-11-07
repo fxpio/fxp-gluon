@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonatra\Bundle\GluonBundle\Block\Extension;
+namespace Sonatra\Component\Gluon\Block\Extension;
 
-use Sonatra\Bundle\BlockBundle\Block\AbstractTypeExtension;
-use Sonatra\Bundle\BlockBundle\Block\BlockBuilderInterface;
-use Sonatra\Bundle\BootstrapBundle\Block\Type\TableType;
-use Sonatra\Bundle\GluonBundle\Block\Type\TableColumnRowNumberType;
-use Sonatra\Bundle\GluonBundle\Block\Type\TableColumnSelectType;
+use Sonatra\Component\Block\AbstractTypeExtension;
+use Sonatra\Component\Block\BlockBuilderInterface;
+use Sonatra\Component\Bootstrap\Block\Type\TableType;
+use Sonatra\Component\Gluon\Block\Type\TableColumnRowNumberType;
+use Sonatra\Component\Gluon\Block\Type\TableColumnSelectType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\OptionsResolver\Options;
 

@@ -1,7 +1,0 @@
-packages:
-    debug_bundle:
-        patterns:
-            - !*
-    web_profiler_bundle:
-        patterns:
-            - !*

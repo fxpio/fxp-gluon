@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonatra\Bundle\GluonBundle\Block\Type;
+namespace Sonatra\Component\Gluon\Block\Type;
 
-use Sonatra\Bundle\BlockBundle\Block\AbstractType;
+use Sonatra\Component\Block\AbstractType;
 
 /**
  * Navbar Title Block Type.

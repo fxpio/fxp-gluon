@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonatra\Bundle\GluonBundle\Block\Extension;
+namespace Sonatra\Component\Gluon\Block\Extension;
 
-use Sonatra\Bundle\BlockBundle\Block\AbstractTypeExtension;
-use Sonatra\Bundle\BlockBundle\Block\BlockBuilderInterface;
-use Sonatra\Bundle\BlockBundle\Block\BlockView;
-use Sonatra\Bundle\BlockBundle\Block\BlockInterface;
-use Sonatra\Bundle\BootstrapBundle\Block\Type\TableType;
-use Sonatra\Bundle\GluonBundle\Block\Type\TablePagerType;
+use Sonatra\Component\Block\AbstractTypeExtension;
+use Sonatra\Component\Block\BlockBuilderInterface;
+use Sonatra\Component\Block\BlockView;
+use Sonatra\Component\Block\BlockInterface;
+use Sonatra\Component\Bootstrap\Block\Type\TableType;
+use Sonatra\Component\Gluon\Block\Type\TablePagerType;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 

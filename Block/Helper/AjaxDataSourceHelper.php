@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonatra\Bundle\GluonBundle\Block\Helper;
+namespace Sonatra\Component\Gluon\Block\Helper;
 
-use Sonatra\Bundle\BlockBundle\Block\BlockInterface;
-use Sonatra\Bundle\BlockBundle\Block\Exception\InvalidArgumentException;
-use Sonatra\Bundle\BootstrapBundle\Block\DataSource\DataSourceInterface;
+use Sonatra\Component\Block\BlockInterface;
+use Sonatra\Component\Block\Exception\InvalidArgumentException;
+use Sonatra\Component\Bootstrap\Block\DataSource\DataSourceInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;

@@ -9,13 +9,13 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonatra\Bundle\GluonBundle\Block\Extension;
+namespace Sonatra\Component\Gluon\Block\Extension;
 
-use Sonatra\Bundle\BlockBundle\Block\AbstractTypeExtension;
-use Sonatra\Bundle\BlockBundle\Block\Extension\Core\Type\FieldType;
+use Sonatra\Component\Block\AbstractTypeExtension;
+use Sonatra\Component\Block\Extension\Core\Type\FieldType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Sonatra\Bundle\BlockBundle\Block\BlockInterface;
-use Sonatra\Bundle\BlockBundle\Block\BlockView;
+use Sonatra\Component\Block\BlockInterface;
+use Sonatra\Component\Block\BlockView;
 
 /**
  * Floating Label Block Extension.

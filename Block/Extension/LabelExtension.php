@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonatra\Bundle\GluonBundle\Block\Extension;
+namespace Sonatra\Component\Gluon\Block\Extension;
 
-use Sonatra\Bundle\BlockBundle\Block\AbstractTypeExtension;
-use Sonatra\Bundle\BootstrapBundle\Block\Type\LabelType;
+use Sonatra\Component\Block\AbstractTypeExtension;
+use Sonatra\Component\Bootstrap\Block\Type\LabelType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**

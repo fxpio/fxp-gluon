@@ -9,11 +9,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonatra\Bundle\GluonBundle\Event;
+namespace Sonatra\Component\Gluon\Event;
 
-use Sonatra\Bundle\AjaxBundle\Event\GetAjaxEvent;
-use Sonatra\Bundle\BootstrapBundle\Block\DataSource\DataSourceInterface;
-use Sonatra\Bundle\GluonBundle\Block\Helper\AjaxDataSourceHelper;
+use Sonatra\Component\Ajax\Event\GetAjaxEvent;
+use Sonatra\Component\Bootstrap\Block\DataSource\DataSourceInterface;
+use Sonatra\Component\Gluon\Block\Helper\AjaxDataSourceHelper;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

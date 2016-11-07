@@ -1,5 +1,0 @@
-# Form
-form:
-    input:
-        file:
-            choose-file: "Choisir"

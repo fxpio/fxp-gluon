@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonatra\Bundle\GluonBundle\Form\Extension;
+namespace Sonatra\Component\Gluon\Form\Extension;
 
-use Sonatra\Bundle\BlockBundle\Block\Util\BlockUtil;
+use Sonatra\Component\Block\Util\BlockUtil;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
 

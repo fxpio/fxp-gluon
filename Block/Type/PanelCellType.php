@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonatra\Bundle\GluonBundle\Block\Type;
+namespace Sonatra\Component\Gluon\Block\Type;
 
-use Sonatra\Bundle\BlockBundle\Block\AbstractType;
-use Sonatra\Bundle\BlockBundle\Block\BlockBuilderInterface;
-use Sonatra\Bundle\BlockBundle\Block\BlockInterface;
-use Sonatra\Bundle\BlockBundle\Block\BlockView;
-use Sonatra\Bundle\BlockBundle\Block\Exception\InvalidConfigurationException;
-use Sonatra\Bundle\BlockBundle\Block\Util\BlockFormUtil;
-use Sonatra\Bundle\BlockBundle\Block\Util\BlockUtil;
-use Sonatra\Bundle\BlockBundle\Block\Util\BlockViewUtil;
-use Sonatra\Bundle\BootstrapBundle\Block\Type\ButtonType;
+use Sonatra\Component\Block\AbstractType;
+use Sonatra\Component\Block\BlockBuilderInterface;
+use Sonatra\Component\Block\BlockInterface;
+use Sonatra\Component\Block\BlockView;
+use Sonatra\Component\Block\Exception\InvalidConfigurationException;
+use Sonatra\Component\Block\Util\BlockFormUtil;
+use Sonatra\Component\Block\Util\BlockUtil;
+use Sonatra\Component\Block\Util\BlockViewUtil;
+use Sonatra\Component\Bootstrap\Block\Type\ButtonType;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\OptionsResolver\Options;
@@ -189,7 +189,7 @@ class PanelCellType extends AbstractType
             },
         ));
 
-        $resolver->addAllowedTypes('formatter', array('null', 'string', 'Sonatra\Bundle\BlockBundle\Block\BlockTypeInterface'));
+        $resolver->addAllowedTypes('formatter', array('null', 'string', 'Sonatra\Component\Block\BlockTypeInterface'));
         $resolver->addAllowedTypes('formatter_options', 'array');
         $resolver->addAllowedTypes('control_attr', 'array');
         $resolver->addAllowedTypes('layout_size', 'string');

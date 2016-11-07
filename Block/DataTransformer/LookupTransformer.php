@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonatra\Bundle\GluonBundle\Block\DataTransformer;
+namespace Sonatra\Component\Gluon\Block\DataTransformer;
 
-use Sonatra\Bundle\BlockBundle\Block\DataTransformerInterface;
+use Sonatra\Component\Block\DataTransformerInterface;
 use Symfony\Component\PropertyAccess\PropertyAccess;
 use Symfony\Component\PropertyAccess\PropertyAccessorInterface;
 use Symfony\Component\PropertyAccess\PropertyPath;

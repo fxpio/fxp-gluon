@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonatra\Bundle\GluonBundle\Form\Extension;
+namespace Sonatra\Component\Gluon\Form\Extension;
 
-use Sonatra\Bundle\BlockBundle\Block\Util\BlockUtil;
+use Sonatra\Component\Block\Util\BlockUtil;
 use Symfony\Component\Form\AbstractTypeExtension;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormInterface;
@@ -70,8 +70,8 @@ class DateExtension extends AbstractTypeExtension
         }
 
         if (isset($view->vars['date_pattern'])) {
-            $view->vars['date_pattern'] = str_replace('/' , '<span>/</span>', $view->vars['date_pattern']);
-            $view->vars['date_pattern'] = str_replace('-' , '<span>-</span>', $view->vars['date_pattern']);
+            $view->vars['date_pattern'] = str_replace('/', '<span>/</span>', $view->vars['date_pattern']);
+            $view->vars['date_pattern'] = str_replace('-', '<span>-</span>', $view->vars['date_pattern']);
         }
     }
 

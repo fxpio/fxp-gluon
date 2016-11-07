@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonatra\Bundle\GluonBundle\Twig\Extension;
+namespace Sonatra\Component\Gluon\Twig\Extension;
 
 /**
  * Add the stylesheet links of google fonts.

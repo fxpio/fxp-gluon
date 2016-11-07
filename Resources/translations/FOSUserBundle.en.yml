@@ -1,6 +1,0 @@
-# Security
-security:
-    login:
-        forget_password: "Forget password?"
-        new_account:     "New account"
-        or:              "or"

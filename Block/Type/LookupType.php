@@ -9,15 +9,15 @@
  * file that was distributed with this source code.
  */
 
-namespace Sonatra\Bundle\GluonBundle\Block\Type;
+namespace Sonatra\Component\Gluon\Block\Type;
 
-use Sonatra\Bundle\BlockBundle\Block\AbstractType;
-use Sonatra\Bundle\BlockBundle\Block\BlockBuilderInterface;
-use Sonatra\Bundle\BlockBundle\Block\BlockInterface;
-use Sonatra\Bundle\BlockBundle\Block\BlockView;
-use Sonatra\Bundle\BootstrapBundle\Block\Type\LinkType;
-use Sonatra\Bundle\GluonBundle\Block\DataTransformer\LookupTransformer;
-use Sonatra\Bundle\RoutingExtraBundle\Routing\RouterExtraInterface;
+use Sonatra\Component\Block\AbstractType;
+use Sonatra\Component\Block\BlockBuilderInterface;
+use Sonatra\Component\Block\BlockInterface;
+use Sonatra\Component\Block\BlockView;
+use Sonatra\Component\Bootstrap\Block\Type\LinkType;
+use Sonatra\Component\Gluon\Block\DataTransformer\LookupTransformer;
+use Sonatra\Component\RoutingExtra\Routing\RouterExtraInterface;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\PropertyAccess\PropertyAccess;
