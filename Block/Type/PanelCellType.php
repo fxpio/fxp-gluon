@@ -59,6 +59,7 @@ class PanelCellType extends AbstractType
         if (null !== $options['help']) {
             $hOpts = array_replace($options['help_options'], array(
                 'label' => '?',
+                'translation_domain' => false,
                 'style' => 'info',
                 'size' => 'xs',
                 'attr' => array('class' => 'panel-cell-help'),
