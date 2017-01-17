@@ -57,7 +57,8 @@ class RaisedExtension extends AbstractTypeExtension
             'raised' => false,
         ));
 
-        $resolver->addAllowedTypes('raised', 'bool');
+        $resolver->addAllowedTypes('raised', array('bool', 'string'));
+        $resolver->addAllowedValues('raised', array(true, false, 'flat'));
     }
 
     /**

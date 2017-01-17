@@ -13,8 +13,6 @@ namespace Sonatra\Component\Gluon\Form\Extension;
 
 use Symfony\Component\Form\AbstractTypeExtension;
 use Symfony\Component\Form\Extension\Core\Type\ButtonType;
-use Symfony\Component\Form\FormInterface;
-use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
@@ -27,24 +25,8 @@ class ButtonExtension extends AbstractTypeExtension
     /**
      * {@inheritdoc}
      */
-    public function buildView(FormView $view, FormInterface $block, array $options)
-    {
-        $view->vars = array_replace($view->vars, array(
-            'raised' => $options['raised'],
-        ));
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
-            'raised' => false,
-        ));
-
-        $resolver->addAllowedTypes('raised', 'bool');
-
         $resolver->addAllowedValues('style', array('accent'));
     }
 
