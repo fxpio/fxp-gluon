@@ -123,7 +123,6 @@ class PanelSectionType extends AbstractType
     public function buildView(BlockView $view, BlockInterface $block, array $options)
     {
         $view->vars = array_replace($view->vars, array(
-            'rendered' => $options['rendered'],
             'collapsible' => $options['collapsible'],
             'collapsed' => $options['collapsed'],
             'hidden_if_empty' => $options['hidden_if_empty'],
@@ -182,7 +181,6 @@ class PanelSectionType extends AbstractType
     {
         $resolver->setDefaults(array(
             'inherit_data' => true,
-            'rendered' => true,
             'collapsible' => false,
             'collapsed' => false,
             'hidden_if_empty' => true,
@@ -193,7 +191,6 @@ class PanelSectionType extends AbstractType
             'cell_label_style' => null,
         ));
 
-        $resolver->addAllowedTypes('rendered', 'bool');
         $resolver->addAllowedTypes('collapsible', 'bool');
         $resolver->addAllowedTypes('collapsed', 'bool');
         $resolver->addAllowedTypes('hidden_if_empty', 'bool');

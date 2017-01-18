@@ -108,7 +108,6 @@ class PanelCellType extends AbstractType
             'layout_col_max' => $options['layout_max'],
             'layout_style' => $options['layout_style'],
             'label_style' => $options['label_style'],
-            'rendered' => $options['rendered'],
             'hidden' => $options['hidden'],
             'value_formatter' => $options['formatter'],
             'value_formatter_options' => $options['formatter_options'],
@@ -179,7 +178,6 @@ class PanelCellType extends AbstractType
             'layout_max' => 12,
             'layout_style' => null,
             'label_style' => null,
-            'rendered' => true,
             'hidden' => false,
             'help' => null,
             'help_options' => array(),
@@ -198,7 +196,6 @@ class PanelCellType extends AbstractType
         $resolver->addAllowedTypes('layout_max', 'int');
         $resolver->addAllowedTypes('layout_size', array('null', 'string'));
         $resolver->addAllowedTypes('label_style', array('null', 'string'));
-        $resolver->addAllowedTypes('rendered', 'bool');
         $resolver->addAllowedTypes('hidden', 'bool');
         $resolver->addAllowedTypes('help', array('null', 'string', 'array'));
         $resolver->addAllowedTypes('help_options', 'array');
