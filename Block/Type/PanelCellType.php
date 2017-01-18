@@ -115,8 +115,6 @@ class PanelCellType extends AbstractType
         if ($view->vars['value'] === $options['empty_message']) {
             $view->vars['value_formatter'] = null;
         }
-
-        $this->injectFormCell($view, $block);
     }
 
     /**
@@ -124,6 +122,8 @@ class PanelCellType extends AbstractType
      */
     public function finishView(BlockView $view, BlockInterface $block, array $options)
     {
+        $this->injectFormCell($view, $block);
+
         foreach ($view->children as $name => $child) {
             if (in_array('button', $child->vars['block_prefixes'])) {
                 $view->vars['button_help'] = $child;
