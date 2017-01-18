@@ -83,7 +83,8 @@ class PanelButtonsType extends AbstractType
 
             if (null === $child->getOption('size')) {
                 if (null !== $child->getForm() && FormUtil::isFormType($child->getForm(), \Symfony\Component\Form\Extension\Core\Type\FormType::class)) {
-                    $fOtps = $child->getOption('options');
+                    /* @var array $fOtps */
+                    $fOtps = $child->getOption('options', array());
                     $fOtps['size'] = $options['button_size'];
                     $child->setOption('options', $fOtps);
                 } else {

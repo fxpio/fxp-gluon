@@ -35,7 +35,7 @@ use Symfony\Component\PropertyAccess\PropertyAccessorInterface;
 class PanelCellType extends AbstractType
 {
     /**
-     * @var PropertyAccessor
+     * @var PropertyAccessorInterface
      */
     private $propertyAccessor;
 

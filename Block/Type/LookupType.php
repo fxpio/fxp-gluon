@@ -36,7 +36,7 @@ class LookupType extends AbstractType
     private $routerExtra;
 
     /**
-     * @var PropertyAccessor
+     * @var PropertyAccessorInterface
      */
     private $propertyAccessor;
 
