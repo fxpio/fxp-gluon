@@ -166,8 +166,7 @@ class PanelButtonsType extends AbstractType
                     foreach ($child->all() as $subChild) {
                         if (BlockUtil::isBlockType($subChild, BlockType::class)) {
                             $parent = $subChild;
-                            break;
-                            break;
+                            break 2;
                         }
                     }
                 }
