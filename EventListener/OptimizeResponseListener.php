@@ -11,8 +11,8 @@
 
 namespace Sonatra\Component\Gluon\EventListener;
 
-use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\HttpKernel\Event\FilterResponseEvent;
+use Symfony\Component\HttpKernel\HttpKernelInterface;
 
 /**
  * OptimizeResponseListener remove all return line and spaces in html response.

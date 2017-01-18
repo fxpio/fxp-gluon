@@ -12,10 +12,10 @@
 namespace Sonatra\Component\Gluon\Block\Extension;
 
 use Sonatra\Component\Block\AbstractTypeExtension;
-use Sonatra\Component\Block\Extension\Core\Type\FieldType;
-use Symfony\Component\OptionsResolver\OptionsResolver;
 use Sonatra\Component\Block\BlockInterface;
 use Sonatra\Component\Block\BlockView;
+use Sonatra\Component\Block\Extension\Core\Type\FieldType;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * Floating Label Block Extension.

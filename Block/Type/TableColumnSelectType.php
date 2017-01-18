@@ -13,15 +13,15 @@ namespace Sonatra\Component\Gluon\Block\Type;
 
 use Sonatra\Component\Block\AbstractType;
 use Sonatra\Component\Block\BlockBuilderInterface;
-use Sonatra\Component\Block\BlockView;
 use Sonatra\Component\Block\BlockInterface;
+use Sonatra\Component\Block\BlockView;
 use Sonatra\Component\Block\Extension\Core\Type\FormType;
 use Sonatra\Component\Block\Extension\Core\Type\TwigType;
 use Sonatra\Component\Block\Util\BlockUtil;
 use Sonatra\Component\Bootstrap\Block\Type\TableColumnType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\OptionsResolver\Options;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * Table Column Select Block Type.

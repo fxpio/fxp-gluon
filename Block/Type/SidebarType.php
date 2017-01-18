@@ -12,10 +12,10 @@
 namespace Sonatra\Component\Gluon\Block\Type;
 
 use Sonatra\Component\Block\AbstractType;
-use Sonatra\Component\Block\BlockView;
 use Sonatra\Component\Block\BlockInterface;
-use Symfony\Component\OptionsResolver\OptionsResolver;
+use Sonatra\Component\Block\BlockView;
 use Symfony\Component\OptionsResolver\Options;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * Sidebar Block Type.

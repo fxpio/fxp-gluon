@@ -16,8 +16,8 @@ use Sonatra\Component\Block\BlockBuilderInterface;
 use Sonatra\Component\Bootstrap\Block\Type\TableType;
 use Sonatra\Component\Gluon\Block\Type\TableColumnRowNumberType;
 use Sonatra\Component\Gluon\Block\Type\TableColumnSelectType;
-use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\OptionsResolver\Options;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * Table Block Extension.

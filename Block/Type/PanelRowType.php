@@ -16,8 +16,8 @@ use Sonatra\Component\Block\BlockInterface;
 use Sonatra\Component\Block\BlockView;
 use Sonatra\Component\Block\Exception\InvalidConfigurationException;
 use Sonatra\Component\Block\Util\BlockUtil;
-use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\OptionsResolver\Options;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * Panel Row Block Type.

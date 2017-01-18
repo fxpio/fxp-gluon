@@ -12,8 +12,8 @@
 namespace Sonatra\Component\Gluon\Block\Extension;
 
 use Sonatra\Component\Block\AbstractTypeExtension;
-use Sonatra\Component\Block\BlockView;
 use Sonatra\Component\Block\BlockInterface;
+use Sonatra\Component\Block\BlockView;
 use Sonatra\Component\Bootstrap\Block\Type\TableColumnType;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;

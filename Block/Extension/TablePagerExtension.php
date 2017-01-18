@@ -13,8 +13,8 @@ namespace Sonatra\Component\Gluon\Block\Extension;
 
 use Sonatra\Component\Block\AbstractTypeExtension;
 use Sonatra\Component\Block\BlockBuilderInterface;
-use Sonatra\Component\Block\BlockView;
 use Sonatra\Component\Block\BlockInterface;
+use Sonatra\Component\Block\BlockView;
 use Sonatra\Component\Bootstrap\Block\Type\TableType;
 use Sonatra\Component\Gluon\Block\Type\TablePagerType;
 use Symfony\Component\OptionsResolver\Options;

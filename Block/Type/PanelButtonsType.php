@@ -13,8 +13,8 @@ namespace Sonatra\Component\Gluon\Block\Type;
 
 use Sonatra\Component\Block\AbstractType;
 use Sonatra\Component\Block\BlockBuilderInterface;
-use Sonatra\Component\Block\BlockView;
 use Sonatra\Component\Block\BlockInterface;
+use Sonatra\Component\Block\BlockView;
 use Sonatra\Component\Block\Exception\InvalidConfigurationException;
 use Sonatra\Component\Block\Extension\Core\Type\BlockType;
 use Sonatra\Component\Block\Extension\Core\Type\FormType;

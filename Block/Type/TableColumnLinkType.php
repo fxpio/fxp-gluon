@@ -14,8 +14,8 @@ namespace Sonatra\Component\Gluon\Block\Type;
 use Sonatra\Component\Block\AbstractType;
 use Sonatra\Component\Block\Extension\Core\Type\TwigType;
 use Sonatra\Component\Bootstrap\Block\Type\TableColumnType;
-use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\OptionsResolver\Options;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * Table Column Link Block Type.

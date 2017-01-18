@@ -17,8 +17,8 @@ use Sonatra\Component\Block\Exception\InvalidConfigurationException;
 use Sonatra\Component\Block\Extension\Core\Type\TwigType;
 use Sonatra\Component\Block\Util\BlockUtil;
 use Sonatra\Component\Bootstrap\Block\Type\TableColumnType;
-use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\OptionsResolver\Options;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * Table Column List Adapter Block Type.

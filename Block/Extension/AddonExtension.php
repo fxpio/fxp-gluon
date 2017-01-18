@@ -12,11 +12,11 @@
 namespace Sonatra\Component\Gluon\Block\Extension;
 
 use Sonatra\Component\Block\AbstractTypeExtension;
+use Sonatra\Component\Block\BlockInterface;
+use Sonatra\Component\Block\BlockView;
 use Sonatra\Component\Block\Util\BlockUtil;
 use Sonatra\Component\Bootstrap\Block\Type\ButtonType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Sonatra\Component\Block\BlockInterface;
-use Sonatra\Component\Block\BlockView;
 
 /**
  * Addon Block Extension.
