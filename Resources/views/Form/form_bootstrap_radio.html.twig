@@ -1,0 +1,14 @@
+{% block radio_widget_content %}
+    {%- if style -%}
+        {%- set attr = attr|merge({'class': (attr.class|default('') ~ ' input-' ~ style)|trim}) -%}
+    {%- endif -%}
+
+    <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>
+        <span class="form-control-md">
+            <input type="radio" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
+            <span class="form-control-md-style"></span>
+            <span>{% if label != ' ' %}{% if translation_domain is same as(false) %}{{ label }}{% else %}{{ label|trans({}, translation_domain) }}{% endif %}{% endif %}</span>
+        </span>
+    </label>
+    {{- form_errors(form) -}}
+{%- endblock radio_widget_content %}

@@ -1,0 +1,41 @@
+{% block block_addon_start -%}
+{%- if rendered -%}
+    {%- require_style '@bower/bootstrap/less/bootstrap.less' -%}
+
+    {%- if (addon_wrapper is not defined or addon_wrapper is same as(true)) and (prepend_string is defined or prepend_block is defined or append_string is defined or append_block is defined) -%}
+        {%- set addon_attr = addon_attr|default({})|merge({'class': ('field-group ' ~ (addon_attr.class|default('')))|trim}) -%}
+
+        <div {% for attrname, attrvalue in addon_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>
+    {%- endif -%}
+
+    {%- set prepend_attr = prepend_attr|default({})|merge({'class': ('field-group-' ~ prepend_type|default('addon') ~ ' ' ~ (prepend_attr.class|default('')))|trim}) -%}
+
+    {%- if prepend_string is defined -%}
+        <span {% for attrname, attrvalue in prepend_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>{{ prepend_string|raw }}</span>
+    {%- endif -%}
+
+    {%- if prepend_block is defined -%}
+        <div {% for attrname, attrvalue in prepend_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>{{ block_widget(prepend_block) }}</div>
+    {%- endif -%}
+{%- endif -%}
+{%- endblock block_addon_start %}
+
+
+{% block block_addon_end -%}
+{%- if rendered -%}
+    {%- require_style '@bower/bootstrap/less/bootstrap.less' -%}
+    {%- set append_attr = append_attr|default({})|merge({'class': ('field-group-' ~ append_type|default('addon') ~ ' ' ~ (append_attr.class|default('')))|trim}) -%}
+
+    {%- if append_string is defined -%}
+        <span {% for attrname, attrvalue in append_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>{{ append_string|raw }}</span>
+    {%- endif -%}
+
+    {%- if append_block is defined -%}
+        <div {% for attrname, attrvalue in append_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>{{ block_widget(append_block) }}</div>
+    {%- endif -%}
+
+    {%- if (addon_wrapper is not defined or addon_wrapper is same as(true)) and (prepend_string is defined or prepend_block is defined or append_string is defined or append_block is defined) -%}
+        </div>
+    {%- endif -%}
+{%- endif -%}
+{%- endblock block_addon_end %}

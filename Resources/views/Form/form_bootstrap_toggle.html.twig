@@ -1,0 +1,4 @@
+{% block toggle_widget -%}
+    {%- set wrapper_class = wrapper_class|default('form-control-md-toggle') -%}
+    {{ block('checkbox_widget') }}
+{%- endblock toggle_widget %}

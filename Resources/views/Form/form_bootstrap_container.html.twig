@@ -1,0 +1,24 @@
+{% block form_widget_simple -%}
+    {%- set type = type|default('text') -%}
+    {%- if type not in ['submit', 'radio', 'checkbox', 'button', 'hidden'] -%}
+        {%- if floating_label|default(false) is same as(true) -%}
+        {%- require_script  '@bower/jquery/dist/jquery.js',
+                            '@bower/sonatra-theme-gluon/js/floating-label.js' -%}
+        {%- endif -%}
+
+        {%- set form_widget_simple_before_content -%}
+            <div class="floating-group{% if errors|length > 0 %} has-error{% endif %}">
+        {%- endset -%}
+
+        {%- set form_widget_simple_after_content -%}
+            <span class="floating-bar"></span>
+            {%- if floating_label|default(false) is same as(true) -%}
+                {%- set label_attr = label_attr|merge({'class': ('control-label ' ~ label_attr.class|default(''))|trim}) -%}
+                {{ block('base_form_label') }}
+            {%- endif -%}
+            {{- form_errors(form) -}}
+            </div>
+        {%- endset -%}
+    {%- endif -%}
+    {{ block('base2_form_widget_simple') }}
+{%- endblock form_widget_simple %}

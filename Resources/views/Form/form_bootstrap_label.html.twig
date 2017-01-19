@@ -1,0 +1,5 @@
+{% block form_label -%}
+    {%- if floating_label|default(false) is not same as(true) -%}
+        {{ block('base2_form_label') }}
+    {%- endif -%}
+{%- endblock form_label %}

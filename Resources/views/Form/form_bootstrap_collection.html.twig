@@ -1,0 +1,47 @@
+{% block collection_widget -%}
+    {%- if selector is defined -%}
+        {{- block('addon_start') -}}
+
+        {%- if floating_label|default(false) -%}
+            <div class="floating-group{% if errors|length > 0 %} has-error{% endif %}">
+        {%- endif -%}
+        {{- form_widget(selector) -}}
+
+        {%- if floating_label|default(false) -%}
+            {%- set label_attr = label_attr|merge({'class': ('control-label top-floating-label' ~ label_attr.class|default(''))|trim}) -%}
+            {{ block('base_form_label') }}
+            </div>
+        {%- endif -%}
+
+        {{- form_errors(form) -}}
+        {{- block('addon_end') -}}
+    {%- else -%}
+        {%- set collection_widget_before_content -%}
+            <div class="floating-group{% if errors|length > 0 %} has-error{% endif %}">
+            {%- if floating_label|default(false) is same as(true) -%}
+                {%- set label_attr = label_attr|merge({'class': ('control-label top-floating-label' ~ label_attr.class|default(''))|trim}) -%}
+                {{ block('base_form_label') }}
+            {%- endif -%}
+        {%- endset -%}
+
+        {%- set collection_widget_after_content -%}
+            </div>
+        {%- endset -%}
+
+        {{- block('base2_collection_widget') -}}
+
+        {%- inline_script -%}
+        <script>
+            $(document).appPjax('addUnregister', function () {
+                {%- if btn_add is defined and prototype is defined -%}
+                    $('#{{ btn_add.vars.id }}').off('click.st.bootstrap');
+                {%- endif -%}
+
+                {%- if allow_delete and prototype is defined -%}
+                    $('#{{ id }}').off('click.st.bootstrap', 'button.btn-remove');
+                {%- endif -%}
+            });
+        </script>
+        {%- endinline_script -%}
+    {%- endif -%}
+{%- endblock collection_widget %}

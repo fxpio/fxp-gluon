@@ -1,0 +1,17 @@
+{% block button_widget -%}
+{%- if rendered -%}
+    {%- if raised is defined -%}
+        {%- if raised is same as(true) -%}
+            {%- set attr = attr|merge({'class': (attr.class|default('') ~ ' btn-raised')|trim}) -%}
+        {%- elseif raised == 'flat' -%}
+            {%- set attr = attr|merge({'class': (attr.class|default('') ~ ' btn-flat-raised')|trim}) -%}
+        {%- endif -%}
+    {%- endif -%}
+
+    {%- if ripple is defined and ripple -%}
+        {%- set attr = attr|merge({'class': (attr.class|default('') ~ ' btn-ripple')|trim}) -%}
+    {%- endif -%}
+
+    {{- block('base_button_widget') -}}
+{%- endif -%}
+{%- endblock button_widget %}

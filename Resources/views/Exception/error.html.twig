@@ -1,0 +1,59 @@
+{% extends "@SonatraGluon/base.html.twig" %}
+
+{%- require_style    '@bower/bootstrap/less/bootstrap.less'
+                    '@bower/sonatra-theme-gluon/less/bootstrap-theme/bootstrap-theme.less'
+                    '@bower/sonatra-theme-gluon/less/gluon/gluon.less' -%}
+
+{%- set is_server_error = false -%}
+{%- set status_text_exclamation = status_text_exclamation|default('!') -%}
+{%- set btn_style = btn_style|default('default') -%}
+{%- set btn_text = btn_text|default('Return to the homepage') -%}
+{%- set btn_ref = btn_ref|default('/') -%}
+{%- set logo_src = logo_src|default('bundles/sonatragluon/logo_black.svg') -%}
+{%- set logo_alt = logo_alt|default('Sonatra') -%}
+
+{%- if status_code >= 500 and status_code <= 520 -%}
+    {%- set is_server_error = true -%}
+    {%- set btn_style = 'default' -%}
+{%- endif -%}
+
+{%- block conditional_comments -%}
+{%- endblock conditional_comments -%}
+
+{%- block title %}{{ status_code }} {{ status_text }}{% endblock title -%}
+
+{%- if is_server_error -%}
+    {%- set body_attr = body_attr|default({})|merge({'class': (body_attr.class|default('') ~ ' error-server')|trim}) -%}
+{%- endif -%}
+
+{%- block body -%}
+{%- spaceless -%}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="error-wrapper">
+                {%- block error_wrapper -%}
+                    <h1>{{ status_code }}</h1>
+                    <h2>
+                        {%- set status_icon = 'road' -%}
+                        {%- if is_server_error -%}
+                            {%- set status_icon = 'unlink' -%}
+                        {%- elseif status_code in [401, 402, 403] -%}
+                            {%- set status_icon = 'shield' -%}
+                        {%- endif -%}
+                        <i class="fa fa-{{ status_icon }}"></i> {{ status_text }}{{ status_text_exclamation }}
+                    </h2>
+                    {%- block button_homepage -%}
+                    <a class="btn btn-lg btn-{{ btn_style }}-outline" href="{{ btn_ref }}"><i class="fa fa-home"></i> {{ btn_text }}</a>
+
+                    <div class="footer-badge">
+                        <img src="{{ asset(logo_src) }}" alt="{{ logo_alt }}" />
+                    </div>
+                    {%- endblock button_homepage -%}
+                {%- endblock error_wrapper -%}
+            </div>
+        </div>
+    </div>
+</div>
+{%- endspaceless -%}
+{%- endblock body -%}

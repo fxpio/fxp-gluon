@@ -1,0 +1,20 @@
+{% block navbar_header_toggle_button -%}
+{%- if rendered -%}
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#{{ collapse_id }}">
+        <span class="sr-only">{{ label|block_trans({}, translation_domain) }}</span>
+        <i class="fa fa-navbar-toggle"></i>
+    </button>
+{%- endif -%}
+{%- endblock navbar_header_toggle_button %}
+
+
+{% block navbar_brand_widget -%}
+{%- if rendered -%}
+    {%- if switchable -%}
+        {%- set attr = attr|merge({'class': (attr.class|default('')  ~ ' navbar-brand-switch')|trim}) -%}
+    {%- endif -%}
+
+    {{- block('base_navbar_brand_widget') -}}
+    {%- require_style '@bower/sonatra-theme-gluon/less/bootstrap-theme/bootstrap-theme.less' -%}
+{%- endif -%}
+{%- endblock navbar_brand_widget %}

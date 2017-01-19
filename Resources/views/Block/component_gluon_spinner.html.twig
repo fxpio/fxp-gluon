@@ -1,0 +1,19 @@
+{% block spinner_widget -%}
+{%- if rendered -%}
+    {%- if floating -%}
+        {%- set attr = attr|merge({'class': ('spinner-floating ' ~ attr.class|default(''))|trim}) -%}
+
+        {%- if mini -%}
+            {%- set attr = attr|merge({'class': (attr.class|default('') ~ ' spinner-mini')|trim}) -%}
+        {%- endif -%}
+
+        {%- spaceless -%}
+            <div{{ block('widget_container_attributes') }}>
+                <svg class="spinner"><circle class="spinner-path" cx="{{ spinner_c }}" cy="{{ spinner_c }}" r="{{ spinner_r }}" /></svg>
+            </div>
+        {%- endspaceless -%}
+    {%- else -%}
+        <svg class="spinner{% if mini %} spinner-mini{% endif %}"><circle class="spinner-path" cx="{{ spinner_c }}" cy="{{ spinner_c }}" r="{{ spinner_r }}" /></svg>
+    {%- endif -%}
+{%- endif -%}
+{%- endblock spinner_widget %}

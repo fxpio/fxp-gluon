@@ -1,0 +1,13 @@
+{% block dropdown_widget -%}
+{%- if rendered -%}
+    {%- require_style   '@bower/sonatra-bootstrap-dropdown-position/less/dropdown-position.less' -%}
+    {%- require_script  '@bower/jquery/dist/jquery.js'
+                        '@bower/sonatra-bootstrap-dropdown-position/js/dropdown-position.js' -%}
+
+    {%- if ripple is defined and ripple -%}
+        {%- set attr = attr|merge({'class': (attr.class|default('') ~ ' dropdown-ripple')|trim}) -%}
+    {%- endif -%}
+
+    {{- block('base_dropdown_widget') -}}
+{%- endif -%}
+{%- endblock dropdown_widget %}

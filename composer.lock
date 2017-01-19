@@ -160,12 +160,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonatra/sonatra-block.git",
-                "reference": "8e1c461b850fa9429b8911e5639b761f8789e4df"
+                "reference": "e7471801ad6f9e4515eaeb9f5d6564b97c9b2050"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonatra/sonatra-block/zipball/8e1c461b850fa9429b8911e5639b761f8789e4df",
-                "reference": "8e1c461b850fa9429b8911e5639b761f8789e4df",
+                "url": "https://api.github.com/repos/sonatra/sonatra-block/zipball/e7471801ad6f9e4515eaeb9f5d6564b97c9b2050",
+                "reference": "e7471801ad6f9e4515eaeb9f5d6564b97c9b2050",
                 "shasum": ""
             },
             "require": {
@@ -218,7 +218,7 @@
                 "ui",
                 "user interface"
             ],
-            "time": "2017-01-19 09:36:13"
+            "time": "2017-01-19 11:33:44"
         },
         {
             "name": "sonatra/bootstrap",
@@ -226,12 +226,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonatra/sonatra-bootstrap.git",
-                "reference": "791b4eaa4b29083a5818bed2941f1a89c511498f"
+                "reference": "7f26d43632b18697a6c5af17cf49e47ac2943d81"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonatra/sonatra-bootstrap/zipball/791b4eaa4b29083a5818bed2941f1a89c511498f",
-                "reference": "791b4eaa4b29083a5818bed2941f1a89c511498f",
+                "url": "https://api.github.com/repos/sonatra/sonatra-bootstrap/zipball/7f26d43632b18697a6c5af17cf49e47ac2943d81",
+                "reference": "7f26d43632b18697a6c5af17cf49e47ac2943d81",
                 "shasum": ""
             },
             "require": {
@@ -280,7 +280,7 @@
                 "block",
                 "template"
             ],
-            "time": "2017-01-19 09:48:53"
+            "time": "2017-01-19 14:41:10"
         },
         {
             "name": "sonatra/form-extensions",
@@ -288,27 +288,27 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonatra/sonatra-form-extensions.git",
-                "reference": "0ec599a93d113be2e61f66cf197d955b303ba608"
+                "reference": "d48fb288a8556ea394ae43a18b40b92eea91b98f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonatra/sonatra-form-extensions/zipball/0ec599a93d113be2e61f66cf197d955b303ba608",
-                "reference": "0ec599a93d113be2e61f66cf197d955b303ba608",
+                "url": "https://api.github.com/repos/sonatra/sonatra-form-extensions/zipball/d48fb288a8556ea394ae43a18b40b92eea91b98f",
+                "reference": "d48fb288a8556ea394ae43a18b40b92eea91b98f",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.6.0",
                 "sonatra/ajax": "1.0.*@dev",
-                "symfony/event-dispatcher": "~3.0",
-                "symfony/form": "~3.0",
-                "symfony/http-foundation": "~3.0",
-                "symfony/property-access": "~3.0",
-                "symfony/routing": "~3.0",
-                "symfony/serializer": "~3.0"
+                "symfony/event-dispatcher": "~3.2",
+                "symfony/form": "~3.2",
+                "symfony/http-foundation": "~3.2",
+                "symfony/property-access": "~3.2",
+                "symfony/routing": "~3.2",
+                "symfony/serializer": "~3.2"
             },
             "require-dev": {
                 "doctrine/orm": "~2.5",
-                "symfony/doctrine-bridge": "~3.0"
+                "symfony/doctrine-bridge": "~3.2"
             },
             "suggest": {
                 "bower-asset/select2": "The Select2 jquery plugin",
@@ -352,7 +352,7 @@
                 "select2",
                 "time"
             ],
-            "time": "2017-01-18 13:27:34"
+            "time": "2017-01-19 14:13:54"
         },
         {
             "name": "sonatra/routing-extra",

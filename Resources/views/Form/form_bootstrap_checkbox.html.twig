@@ -1,0 +1,15 @@
+{% block checkbox_widget_content -%}
+    {%- set wrapper_class = wrapper_class|default('form-control-md') -%}
+    {%- if style -%}
+        {%- set attr = attr|merge({'class': (attr.class|default('') ~ ' input-' ~ style)|trim}) -%}
+    {%- endif -%}
+
+    <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>
+        <span class="{{ wrapper_class }}">
+            <input type="checkbox" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
+            <span class="form-control-md-style"></span>
+            <span>{% if label != ' ' %}{% if translation_domain is same as(false) %}{{ label }}{% else %}{{ label|trans({}, translation_domain) }}{% endif %}{% endif %}</span>
+        </span>
+    </label>
+    {{- form_errors(form) -}}
+{%- endblock checkbox_widget_content %}

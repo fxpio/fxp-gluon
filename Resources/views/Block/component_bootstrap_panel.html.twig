@@ -1,0 +1,83 @@
+{% block panel_widget -%}
+{%- if rendered -%}
+    {%- if rendered and (not(hidden_if_empty) or (hidden_if_empty and block.children|length > 0)) -%}
+        {%- if border_top_style is not null -%}
+            {%- set attr = attr|merge({'class': (attr.class|default('') ~ ' panel-' ~ border_top_style ~ '-top')|trim}) -%}
+        {%- endif -%}
+
+        {%- if panel_main -%}
+            {%- set attr = attr|merge({'class': (attr.class|default('') ~ ' panel-main')|trim}) -%}
+        {%- endif -%}
+
+        {%- if collapsible -%}
+            {%- require_style '@bower/sonatra-bootstrap-panel-collapse/less/panel-collapse.less' -%}
+            {%- require_script '@bower/sonatra-bootstrap-panel-collapse/js/panel-collapse.js' -%}
+
+            {%- set attr = attr|merge({'data-panel-collapse': 'true'}) -%}
+        {%- endif -%}
+
+        {%- if collapsed -%}
+            {%- set attr = attr|merge({'class': (attr.class|default('') ~ ' panel-collapsed')|trim}) -%}
+        {%- endif -%}
+
+        {{- block('base_panel_widget') -}}
+
+        {%- if panels_rendered -%}
+            {%- for panel in related_panels -%}
+                {{- block_widget(panel) -}}
+            {%- endfor -%}
+        {%- endif -%}
+    {%- endif -%}
+
+    {%- require_style '@bower/sonatra-theme-gluon/less/bootstrap-theme/bootstrap-theme.less' -%}
+{%- endif -%}
+{%- endblock panel_widget %}
+
+
+{% block panel_header_widget_content -%}
+{%- if rendered -%}
+    {%- if panel_actions is defined -%}
+        {{- block_widget(panel_actions) -}}
+    {%- endif -%}
+
+    {%- if panel_heading is defined -%}
+        {{- block_widget(panel_heading) -}}
+    {%- endif -%}
+
+    {%- if panel_actions is defined -%}
+        <div class="clearfix"></div>
+    {%- endif -%}
+
+    {{- value|raw -}}
+
+    {%- for child in block -%}
+        {{- block_widget(child) -}}
+    {%- endfor -%}
+{%- endif -%}
+{%- endblock panel_header_widget_content %}
+
+
+{% block panel_body_widget -%}
+{%- if rendered -%}
+    {%- if style is not null -%}
+        {%- set attr = attr|merge({'class': (attr.class|default('') ~ ' panel-' ~ style)|trim}) -%}
+    {%- endif -%}
+
+    {{- block('base_panel_body_widget') -}}
+
+    {%- require_style '@bower/sonatra-theme-gluon/less/bootstrap-theme/bootstrap-theme.less' -%}
+{%- endif -%}
+{%- endblock panel_body_widget %}
+
+
+{% block panel_footer_widget -%}
+{%- if rendered -%}
+    {%- if style is not null -%}
+        {%- set attr = attr|merge({'class': (attr.class|default('') ~ ' panel-' ~ style)|trim}) -%}
+    {%- endif -%}
+
+    {{- block('base_panel_footer_widget') -}}
+
+    {%- require_style '@bower/sonatra-theme-gluon/less/bootstrap-theme/bootstrap-theme.less' -%}
+{%- endif -%}
+{%- endblock panel_footer_widget %}

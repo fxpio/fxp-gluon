@@ -1,0 +1,16 @@
+{% block checkbox_widget_content -%}
+{%- if rendered -%}
+    {%- if value -%}
+        {%- set value = 'checked' -%}
+    {%- else -%}
+        {%- set value = '' -%}
+    {%- endif -%}
+
+    {%- if style -%}
+        {%- set attr = attr|merge({'class': (attr.class|default('') ~ ' block-' ~ style)|trim}) -%}
+    {%- endif -%}
+    {%- set attr = attr|merge({'class': ('fa block-control-fa-checkbox ' ~ value ~ ' ' ~ attr.class|default(''))|trim}) -%}
+
+    <i{{ block('widget_attributes') }}></i>
+{%- endif -%}
+{%- endblock checkbox_widget_content %}

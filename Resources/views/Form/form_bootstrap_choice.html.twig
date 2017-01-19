@@ -1,0 +1,42 @@
+{% block choice_widget -%}
+    {%- if select2 is defined -%}
+        {%- set attr = attr|merge({'class': (attr.class|default('') ~ ' select2')|trim}) -%}
+        {{- block('select2_widget_content') -}}
+    {%- else -%}
+        {{- block('base_choice_widget') -}}
+    {%- endif -%}
+{%- endblock choice_widget %}
+
+
+{% block base_choice_widget_collapsed -%}
+    {%- if floating_label|default(false) -%}
+        <div class="floating-group{% if errors|length > 0 %} has-error{% endif %}">
+    {%- endif -%}
+
+    {{- block('base2_choice_widget_collapsed') -}}
+
+    {%- if floating_label|default(false) -%}
+        {%- set label_attr = label_attr|merge({'class': ('control-label top-floating-label-choice' ~ label_attr.class|default(''))|trim}) -%}
+        {{ block('base_form_label') }}
+        </div>
+    {%- endif -%}
+{%- endblock base_choice_widget_collapsed %}
+
+
+{% block choice_widget_expanded -%}
+    {%- set choice_widget_expanded_before_content -%}
+        {%- if floating_label|default(false) -%}
+            <div class="floating-group{% if errors|length > 0 %} has-error{% endif %}">
+        {%- endif -%}
+    {%- endset -%}
+
+    {%- set choice_widget_expanded_after_content -%}
+        {%- if floating_label|default(false) -%}
+            {%- set label_attr = label_attr|merge({'class': ('control-label top-floating-label' ~ label_attr.class|default(''))|trim}) -%}
+            {{ block('base_form_label') }}
+            </div>
+        {%- endif -%}
+    {%- endset -%}
+
+    {{- block('base2_choice_widget_expanded') -}}
+{%- endblock choice_widget_expanded %}

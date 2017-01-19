@@ -1,0 +1,17 @@
+{% block block_floating_label_start -%}
+{%- if rendered -%}
+    {%- if floating_label|default(false) is same as(true) -%}
+        <div class="floating-group">
+    {%- endif -%}
+{%- endif -%}
+{%- endblock block_floating_label_start %}
+
+
+{% block block_floating_label_end -%}
+{%- if rendered -%}
+    {%- if floating_label|default(false) is same as(true) -%}
+            {{ block_label(block, null, {floating_label: false, label_attr: label_attr|merge({'class': ('top-floating-label ' ~ label_attr.class|default(''))|trim})}) }}
+        </div>
+    {%- endif -%}
+{%- endif -%}
+{%- endblock block_floating_label_end %}

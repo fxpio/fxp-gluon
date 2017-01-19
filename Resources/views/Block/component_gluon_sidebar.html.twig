@@ -1,0 +1,140 @@
+{% block sidebar_widget -%}
+{%- if rendered -%}
+    {%- require_style   '?@bower/sonatra-jquery-scroller/css/scroller.css'
+                        '@bower/sonatra-jquery-sidebar/less/sidebar.less' -%}
+    {%- require_script  '@bower/jquery/dist/jquery.js'
+                        '?@bower/hammerjs/hammer.js'
+                        '?@bower/sonatra-jquery-scroller/js/scroller.js'
+                        '?@bower/sonatra-jquery-scroller/js/sticky-header.js'
+                        '@bower/sonatra-jquery-sidebar/js/sidebar.js' -%}
+
+    {%- set attr = attr|merge({'class': ('sidebar sidebar-' ~ style ~ ' ' ~ attr.class|default(''))|trim}) -%}
+
+    {%- if not(disabled) and (opened or locked) -%}
+        {%- set attr = attr|merge({'class': (attr.class|default('') ~ ' sidebar-open-init')|trim}) -%}
+    {%- endif -%}
+
+    {%- if 'right' == position -%}
+        {%- set attr = attr|merge({'class': (attr.class|default('') ~ ' sidebar-right')|trim}) -%}
+    {%- endif -%}
+
+    {%- if opened is same as('force') or locked -%}
+        {%- set attr = attr|merge({'class': (attr.class|default('') ~ ' sidebar-force-open')|trim}) -%}
+    {%- endif -%}
+
+    {%- if locked -%}
+        {%- set attr = attr|merge({'class': (attr.class|default('') ~ ' sidebar-locked')|trim}) -%}
+    {%- endif -%}
+
+    {%- if full_locked -%}
+        {%- set attr = attr|merge({'class': (attr.class|default('') ~ ' sidebar-full-locked')|trim}) -%}
+    {%- endif -%}
+
+    {%- if fixed_top -%}
+        {%- set attr = attr|merge({'class': (attr.class|default('') ~ ' sidebar-fixed-top')|trim}) -%}
+    {%- endif -%}
+
+    {%- if disabled -%}
+        {%- set attr = attr|merge({'class': (attr.class|default('') ~ ' sidebar-disabled')|trim}) -%}
+    {%- endif -%}
+
+    {%- spaceless -%}
+    <div{{ block('widget_container_attributes') }}>
+        <ul class="sidebar-menu{% if with_icons %} with-icons{% endif %}">
+            {{- value|raw -}}
+            {%- for child in block -%}
+                {{- block_widget(child) -}}
+            {%- endfor -%}
+        </ul>
+    </div>
+    {%- endspaceless -%}
+{%- endif -%}
+{%- endblock sidebar_widget %}
+
+
+{% block sidebar_header_widget -%}
+{%- if rendered -%}
+    {%- set attr = attr|merge({'class': ('sidebar-header ' ~ attr.class|default(''))|trim}) -%}
+
+    {%- spaceless -%}
+        <li{{ block('widget_container_attributes') }}>
+            {{- label|block_trans({}, translation_domain) -}}
+            {{- value|raw -}}
+            {{- block('block_rows') -}}
+        </li>
+    {%- endspaceless -%}
+{%- endif -%}
+{%- endblock sidebar_header_widget %}
+
+
+{% block sidebar_group_widget -%}
+{%- if rendered -%}
+    {%- set attr = attr|merge({'class': ('sidebar-group ' ~ attr.class|default(''))|trim}) -%}
+
+    {%- if context_menu -%}
+        {%- set attr = attr|merge({'class': (attr.class|default('') ~ ' sidebar-menu-context')|trim}) -%}
+    {%- endif -%}
+
+    {%- spaceless -%}
+    <li{{ block('widget_container_attributes') }}>
+        <span{% for attrname, attrvalue in group_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>
+            {{- label|block_trans({}, translation_domain) -}}
+            {{- value|raw -}}
+        </span>
+        <ul class="sidebar-group-menu">
+            {{- block('block_rows') -}}
+        </ul>
+    </li>
+    {%- endspaceless -%}
+{%- endif -%}
+{%- endblock sidebar_group_widget %}
+
+
+{% block sidebar_divider_item_widget -%}
+{%- if rendered -%}
+    {%- set attr = attr|merge({'class': ('sidebar-divider-item ' ~ attr.class|default(''))|trim}) -%}
+
+    {%- if context_menu -%}
+        {%- set attr = attr|merge({'class': (attr.class|default('') ~ ' sidebar-menu-context')|trim}) -%}
+    {%- endif -%}
+
+    <li{{ block('widget_container_attributes') }}></li>
+{%- endif -%}
+{%- endblock sidebar_divider_item_widget %}
+
+
+{% block sidebar_item_widget -%}
+{%- if rendered -%}
+    {%- set attr = attr|merge({'class': ('sidebar-item ' ~ attr.class|default(''))|trim}) -%}
+
+    {%- if context_menu -%}
+        {%- set attr = attr|merge({'class': (attr.class|default('') ~ ' sidebar-menu-context')|trim}) -%}
+    {%- endif -%}
+
+    {%- if mini -%}
+        {%- set attr = attr|merge({'class': (attr.class|default('') ~ ' sidebar-item-mini')|trim}) -%}
+    {%- endif -%}
+
+    {%- if data_item is not empty -%}
+        {%- set link_attr = link_attr|merge({'data-item': data_item}) -%}
+    {%- endif -%}
+
+    {%- if active and not disabled -%}
+        {%- set link_attr = link_attr|merge({'class': (link_attr.class|default('') ~ ' active')|trim}) -%}
+    {%- endif -%}
+
+    {%- if disabled -%}
+        {%- set link_attr = link_attr|merge({'class': (link_attr.class|default('') ~ ' disabled')|trim}) -%}
+    {%- endif -%}
+
+    {%- spaceless -%}
+        <li{{ block('widget_container_attributes') }}>
+            <a{% for attrname, attrvalue in link_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>
+                {{- label|block_trans({}, translation_domain) -}}
+                {{- value|raw -}}
+                {{- block('block_rows') -}}
+            </a>
+        </li>
+    {%- endspaceless -%}
+{%- endif -%}
+{%- endblock sidebar_item_widget %}

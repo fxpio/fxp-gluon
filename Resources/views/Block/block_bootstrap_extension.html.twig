@@ -1,0 +1,47 @@
+{% block extension_tooltip_javascript -%}
+{%- if rendered -%}
+    {{ block('base2_extension_tooltip_javascript') }}
+    {%- if tooltip_id is defined -%}
+        {%- inline_script -%}
+        <script>
+            $(document).appPjax('addUnregister', function (appPjax) {
+                $('#{{ tooltip_id }}').tooltip('destroy');
+            });
+        </script>
+        {%- endinline_script -%}
+    {%- endif -%}
+{%- endif -%}
+{%- endblock extension_tooltip_javascript %}
+
+
+{% block extension_popover_javascript -%}
+{%- if rendered -%}
+    {{ block('base2_extension_popover_javascript') }}
+    {%- if popover_id is defined -%}
+        {%- inline_script -%}
+        <script>
+            $(document).appPjax('addUnregister', function () {
+                $('#{{ popover_id }}').popover('destroy');
+            });
+        </script>
+        {%- endinline_script -%}
+    {%- endif -%}
+{%- endif -%}
+{%- endblock extension_popover_javascript %}
+
+
+{% block extension_scroll_spy_javascript -%}
+{%- if rendered -%}
+    {{ block('base2_extension_scroll_spy_javascript') }}
+    {%- if scroll_spy is defined -%}
+        {%- inline_script -%}
+        <script>
+            $(document).appPjax('addUnregister', function () {
+                var spy = $('{{ scroll_spy.on }}').data('bs.scrollspy');
+                spy.$scrollElement.off('scroll.bs.scrollspy', $.proxy(spy.process, spy));
+            });
+        </script>
+        {%- endinline_script -%}
+    {%- endif -%}
+{%- endif -%}
+{%- endblock extension_scroll_spy_javascript %}

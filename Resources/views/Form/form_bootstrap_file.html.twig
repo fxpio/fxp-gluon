@@ -1,0 +1,5 @@
+{% block file_widget -%}
+    {%- require_script '?@bower/jquery/dist/jquery.js', '?@bower/bootstrap-filestyle/src/bootstrap-filestyle.js' -%}
+    {%- set attr = attr|merge({'class': ('filestyle ' ~ attr.class|default(''))|trim, 'data-classButton': 'btn btn-default btn-file-input-text', 'data-classInput':'form-control', 'data-buttonText':'form.type.file.label'|trans}) -%}
+    {{- block('form_widget_simple') -}}
+{%- endblock file_widget %}

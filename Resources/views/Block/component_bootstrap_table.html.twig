@@ -1,0 +1,34 @@
+{% block table_widget -%}
+{%- if rendered -%}
+    {%- if footable_options is defined -%}
+        {%- set striped = false -%}
+    {%- endif -%}
+
+    {%- if pager is defined -%}
+        {{- block_widget(pager) -}}
+    {%- endif -%}
+
+    {{- block('base_table_widget') -}}
+    {%- require_style '@bower/sonatra-theme-gluon/less/bootstrap-theme/bootstrap-theme.less' -%}
+
+    {%- if footable_options is defined -%}
+        {%- require_style    '@bower/footable/css/footable.core.css'
+                            '?@bower/sonatra-footable-striped/less/footable-striped.less' -%}
+        {%- require_script   '@bower/jquery/dist/jquery.js'
+                            '@bower/footable/js/footable.js'
+                            '@bower/sonatra-theme-gluon/js/footable-destroy.js'
+                            '?@bower/sonatra-footable-responsive/js/footable-responsive.js'
+                            '?@bower/sonatra-footable-striped/js/footable-striped.js'
+                            '?@bower/sonatra-bootstrap-nav-footable/js/nav-footable.js'
+                            '?@bower/sonatra-jquery-table-pager-footable/js/table-pager-footable.js' -%}
+        {%- inline_script -%}
+        <script>
+            $( '#{{ id }}' ).footable({{ footable_options|json_encode|raw }});
+            $(document).appPjax('addUnregister', function () {
+                window.destroyFootable('#{{ id }}');
+            });
+        </script>
+        {%- endinline_script -%}
+    {%- endif -%}
+{%- endif -%}
+{%- endblock table_widget %}

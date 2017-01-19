@@ -1,0 +1,9 @@
+{% block nav_item_widget -%}
+{%- if rendered -%}
+    {%- if ripple is defined and ripple -%}
+        {%- set attr = attr|merge({'class': (attr.class|default('') ~ ' btn-ripple')|trim}) -%}
+    {%- endif -%}
+
+    {{- block('base_nav_item_widget') -}}
+{%- endif -%}
+{%- endblock nav_item_widget %}
