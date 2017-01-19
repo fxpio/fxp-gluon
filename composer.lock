@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a66cfd6885ab1b4020a972e257a95336",
-    "content-hash": "35e8fbe6ac029f4f1cd03f8ad26024d6",
+    "hash": "ffa33eb0fbb4d1fa779554ef599e4fa0",
+    "content-hash": "7db0ef6451496602d6b731a237aa9ddc",
     "packages": [
         {
             "name": "paragonie/random_compat",
@@ -226,16 +226,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonatra/sonatra-bootstrap.git",
-                "reference": "7f26d43632b18697a6c5af17cf49e47ac2943d81"
+                "reference": "b8150212b97cfcc8884b18743177fd23f13445bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonatra/sonatra-bootstrap/zipball/7f26d43632b18697a6c5af17cf49e47ac2943d81",
-                "reference": "7f26d43632b18697a6c5af17cf49e47ac2943d81",
+                "url": "https://api.github.com/repos/sonatra/sonatra-bootstrap/zipball/b8150212b97cfcc8884b18743177fd23f13445bf",
+                "reference": "b8150212b97cfcc8884b18743177fd23f13445bf",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6.0",
+                "php": ">=7.0.0",
                 "sonatra/block": "1.0.*@dev"
             },
             "require-dev": {
@@ -280,7 +280,7 @@
                 "block",
                 "template"
             ],
-            "time": "2017-01-19 14:41:10"
+            "time": "2017-01-19 16:20:14"
         },
         {
             "name": "sonatra/form-extensions",
@@ -288,16 +288,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonatra/sonatra-form-extensions.git",
-                "reference": "d48fb288a8556ea394ae43a18b40b92eea91b98f"
+                "reference": "4248b945220ac14fcc90a39033c1bbc5abfce0b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonatra/sonatra-form-extensions/zipball/d48fb288a8556ea394ae43a18b40b92eea91b98f",
-                "reference": "d48fb288a8556ea394ae43a18b40b92eea91b98f",
+                "url": "https://api.github.com/repos/sonatra/sonatra-form-extensions/zipball/4248b945220ac14fcc90a39033c1bbc5abfce0b5",
+                "reference": "4248b945220ac14fcc90a39033c1bbc5abfce0b5",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6.0",
+                "php": ">=7.0.0",
                 "sonatra/ajax": "1.0.*@dev",
                 "symfony/event-dispatcher": "~3.2",
                 "symfony/form": "~3.2",
@@ -352,7 +352,7 @@
                 "select2",
                 "time"
             ],
-            "time": "2017-01-19 14:13:54"
+            "time": "2017-01-19 15:59:27"
         },
         {
             "name": "sonatra/routing-extra",
@@ -1387,7 +1387,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.6.0"
+        "php": ">=7.0.0"
     },
     "platform-dev": []
 }
