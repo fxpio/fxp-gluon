@@ -1,5 +1,4 @@
 {% block table_column_link_content -%}
-{%- if rendered -%}
     {%- set link_options = link_options|merge({label: property_path(_row_data, _column.config.getOption('data_property_path'))}) -%}
 
     {%- if link_options.label is empty -%}
@@ -22,12 +21,9 @@
     {%- endif -%}
 
     {%- sblock 'link' link_options :-%}
-{%- endif -%}
 {%- endblock table_column_link_content %}
 
 
 {% block table_column_select_content -%}
-{%- if rendered -%}
     {%- sblock 'form' type='Symfony\\Component\\Form\\Extension\\Core\\Type\\CheckboxType' options=options :-%}
-{%- endif -%}
 {%- endblock table_column_select_content %}
