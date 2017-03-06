@@ -4,21 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ffa33eb0fbb4d1fa779554ef599e4fa0",
-    "content-hash": "7db0ef6451496602d6b731a237aa9ddc",
+    "content-hash": "052b8e42b0f620ce8fb8f3df0d76063b",
     "packages": [
         {
             "name": "paragonie/random_compat",
-            "version": "v2.0.4",
+            "version": "v2.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "a9b97968bcde1c4de2a5ec6cbd06a0f6c919b46e"
+                "reference": "6968531206671f94377b01dc7888d5d1b858a01b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/a9b97968bcde1c4de2a5ec6cbd06a0f6c919b46e",
-                "reference": "a9b97968bcde1c4de2a5ec6cbd06a0f6c919b46e",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/6968531206671f94377b01dc7888d5d1b858a01b",
+                "reference": "6968531206671f94377b01dc7888d5d1b858a01b",
                 "shasum": ""
             },
             "require": {
@@ -53,7 +52,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-11-07 23:38:38"
+            "time": "2017-03-03T20:43:42+00:00"
         },
         {
             "name": "psr/log",
@@ -100,7 +99,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-10-10 12:19:37"
+            "time": "2016-10-10T12:19:37+00:00"
         },
         {
             "name": "sonatra/ajax",
@@ -108,20 +107,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonatra/sonatra-ajax.git",
-                "reference": "491689fd449e164f042499f0c17125af01e7c613"
+                "reference": "8537258c5c796acbd7d7bd8db2c44175a95ec137"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonatra/sonatra-ajax/zipball/491689fd449e164f042499f0c17125af01e7c613",
-                "reference": "491689fd449e164f042499f0c17125af01e7c613",
+                "url": "https://api.github.com/repos/sonatra/sonatra-ajax/zipball/8537258c5c796acbd7d7bd8db2c44175a95ec137",
+                "reference": "8537258c5c796acbd7d7bd8db2c44175a95ec137",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.6.0",
-                "symfony/event-dispatcher": "~3.0",
-                "symfony/http-foundation": "~3.0",
-                "symfony/http-kernel": "~3.0",
-                "symfony/serializer": "~3.0"
+                "symfony/event-dispatcher": "^3.0.0",
+                "symfony/http-foundation": "^3.0.0",
+                "symfony/http-kernel": "^3.0.0",
+                "symfony/serializer": "^3.0.0"
             },
             "type": "library",
             "extra": {
@@ -152,7 +151,7 @@
             "keywords": [
                 "AJAX response"
             ],
-            "time": "2017-01-18 12:49:30"
+            "time": "2017-03-06T14:38:15+00:00"
         },
         {
             "name": "sonatra/block",
@@ -160,29 +159,29 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonatra/sonatra-block.git",
-                "reference": "e7471801ad6f9e4515eaeb9f5d6564b97c9b2050"
+                "reference": "491c1600fdf45fe9e45ab0a31d5d90c8e66a4833"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonatra/sonatra-block/zipball/e7471801ad6f9e4515eaeb9f5d6564b97c9b2050",
-                "reference": "e7471801ad6f9e4515eaeb9f5d6564b97c9b2050",
+                "url": "https://api.github.com/repos/sonatra/sonatra-block/zipball/491c1600fdf45fe9e45ab0a31d5d90c8e66a4833",
+                "reference": "491c1600fdf45fe9e45ab0a31d5d90c8e66a4833",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.0.0",
-                "symfony/event-dispatcher": "~3.0",
-                "symfony/form": "~3.0",
-                "symfony/options-resolver": "~3.0"
+                "symfony/event-dispatcher": "^3.0.0",
+                "symfony/form": "^3.0.0",
+                "symfony/options-resolver": "^3.0.0"
             },
             "require-dev": {
-                "doctrine/orm": "~2.5",
-                "symfony/dependency-injection": "~3.0",
-                "symfony/doctrine-bridge": "~3.0",
-                "symfony/http-kernel": "~3.0",
-                "symfony/templating": "~3.0",
-                "symfony/translation": "~3.0",
-                "symfony/validator": "~3.0",
-                "twig/twig": "~2.0"
+                "doctrine/orm": "^2.5.0",
+                "symfony/dependency-injection": "^3.0.0",
+                "symfony/doctrine-bridge": "^3.0.0",
+                "symfony/http-kernel": "^3.0.0",
+                "symfony/templating": "^3.0.0",
+                "symfony/translation": "^3.0.0",
+                "symfony/validator": "^3.0.0",
+                "twig/twig": "^2.0.0"
             },
             "suggest": {
                 "doctrine/orm": "For doctrine block type"
@@ -218,7 +217,7 @@
                 "ui",
                 "user interface"
             ],
-            "time": "2017-01-19 11:33:44"
+            "time": "2017-03-06T17:14:16+00:00"
         },
         {
             "name": "sonatra/bootstrap",
@@ -226,26 +225,26 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonatra/sonatra-bootstrap.git",
-                "reference": "b8150212b97cfcc8884b18743177fd23f13445bf"
+                "reference": "be43d14509ddba42ac5f2d9acc083f0d4d3bae30"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonatra/sonatra-bootstrap/zipball/b8150212b97cfcc8884b18743177fd23f13445bf",
-                "reference": "b8150212b97cfcc8884b18743177fd23f13445bf",
+                "url": "https://api.github.com/repos/sonatra/sonatra-bootstrap/zipball/be43d14509ddba42ac5f2d9acc083f0d4d3bae30",
+                "reference": "be43d14509ddba42ac5f2d9acc083f0d4d3bae30",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.0.0",
-                "sonatra/block": "1.0.*@dev"
+                "sonatra/block": "^1.0.0"
             },
             "require-dev": {
-                "doctrine/orm": "~2.5",
-                "gedmo/doctrine-extensions": "~2.4"
+                "doctrine/orm": "^2.5.0",
+                "gedmo/doctrine-extensions": "^2.4.0"
             },
             "suggest": {
-                "bower-asset/bootstrap": "v3.3.*",
-                "bower-asset/html5shiv": "v3.7.*",
-                "bower-asset/respond": "v1.4.*",
+                "bower-asset/bootstrap": "^3.3.0",
+                "bower-asset/html5shiv": "^3.7.0",
+                "bower-asset/respond": "^1.4.0",
                 "fxp/composer-asset-plugin": "For manage NPM/Bower dependencies with Composer"
             },
             "type": "library",
@@ -280,7 +279,7 @@
                 "block",
                 "template"
             ],
-            "time": "2017-01-19 16:20:14"
+            "time": "2017-03-06T17:20:58+00:00"
         },
         {
             "name": "sonatra/form-extensions",
@@ -288,27 +287,27 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonatra/sonatra-form-extensions.git",
-                "reference": "4248b945220ac14fcc90a39033c1bbc5abfce0b5"
+                "reference": "b49e43831a3fe7271e744690615e40fb8b81c953"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonatra/sonatra-form-extensions/zipball/4248b945220ac14fcc90a39033c1bbc5abfce0b5",
-                "reference": "4248b945220ac14fcc90a39033c1bbc5abfce0b5",
+                "url": "https://api.github.com/repos/sonatra/sonatra-form-extensions/zipball/b49e43831a3fe7271e744690615e40fb8b81c953",
+                "reference": "b49e43831a3fe7271e744690615e40fb8b81c953",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.0.0",
-                "sonatra/ajax": "1.0.*@dev",
-                "symfony/event-dispatcher": "~3.2",
-                "symfony/form": "~3.2",
-                "symfony/http-foundation": "~3.2",
-                "symfony/property-access": "~3.2",
-                "symfony/routing": "~3.2",
-                "symfony/serializer": "~3.2"
+                "sonatra/ajax": "^1.0.0",
+                "symfony/event-dispatcher": "^3.2.0",
+                "symfony/form": "^3.2.0",
+                "symfony/http-foundation": "^3.2.0",
+                "symfony/property-access": "^3.2.0",
+                "symfony/routing": "^3.2.0",
+                "symfony/serializer": "^3.2.0"
             },
             "require-dev": {
-                "doctrine/orm": "~2.5",
-                "symfony/doctrine-bridge": "~3.2"
+                "doctrine/orm": "^2.5.0",
+                "symfony/doctrine-bridge": "^3.2.0"
             },
             "suggest": {
                 "bower-asset/select2": "The Select2 jquery plugin",
@@ -352,7 +351,7 @@
                 "select2",
                 "time"
             ],
-            "time": "2017-01-19 15:59:27"
+            "time": "2017-03-06T17:26:08+00:00"
         },
         {
             "name": "sonatra/routing-extra",
@@ -360,18 +359,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonatra/sonatra-routing-extra.git",
-                "reference": "370bef0520e3322bb4de3974d5c6e07c89dd8125"
+                "reference": "9922e7acf79416ff59a3c1362cdc1d02ef627f32"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonatra/sonatra-routing-extra/zipball/370bef0520e3322bb4de3974d5c6e07c89dd8125",
-                "reference": "370bef0520e3322bb4de3974d5c6e07c89dd8125",
+                "url": "https://api.github.com/repos/sonatra/sonatra-routing-extra/zipball/9922e7acf79416ff59a3c1362cdc1d02ef627f32",
+                "reference": "9922e7acf79416ff59a3c1362cdc1d02ef627f32",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.6.0",
-                "symfony/property-access": "~3.0",
-                "symfony/routing": "~3.0"
+                "symfony/property-access": "^3.0.0",
+                "symfony/routing": "^3.0.0"
             },
             "type": "library",
             "extra": {
@@ -403,20 +402,20 @@
                 "extra",
                 "routing"
             ],
-            "time": "2016-12-17 11:45:20"
+            "time": "2017-03-06T14:44:46+00:00"
         },
         {
             "name": "symfony/debug",
-            "version": "v3.2.2",
+            "version": "v3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "810ba5c1c5352a4ddb15d4719e8936751dff0b05"
+                "reference": "9b98854cb45bc59d100b7d4cc4cf9e05f21026b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/810ba5c1c5352a4ddb15d4719e8936751dff0b05",
-                "reference": "810ba5c1c5352a4ddb15d4719e8936751dff0b05",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/9b98854cb45bc59d100b7d4cc4cf9e05f21026b9",
+                "reference": "9b98854cb45bc59d100b7d4cc4cf9e05f21026b9",
                 "shasum": ""
             },
             "require": {
@@ -460,11 +459,11 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2017-01-02 20:32:22"
+            "time": "2017-02-16T16:34:18+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v3.2.2",
+            "version": "v3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
@@ -520,20 +519,20 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-            "time": "2017-01-02 20:32:22"
+            "time": "2017-01-02T20:32:22+00:00"
         },
         {
             "name": "symfony/form",
-            "version": "v3.2.2",
+            "version": "v3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/form.git",
-                "reference": "99c7065a3faacc3e2a532a43acfcc7d3ebb63703"
+                "reference": "2ebefd087493f841c67006da8b866c242ce62258"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/form/zipball/99c7065a3faacc3e2a532a43acfcc7d3ebb63703",
-                "reference": "99c7065a3faacc3e2a532a43acfcc7d3ebb63703",
+                "url": "https://api.github.com/repos/symfony/form/zipball/2ebefd087493f841c67006da8b866c242ce62258",
+                "reference": "2ebefd087493f841c67006da8b866c242ce62258",
                 "shasum": ""
             },
             "require": {
@@ -595,20 +594,20 @@
             ],
             "description": "Symfony Form Component",
             "homepage": "https://symfony.com",
-            "time": "2017-01-12 19:27:47"
+            "time": "2017-02-06T12:27:26+00:00"
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v3.2.2",
+            "version": "v3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "33eb76bf1d833c705433e5361a646c164696394b"
+                "reference": "a90da6dd679605d88c9803a57a6fc1fb7a19a6e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/33eb76bf1d833c705433e5361a646c164696394b",
-                "reference": "33eb76bf1d833c705433e5361a646c164696394b",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/a90da6dd679605d88c9803a57a6fc1fb7a19a6e0",
+                "reference": "a90da6dd679605d88c9803a57a6fc1fb7a19a6e0",
                 "shasum": ""
             },
             "require": {
@@ -648,20 +647,20 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
-            "time": "2017-01-08 20:47:33"
+            "time": "2017-02-16T22:46:52+00:00"
         },
         {
             "name": "symfony/http-kernel",
-            "version": "v3.2.2",
+            "version": "v3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "8a898e340a89022246645b1288d295f49c9381e4"
+                "reference": "4cd0d4bc31819095c6ef13573069f621eb321081"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/8a898e340a89022246645b1288d295f49c9381e4",
-                "reference": "8a898e340a89022246645b1288d295f49c9381e4",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/4cd0d4bc31819095c6ef13573069f621eb321081",
+                "reference": "4cd0d4bc31819095c6ef13573069f621eb321081",
                 "shasum": ""
             },
             "require": {
@@ -730,11 +729,11 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2017-01-12 21:36:33"
+            "time": "2017-02-16T23:59:56+00:00"
         },
         {
             "name": "symfony/inflector",
-            "version": "v3.2.2",
+            "version": "v3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/inflector.git",
@@ -787,20 +786,20 @@
                 "symfony",
                 "words"
             ],
-            "time": "2017-01-02 20:32:22"
+            "time": "2017-01-02T20:32:22+00:00"
         },
         {
             "name": "symfony/intl",
-            "version": "v3.2.2",
+            "version": "v3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/intl.git",
-                "reference": "6102349d68bb6b5a1e02593714189fdf8656ab62"
+                "reference": "601cdab0b1db7ee34f26582cdd5b8e5beba8d291"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/intl/zipball/6102349d68bb6b5a1e02593714189fdf8656ab62",
-                "reference": "6102349d68bb6b5a1e02593714189fdf8656ab62",
+                "url": "https://api.github.com/repos/symfony/intl/zipball/601cdab0b1db7ee34f26582cdd5b8e5beba8d291",
+                "reference": "601cdab0b1db7ee34f26582cdd5b8e5beba8d291",
                 "shasum": ""
             },
             "require": {
@@ -862,11 +861,11 @@
                 "l10n",
                 "localization"
             ],
-            "time": "2017-01-02 20:32:22"
+            "time": "2017-01-28T02:37:08+00:00"
         },
         {
             "name": "symfony/options-resolver",
-            "version": "v3.2.2",
+            "version": "v3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/options-resolver.git",
@@ -916,7 +915,7 @@
                 "configuration",
                 "options"
             ],
-            "time": "2017-01-02 20:32:22"
+            "time": "2017-01-02T20:32:22+00:00"
         },
         {
             "name": "symfony/polyfill-intl-icu",
@@ -974,7 +973,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-11-14 01:06:16"
+            "time": "2016-11-14T01:06:16+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -1033,7 +1032,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-11-14 01:06:16"
+            "time": "2016-11-14T01:06:16+00:00"
         },
         {
             "name": "symfony/polyfill-php70",
@@ -1092,20 +1091,20 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-11-14 01:06:16"
+            "time": "2016-11-14T01:06:16+00:00"
         },
         {
             "name": "symfony/property-access",
-            "version": "v3.2.2",
+            "version": "v3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/property-access.git",
-                "reference": "370a5276e00885648f6dde3cabc7c61eaab57bd8"
+                "reference": "dba6dcd9876bb1bba8fd38e23f311301e6ef385f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/property-access/zipball/370a5276e00885648f6dde3cabc7c61eaab57bd8",
-                "reference": "370a5276e00885648f6dde3cabc7c61eaab57bd8",
+                "url": "https://api.github.com/repos/symfony/property-access/zipball/dba6dcd9876bb1bba8fd38e23f311301e6ef385f",
+                "reference": "dba6dcd9876bb1bba8fd38e23f311301e6ef385f",
                 "shasum": ""
             },
             "require": {
@@ -1160,20 +1159,20 @@
                 "property path",
                 "reflection"
             ],
-            "time": "2017-01-02 20:32:22"
+            "time": "2017-02-02T13:47:35+00:00"
         },
         {
             "name": "symfony/routing",
-            "version": "v3.2.2",
+            "version": "v3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/routing.git",
-                "reference": "fda2c67d47ec801726ca888c95d701d31b27b444"
+                "reference": "af464432c177dbcdbb32295113b7627500331f2d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/routing/zipball/fda2c67d47ec801726ca888c95d701d31b27b444",
-                "reference": "fda2c67d47ec801726ca888c95d701d31b27b444",
+                "url": "https://api.github.com/repos/symfony/routing/zipball/af464432c177dbcdbb32295113b7627500331f2d",
+                "reference": "af464432c177dbcdbb32295113b7627500331f2d",
                 "shasum": ""
             },
             "require": {
@@ -1235,20 +1234,20 @@
                 "uri",
                 "url"
             ],
-            "time": "2017-01-02 20:32:22"
+            "time": "2017-01-28T02:37:08+00:00"
         },
         {
             "name": "symfony/serializer",
-            "version": "v3.2.2",
+            "version": "v3.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/serializer.git",
-                "reference": "1538e02db55d8ba5b0c29f5062f471fe5b283704"
+                "reference": "56588a4e0c65c540f8bfb3723d7b187e4c75aa5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/serializer/zipball/1538e02db55d8ba5b0c29f5062f471fe5b283704",
-                "reference": "1538e02db55d8ba5b0c29f5062f471fe5b283704",
+                "url": "https://api.github.com/repos/symfony/serializer/zipball/56588a4e0c65c540f8bfb3723d7b187e4c75aa5b",
+                "reference": "56588a4e0c65c540f8bfb3723d7b187e4c75aa5b",
                 "shasum": ""
             },
             "require": {
@@ -1256,6 +1255,7 @@
             },
             "conflict": {
                 "symfony/property-access": ">=3.0,<3.0.4|>=2.8,<2.8.4",
+                "symfony/property-info": "<3.1",
                 "symfony/yaml": "<3.1"
             },
             "require-dev": {
@@ -1309,82 +1309,14 @@
             ],
             "description": "Symfony Serializer Component",
             "homepage": "https://symfony.com",
-            "time": "2017-01-08 20:47:33"
+            "time": "2017-02-16T14:07:22+00:00"
         }
     ],
-    "packages-dev": [
-        {
-            "name": "twig/twig",
-            "version": "v1.31.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/twigphp/Twig.git",
-                "reference": "ddc9e3e20ee9c0b6908f401ac8353635b750eca7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/ddc9e3e20ee9c0b6908f401ac8353635b750eca7",
-                "reference": "ddc9e3e20ee9c0b6908f401ac8353635b750eca7",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2.7"
-            },
-            "require-dev": {
-                "symfony/debug": "~2.7",
-                "symfony/phpunit-bridge": "~3.2"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.31-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Twig_": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com",
-                    "homepage": "http://fabien.potencier.org",
-                    "role": "Lead Developer"
-                },
-                {
-                    "name": "Armin Ronacher",
-                    "email": "armin.ronacher@active-4.com",
-                    "role": "Project Founder"
-                },
-                {
-                    "name": "Twig Team",
-                    "homepage": "http://twig.sensiolabs.org/contributors",
-                    "role": "Contributors"
-                }
-            ],
-            "description": "Twig, the flexible, fast, and secure template language for PHP",
-            "homepage": "http://twig.sensiolabs.org",
-            "keywords": [
-                "templating"
-            ],
-            "time": "2017-01-11 19:36:15"
-        }
-    ],
+    "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "stable",
-    "stability-flags": {
-        "sonatra/block": 20,
-        "sonatra/bootstrap": 20,
-        "sonatra/ajax": 20,
-        "sonatra/form-extensions": 20,
-        "sonatra/routing-extra": 20
-    },
-    "prefer-stable": false,
+    "minimum-stability": "dev",
+    "stability-flags": [],
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": ">=7.0.0"
