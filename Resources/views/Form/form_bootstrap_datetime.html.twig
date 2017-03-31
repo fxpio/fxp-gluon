@@ -1,7 +1,4 @@
 {% block datetime_widget -%}
-    {%- require_script '@bower/jquery/dist/jquery.js', '@bower/moment/moment.js', '@bower/hammerjs/hammer.js', '@bower/jquery-knob/js/jquery-knob.js', '@bower/sonatra-jquery-datetime-picker/js/datetime-picker.js' -%}
-    {%- require_style '@bower/sonatra-jquery-datetime-picker/less/datetime-picker.less' -%}
-
     {%- set append_icon = append_icon|default('<span class="fa fa-calendar-o"></span>') -%}
     {%- set append_btn_style = append_btn_style|default('btn-default') -%}
     {%- set append_type = 'btn' -%}
@@ -36,14 +33,6 @@
 
 
 {% block select2_widget_content -%}
-    {%- require_style   '@bower/select2-bootstrap-theme/src/build.less'
-                        '@bower/sonatra-select2-responsive/less/select2-responsive.less'
-                        '?@bower/sonatra-jquery-scroller/less/scroller.less' -%}
-    {%- require_script  '@bower/jquery/dist/jquery.js'
-                        '?@bower/sonatra-jquery-scroller/js/scroller.js'
-                        '@bower/select2/dist/js/select2.js'
-                        '?@bower/sonatra-select2-responsive/js/select2-responsive.js'
-                        '?@bower/sonatra-select2-jquery-scroller/js/select2-jquery-scroller.js' -%}
     {%- set attr = attr|merge({'data-select2-jquery-scroller': 'true', 'data-select2-responsive': 'true'}) -%}
     {{- block('base_select2_widget_content') -}}
 

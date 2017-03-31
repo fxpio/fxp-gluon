@@ -1,9 +1,4 @@
 {% block textarea_widget -%}
-    {%- if floating_label|default(false) is same as(true) -%}
-    {%- require_script  '@bower/jquery/dist/jquery.js',
-                        '@bower/sonatra-theme-gluon/js/floating-label.js'
-                        '?@bower/sonatra-theme-gluon/js/resizing-textarea.js' -%}
-    {%- endif -%}
     {%- if addon_attr is defined and errors|length > 0 -%}
         {%- set addon_attr = addon_attr|merge({'class': (addon_attr.class|default('') ~ ' has-error')|trim}) -%}
     {%- endif -%}

@@ -1,13 +1,5 @@
 {% block sidebar_widget -%}
 {%- if rendered -%}
-    {%- require_style   '?@bower/sonatra-jquery-scroller/css/scroller.css'
-                        '@bower/sonatra-jquery-sidebar/less/sidebar.less' -%}
-    {%- require_script  '@bower/jquery/dist/jquery.js'
-                        '?@bower/hammerjs/hammer.js'
-                        '?@bower/sonatra-jquery-scroller/js/scroller.js'
-                        '?@bower/sonatra-jquery-scroller/js/sticky-header.js'
-                        '@bower/sonatra-jquery-sidebar/js/sidebar.js' -%}
-
     {%- set attr = attr|merge({'class': ('sidebar sidebar-' ~ style ~ ' ' ~ attr.class|default(''))|trim}) -%}
 
     {%- if not(disabled) and (opened or locked) -%}

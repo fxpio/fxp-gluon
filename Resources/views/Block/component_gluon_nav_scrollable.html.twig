@@ -1,11 +1,5 @@
 {% block nav_scrollable_widget -%}
 {%- if rendered -%}
-    {%- require_style   '@bower/sonatra-jquery-scroller/less/scroller.less'
-                        '@bower/sonatra-bootstrap-nav-scroll/less/nav-scroll.less'
-                        '@bower/sonatra-bootstrap-dropdown-position/less/dropdown-position.less'-%}
-    {%- require_script  '@bower/jquery/dist/jquery.js'
-                        '@bower/sonatra-jquery-scroller/js/scroller.js'
-                        '@bower/sonatra-bootstrap-nav-scroll/js/nav-scroll.js' -%}
     {%- set attr = attr|merge({'class': ('nav-scrollable ' ~ attr.class|default(''))|trim, 'data-nav-scroll': 'true'}) -%}
 
     <div{{ block('widget_container_attributes') }}>

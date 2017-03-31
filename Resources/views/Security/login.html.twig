@@ -1,12 +1,5 @@
 {%- extends "@SonatraGluon/base.html.twig" -%}
 
-{%- require_style '@bower/sonatra-jquery-ripple/less/ripple.less' -%}
-
-{%- require_script  '@bower/jquery/dist/jquery.js',
-                    '@bower/sonatra-theme-gluon/js/floating-label.js'
-                    '@bower/sonatra-jquery-ripple/js/ripple.js'
--%}
-
 {%- trans_default_domain 'FOSUserBundle' -%}
 
 {%- set whitout_navbar = whitout_navbar|default(false) -%}

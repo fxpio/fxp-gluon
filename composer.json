@@ -21,27 +21,6 @@
         "sonatra/form-extensions": "^1.0.0",
         "sonatra/routing-extra": "^1.0.0"
     },
-    "suggest": {
-        "bower-asset/select2-bootstrap-theme": "^0.1.0",
-        "bower-asset/sonatra-theme-gluon": "^1.0.0",
-        "bower-asset/sonatra-theme-gluon-pjax": "^1.0.0",
-        "bower-asset/sonatra-bootstrap-dropdown-position": "^1.0.0",
-        "bower-asset/sonatra-bootstrap-nav-scroll": "^1.0.0",
-        "bower-asset/sonatra-bootstrap-nav-footable": "^1.0.0",
-        "bower-asset/sonatra-bootstrap-panel-collapse": "^1.0.0",
-        "bower-asset/sonatra-jquery-table-pager-footable": "^1.0.0",
-        "bower-asset/sonatra-jquery-table-select": "^1.0.0",
-        "bower-asset/sonatra-jquery-table-pager": "^1.0.0",
-        "bower-asset/sonatra-select2-scroller": "^1.0.0",
-        "bower-asset/sonatra-select2-responsive": "^1.0.0",
-        "bower-asset/sonatra-footable-striped": "^1.0.0",
-        "bower-asset/sonatra-footable-responsive": "^1.0.0",
-        "bower-asset/sonatra-jquery-scroller": "^1.0.0",
-        "bower-asset/sonatra-jquery-sidebar": "^1.0.0",
-        "bower-asset/sonatra-jquery-datetime-picker": "^1.0.0",
-        "bower-asset/sonatra-jquery-ripple": "^1.0.0",
-        "fxp/composer-asset-plugin": "For manage NPM/Bower dependencies with Composer"
-    },
     "autoload": {
         "psr-4": { "Sonatra\\Component\\Gluon\\": "" },
         "exclude-from-classmap": [

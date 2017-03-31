@@ -1,7 +1,5 @@
 {% block progress_bar_widget -%}
 {%- if rendered -%}
-    {%- require_style '@bower/sonatra-theme-gluon/less/bootstrap-theme/bootstrap-theme.less' -%}
-
     {%- if indeterminate -%}
         {%- set progress_class = progress_class|default('') ~ ' progress-indeterminate' -%}
     {%- endif -%}

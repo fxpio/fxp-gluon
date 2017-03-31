@@ -1,13 +1,5 @@
 {%- extends "@SonatraBootstrap/base.html.twig" -%}
 
-{%- require_style   '@bower/bootstrap/less/bootstrap.less'
-                    '@bower/bootstrap/less/theme.less'
-                    '@bower/font-awesome/css/font-awesome.css'
-                    'sonatra_gluon_bundle/assetic/less/gluon.less'
--%}
-
-{%- require_script  '@bower/sonatra_theme_gluon/js/scroller-shrink.js' -%}
-
 {%- block stylesheets -%}
     {{- stylesheet_google_fonts() -}}
     {{- parent() -}}
@@ -65,8 +57,18 @@
 
 {%- block javascript_global -%}
     <script>
-        $(window).load(function() {
-            $(document).appPjax('executeMainScripts');
-        });
+        (function (factory) {
+            'use strict';
+
+            if (typeof define === 'function' && define.amd) {
+                define(['jquery'], factory);
+            } else {
+                factory(jQuery);
+            }
+        }(function ($) {
+            $(window).load(function() {
+                $(document).appPjax('executeMainScripts');
+            });
+        }));
     </script>
 {%- endblock javascript_global -%}

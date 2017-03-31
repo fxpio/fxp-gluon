@@ -1,7 +1,5 @@
 {% block block_addon_start -%}
 {%- if rendered -%}
-    {%- require_style '@bower/bootstrap/less/bootstrap.less' -%}
-
     {%- if (addon_wrapper is not defined or addon_wrapper is same as(true)) and (prepend_string is defined or prepend_block is defined or append_string is defined or append_block is defined) -%}
         {%- set addon_attr = addon_attr|default({})|merge({'class': ('field-group ' ~ (addon_attr.class|default('')))|trim}) -%}
 
@@ -23,7 +21,6 @@
 
 {% block block_addon_end -%}
 {%- if rendered -%}
-    {%- require_style '@bower/bootstrap/less/bootstrap.less' -%}
     {%- set append_attr = append_attr|default({})|merge({'class': ('field-group-' ~ append_type|default('addon') ~ ' ' ~ (append_attr.class|default('')))|trim}) -%}
 
     {%- if append_string is defined -%}

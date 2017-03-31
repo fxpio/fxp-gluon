@@ -1,10 +1,5 @@
 {% block table_pager_widget %}
 {%- if rendered -%}
-    {%- require_style   '@bower/sonatra-jquery-table-pager/less/table-pager.less'
-                        '@bower/sonatra-jquery-table-pager/less/table-sort.less' -%}
-    {%- require_script  '@bower/sonatra-jquery-table-pager/js/table-pager.js'
-                        '@bower/sonatra-theme-gluon/js/table-pager-default.js'-%}
-
     {%- set attr = attr|merge({'class': ('table-pager ' ~ attr.class|default(''))|trim}) -%}
     {%- set btnStartPageStyle = btnStartPageStyle|default('fa fa-step-backward') -%}
     {%- set btnPreviousPageStyle = btnPreviousPageStyle|default('fa fa-angle-double-left') -%}
@@ -70,9 +65,6 @@
                     </div>
 
                     {%- if block.parent.vars.attr['data-table-select'] is defined and block.parent.vars.attr['data-table-select'] == 'true' -%}
-                        {%- require_style '@bower/sonatra-jquery-table-select/less/table-select.less' -%}
-                        {%- require_script '@bower/sonatra-jquery-table-select/js/table-select.js' -%}
-
                         <div class="btn-group">
                             <span class="btn btn-{{ block.parent.vars.column_selection_stype|default('default') }} table-select-count disabled {{ selectCountStyle }}"></span>
                             <button class="btn btn-{{ block.parent.vars.column_selection_stype|default('accent') }} table-select-clear {{ selectClearStyle }}" tabindex="{{ tabindex }}"></button>

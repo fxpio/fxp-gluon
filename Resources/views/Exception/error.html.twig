@@ -1,9 +1,5 @@
 {% extends "@SonatraGluon/base.html.twig" %}
 
-{%- require_style    '@bower/bootstrap/less/bootstrap.less'
-                    '@bower/sonatra-theme-gluon/less/bootstrap-theme/bootstrap-theme.less'
-                    '@bower/sonatra-theme-gluon/less/gluon/gluon.less' -%}
-
 {%- set is_server_error = false -%}
 {%- set status_text_exclamation = status_text_exclamation|default('!') -%}
 {%- set btn_style = btn_style|default('default') -%}
