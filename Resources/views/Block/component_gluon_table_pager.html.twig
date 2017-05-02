@@ -14,7 +14,7 @@
         {%- set empty_message_value -%}
             {%- sblock empty_block :-%}
         {%- endset -%}
-        {%- set attr = attr|merge({'data-empty-message': empty_message_value}) -%}
+        {%- set attr = attr|merge({'data-empty-message': empty_message_value|escape}) -%}
     {%- endif -%}
 
     {%- spaceless -%}
