@@ -39,7 +39,7 @@ class GoogleFontsExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            new \Twig_SimpleFunction('stylesheet_google_fonts', array($this, 'addStylesheetGoogleFonts'), array('is_safe' => array('html'))),
+            new \Twig_Function('stylesheet_google_fonts', array($this, 'addStylesheetGoogleFonts'), array('is_safe' => array('html'))),
         );
     }
 
