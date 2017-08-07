@@ -4,19 +4,14 @@
         {%- set caret = false -%}
 
         {%- if absolute_position is not empty -%}
+            {%- set btn_group_attr = btn_group_attr|default({})|merge({'class': (btn_group_attr.class|default('') ~ ' btn-group-fab-' ~ absolute_position)|trim}) -%}
+
             {%- if dropdown is not defined -%}
-                {%- set btn_group_attr = btn_group_attr|default({})|merge({'class': ('btn-group btn-group-fab-' ~ absolute_position ~ ' ' ~ btn_group_attr.class|default(''))|trim}) -%}
-                <div{% for attrname, attrvalue in btn_group_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>
-            {%- else -%}
-                {%- set btn_group_attr = btn_group_attr|default({})|merge({'class': (btn_group_attr.class|default('') ~ ' btn-group-fab-' ~ absolute_position)|trim}) -%}
+                {%- set btn_group_attr = btn_group_attr|default({})|merge({'class': ('btn-group ' ~ btn_group_attr.class|default(''))|trim}) -%}
             {%- endif -%}
         {%- endif -%}
 
         {{- block('button_widget') -}}
-
-        {%- if dropdown is not defined and absolute_position is not empty -%}
-            </div>
-        {%- endif -%}
 {%- endif -%}
 {%- endblock fab_widget %}
 
