@@ -32,6 +32,8 @@ class SidebarType extends AbstractType
         $attr = $view->vars['attr'];
         $attr['data-sidebar'] = $this->formatBoolean(true);
         $attr['data-force-toggle'] = is_bool($options['force_toggle']) ? $this->formatBoolean($options['force_toggle']) : $options['force_toggle'];
+        $attr['data-toggle-on-click'] = $this->formatBoolean($options['toggle_on_click']);
+        $attr['data-save-config'] = $this->formatBoolean($options['save_config']);
         $attr['data-locked'] = $this->formatBoolean($options['locked']);
 
         if (null !== $options['sticky_header']) {
@@ -100,6 +102,8 @@ class SidebarType extends AbstractType
         $resolver->setDefaults(array(
             'open_on_hover' => null,
             'force_toggle' => $forceToggle,
+            'toggle_on_click' => false,
+            'save_config' => false,
             'fixed_top' => false,
             'full_locked' => false,
             'min_lock_width' => null,
@@ -120,6 +124,8 @@ class SidebarType extends AbstractType
 
         $resolver->setAllowedTypes('open_on_hover', array('null', 'bool'));
         $resolver->setAllowedTypes('force_toggle', array('bool', 'string'));
+        $resolver->setAllowedTypes('toggle_on_click', 'bool');
+        $resolver->setAllowedTypes('save_config', 'bool');
         $resolver->setAllowedTypes('fixed_top', 'bool');
         $resolver->setAllowedTypes('full_locked', 'bool');
         $resolver->setAllowedTypes('min_lock_width', array('null', 'int'));
