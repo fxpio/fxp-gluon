@@ -35,6 +35,7 @@ class SidebarType extends AbstractType
         $attr['data-toggle-on-click'] = $this->formatBoolean($options['toggle_on_click']);
         $attr['data-save-config'] = $this->formatBoolean($options['save_config']);
         $attr['data-locked'] = $this->formatBoolean($options['locked']);
+        $attr['data-clickable-swipe'] = $this->formatBoolean($options['clickable_swipe']);
 
         if (null !== $options['sticky_header']) {
             $attr['data-scroller-sticky-header'] = $this->formatBoolean($options['sticky_header']);
@@ -104,6 +105,7 @@ class SidebarType extends AbstractType
             'force_toggle' => $forceToggle,
             'toggle_on_click' => false,
             'save_config' => false,
+            'clickable_swipe' => false,
             'fixed_top' => false,
             'full_locked' => false,
             'min_lock_width' => null,
@@ -126,6 +128,7 @@ class SidebarType extends AbstractType
         $resolver->setAllowedTypes('force_toggle', array('bool', 'string'));
         $resolver->setAllowedTypes('toggle_on_click', 'bool');
         $resolver->setAllowedTypes('save_config', 'bool');
+        $resolver->setAllowedTypes('clickable_swipe', 'bool');
         $resolver->setAllowedTypes('fixed_top', 'bool');
         $resolver->setAllowedTypes('full_locked', 'bool');
         $resolver->setAllowedTypes('min_lock_width', array('null', 'int'));
