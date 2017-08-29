@@ -44,6 +44,10 @@
                     </div>
                 </div>
                 <div class="table-pager-group group2">
+                    {%- if before_more_actions is defined -%}
+                        {{- before_more_actions|raw -}}
+                    {%- endif -%}
+
                     {%- if sort_columns is defined -%}
                         <div class="btn-group">
                             <button type="button" disabled="disabled" class="table-pager-list-sort btn btn-default {{ btnSortListStyle}}" data-toggle="dropdown" tabindex="{{ tabindex }}"></button>
@@ -63,6 +67,10 @@
                             <span class="table-pager-size">{{ source.size }}</span>
                         </div>
                     </div>
+
+                    {%- if after_more_actions is defined -%}
+                        {{- after_more_actions|raw -}}
+                    {%- endif -%}
 
                     {%- if block.parent.vars.attr['data-table-select'] is defined and block.parent.vars.attr['data-table-select'] == 'true' -%}
                         <div class="btn-group">
