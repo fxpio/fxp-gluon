@@ -1,0 +1,23 @@
+{
+    "license": "MIT",
+    "dependencies": {
+        "select2-bootstrap-theme": "^0.1.0-beta.10",
+        "@sonatra/theme-gluon": "git+ssh://git@github.com/sonatra/sonatra-theme-gluon.git#master",
+        "@sonatra/theme-gluon-pjax": "git+ssh://git@github.com/sonatra/sonatra-theme-gluon-pjax.git#master",
+        "@sonatra/bootstrap-dropdown-position": "git+ssh://git@github.com/sonatra/sonatra-bootstrap-dropdown-position.git#master",
+        "@sonatra/bootstrap-nav-scroll": "git+ssh://git@github.com/sonatra/sonatra-bootstrap-nav-scroll.git#master",
+        "@sonatra/bootstrap-nav-footable": "git+ssh://git@github.com/sonatra/sonatra-bootstrap-nav-footable.git#master",
+        "@sonatra/bootstrap-panel-collapse": "git+ssh://git@github.com/sonatra/sonatra-bootstrap-panel-collapse.git#master",
+        "@sonatra/jquery-table-pager-footable": "git+ssh://git@github.com/sonatra/sonatra-jquery-table-pager-footable.git#master",
+        "@sonatra/jquery-table-select": "git+ssh://git@github.com/sonatra/sonatra-jquery-table-select.git#master",
+        "@sonatra/jquery-table-pager": "git+ssh://git@github.com/sonatra/sonatra-jquery-table-pager.git#master",
+        "@sonatra/select2-scroller": "git+ssh://git@github.com/sonatra/sonatra-select2-scroller.git#master",
+        "@sonatra/select2-responsive": "git+ssh://git@github.com/sonatra/sonatra-select2-responsive.git#master",
+        "@sonatra/footable-striped": "git+ssh://git@github.com/sonatra/sonatra-footable-striped.git#master",
+        "@sonatra/footable-responsive": "git+ssh://git@github.com/sonatra/sonatra-footable-responsive.git#master",
+        "@sonatra/jquery-scroller": "git+ssh://git@github.com/sonatra/sonatra-jquery-scroller.git#master",
+        "@sonatra/jquery-sidebar": "git+ssh://git@github.com/sonatra/sonatra-jquery-sidebar.git#master",
+        "@sonatra/jquery-datetime-picker": "git+ssh://git@github.com/sonatra/sonatra-jquery-datetime-picker.git#master",
+        "@sonatra/jquery-ripple": "git+ssh://git@github.com/sonatra/sonatra-jquery-ripple.git#master"
+    }
+}

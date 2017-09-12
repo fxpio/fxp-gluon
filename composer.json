@@ -21,6 +21,14 @@
         "sonatra/form-extensions": "^1.0.0",
         "sonatra/routing-extra": "^1.0.0"
     },
+    "require-dev" : {
+        "foxy/foxy": "^1.0.0"
+    },
+    "config": {
+        "foxy": {
+            "enabled": false
+        }
+    },
     "autoload": {
         "psr-4": { "Sonatra\\Component\\Gluon\\": "" },
         "exclude-from-classmap": [
