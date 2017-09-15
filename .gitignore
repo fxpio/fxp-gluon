@@ -1,5 +1,6 @@
 vendor/
 node_modules/
 package-lock.json
+yarn.lock
 phpunit.xml
 .php_cs.cache
