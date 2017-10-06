@@ -19,7 +19,7 @@
         <meta name="msapplication-TileColor" content="{{ msapplication.color }}">
     {%- endif -%}
     <meta name="hostname" content="{{ app.request.host }}">
-    {%- if app.user.username is defined -%}
+    {%- if app.tokenStorage is defined and app.user.username is defined -%}
         <meta name="user-login" content="{{ app.user.username }}">
     {%- endif -%}
     {%- if is_dotcom is defined  and is_dotcom == true -%}
