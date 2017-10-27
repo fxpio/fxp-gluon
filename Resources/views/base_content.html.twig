@@ -12,21 +12,21 @@
     {%- if content_language is not defined -%}
         {%- set content_language = app.request.locale -%}
     {%- endif -%}
-    <meta http-equiv="Content-Language" content="{{ content_language }}">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="{{ content_language }}"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     {%- if theme_color is defined -%}
-        <meta name="theme-color" content="{{ theme_color }}">
+        <meta name="theme-color" content="{{ theme_color }}"/>
     {%- endif -%}
     {%- if msapplication.asset is defined and msapplication.color is defined -%}
-        <meta name="msapplication-TileImage" content="{{ asset(msapplication.asset) }}">
-        <meta name="msapplication-TileColor" content="{{ msapplication.color }}">
+        <meta name="msapplication-TileImage" content="{{ asset(msapplication.asset) }}"/>
+        <meta name="msapplication-TileColor" content="{{ msapplication.color }}"/>
     {%- endif -%}
-    <meta name="hostname" content="{{ app.request.host }}">
+    <meta name="hostname" content="{{ app.request.host }}"/>
     {%- if app.tokenStorage is defined and app.user.username is defined -%}
-        <meta name="user-login" content="{{ app.user.username }}">
+        <meta name="user-login" content="{{ app.user.username }}"/>
     {%- endif -%}
     {%- if is_dotcom is defined and is_dotcom == true -%}
-        <meta name="is-dotcom" content="true">
+        <meta name="is-dotcom" content="true"/>
     {%- endif -%}
 {%- endblock metadata -%}
 
