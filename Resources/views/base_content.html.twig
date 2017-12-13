@@ -37,7 +37,11 @@
             {% set fluidicon = {asset: fluidicon} %}
         {%- endif -%}
         {%- if fluidicon is iterable and fluidicon.asset is defined -%}
-            <link rel="fluid-icon" type="image/png" href="{{ app.request.uriForPath(asset(fluidicon.asset)) }}"{% if fluidicon.title is defined %} title="{{ fluidicon.title }}"{% endif %}>
+            {%- if fluidicon.asset_url is not defined or fluidicon.asset_url is not same as(true) -%}
+                {%- set fluidicon = fluidicon|merge({asset: app.request.uriForPath(asset(fluidicon.asset))}) -%}
+            {%- endif -%}
+
+            <link rel="fluid-icon" type="image/png" href="{{ fluidicon.asset }}"{% if fluidicon.title is defined %} title="{{ fluidicon.title }}"{% endif %}>
         {%- endif -%}
     {%- endif -%}
     {%- if icons is defined and icons is iterable -%}
