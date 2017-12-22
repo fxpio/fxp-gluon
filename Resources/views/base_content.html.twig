@@ -73,7 +73,7 @@
                 factory(jQuery);
             }
         }(function ($) {
-            $(window).load(function() {
+            $(window).on('load', function() {
                 $(document).appPjax('executeMainScripts');
             });
         }));
