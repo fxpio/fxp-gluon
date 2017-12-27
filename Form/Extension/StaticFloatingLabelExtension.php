@@ -61,7 +61,7 @@ class StaticFloatingLabelExtension extends AbstractTypeExtension
         $resolver->setAllowedTypes('floating_label', 'bool');
 
         $resolver->setNormalizer('floating_label', function (Options $options, $value) {
-            return $options['layout'] === 'horizontal'
+            return 'horizontal' === $options['layout']
                 ? false
                 : $value;
         });

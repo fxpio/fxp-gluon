@@ -144,7 +144,7 @@ class PanelRowType extends AbstractType
                 throw new InvalidConfigurationException('The "column" option must be lower of "layout_max" option');
             }
 
-            if ($colNumMax % $value !== 0) {
+            if (0 !== $colNumMax % $value) {
                 $msg = 'Result of %s is not an integer. The Panel row\'s column must be an integer after division per %s.';
 
                 throw new InvalidConfigurationException(sprintf($msg, $colNumMax / $value, $colNumMax));
