@@ -71,7 +71,7 @@ class PanelButtonsType extends AbstractType
             $attr['data-content-selector'] = '.nav-btn-group';
             $child->setOption('attr', $attr);
 
-        // button
+            // button
         } elseif (BlockUtil::isBlockType($child, ButtonType::class)
                 || (BlockUtil::isBlockType($child, FormType::class)
                     && FormUtil::isFormType($child->getForm(), array(\Symfony\Component\Form\Extension\Core\Type\FormType::class, FormButtonType::class, SubmitType::class)))) {
@@ -92,7 +92,7 @@ class PanelButtonsType extends AbstractType
                 }
             }
 
-        // other
+            // other
         } else {
             $msg = 'The "panel_buttons" child block (name: "%s") must be a "button" or "form" block type';
             throw new InvalidConfigurationException(sprintf($msg, $child->getName()));
