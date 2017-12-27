@@ -82,8 +82,8 @@ class AjaxDataSourceHelper
      */
     public static function getData(Request $request, DataSourceInterface $source, $prefix = '')
     {
-        $source->setPageSize(intval($request->get($prefix.'ps', $source->getPageSize())));
-        $source->setPageNumber(intval($request->get($prefix.'pn', $source->getPageNumber())));
+        $source->setPageSize((int) ($request->get($prefix.'ps', $source->getPageSize())));
+        $source->setPageNumber((int) ($request->get($prefix.'pn', $source->getPageNumber())));
         $source->setSortColumns((array) $request->get($prefix.'sc', array()));
         $source->setParameters((array) $request->get($prefix.'p', array()));
 
