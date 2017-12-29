@@ -69,7 +69,7 @@ class SidebarType extends AbstractType
             $attr['data-sidebar-context'] = 'true';
         }
 
-        $view->vars = array_replace($view->vars, array(
+        $view->vars = array_replace($view->vars, [
             'style' => $options['style'],
             'attr' => $attr,
             'sticky_header' => $options['sticky_header'],
@@ -80,7 +80,7 @@ class SidebarType extends AbstractType
             'position' => 'right' === $options['position'] ? $options['position'] : 'left',
             'with_icons' => $options['with_icons'],
             'disabled' => $options['disabled'],
-        ));
+        ]);
     }
 
     /**
@@ -100,7 +100,7 @@ class SidebarType extends AbstractType
             return ('right' === $options['position']) ? false : true;
         };
 
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'open_on_hover' => null,
             'force_toggle' => $forceToggle,
             'toggle_on_click' => false,
@@ -122,34 +122,34 @@ class SidebarType extends AbstractType
             'disabled' => false,
             'selection' => null,
             'context_selection' => null,
-        ));
+        ]);
 
-        $resolver->setAllowedTypes('open_on_hover', array('null', 'bool'));
-        $resolver->setAllowedTypes('force_toggle', array('bool', 'string'));
+        $resolver->setAllowedTypes('open_on_hover', ['null', 'bool']);
+        $resolver->setAllowedTypes('force_toggle', ['bool', 'string']);
         $resolver->setAllowedTypes('toggle_on_click', 'bool');
         $resolver->setAllowedTypes('save_config', 'bool');
         $resolver->setAllowedTypes('clickable_swipe', 'bool');
         $resolver->setAllowedTypes('fixed_top', 'bool');
         $resolver->setAllowedTypes('full_locked', 'bool');
-        $resolver->setAllowedTypes('min_lock_width', array('null', 'int'));
-        $resolver->setAllowedTypes('sticky_header', array('null', 'bool'));
+        $resolver->setAllowedTypes('min_lock_width', ['null', 'int']);
+        $resolver->setAllowedTypes('sticky_header', ['null', 'bool']);
         $resolver->setAllowedTypes('style', 'string');
-        $resolver->setAllowedTypes('toggle_id', array('null', 'string'));
-        $resolver->setAllowedTypes('opened', array('bool', 'string'));
+        $resolver->setAllowedTypes('toggle_id', ['null', 'string']);
+        $resolver->setAllowedTypes('opened', ['bool', 'string']);
         $resolver->setAllowedTypes('locked', 'bool');
-        $resolver->setAllowedTypes('position', array('null', 'string'));
-        $resolver->setAllowedTypes('scrollbar', array('null', 'bool'));
-        $resolver->setAllowedTypes('disable_keyboard', array('null', 'bool'));
+        $resolver->setAllowedTypes('position', ['null', 'string']);
+        $resolver->setAllowedTypes('scrollbar', ['null', 'bool']);
+        $resolver->setAllowedTypes('disable_keyboard', ['null', 'bool']);
         $resolver->setAllowedTypes('with_icons', 'bool');
         $resolver->setAllowedTypes('menu_context', 'bool');
         $resolver->setAllowedTypes('disabled', 'bool');
-        $resolver->setAllowedTypes('selection', array('null', 'string'));
-        $resolver->setAllowedTypes('context_selection', array('null', 'string'));
+        $resolver->setAllowedTypes('selection', ['null', 'string']);
+        $resolver->setAllowedTypes('context_selection', ['null', 'string']);
 
-        $resolver->setAllowedValues('force_toggle', array(false, true, 'always'));
-        $resolver->setAllowedValues('style', array('default', 'inverse'));
-        $resolver->setAllowedValues('opened', array(false, true, 'force'));
-        $resolver->setAllowedValues('position', array(null, 'left', 'right'));
+        $resolver->setAllowedValues('force_toggle', [false, true, 'always']);
+        $resolver->setAllowedValues('style', ['default', 'inverse']);
+        $resolver->setAllowedValues('opened', [false, true, 'force']);
+        $resolver->setAllowedValues('position', [null, 'left', 'right']);
     }
 
     /**

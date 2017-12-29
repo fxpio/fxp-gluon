@@ -39,9 +39,9 @@ class TextareaExtension extends AbstractTypeExtension
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'auto_resize' => true,
-        ));
+        ]);
 
         $resolver->setAllowedTypes('auto_resize', 'bool');
     }

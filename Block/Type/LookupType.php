@@ -69,13 +69,13 @@ class LookupType extends AbstractType
             return;
         }
 
-        $view->vars = array_replace($view->vars, array(
-            'attr' => array_merge($view->vars['attr'], array(
+        $view->vars = array_replace($view->vars, [
+            'attr' => array_merge($view->vars['attr'], [
                 'href' => $this->routerExtra->generate($options['route_name'],
                     $block->getAttribute('route_parameters'),
                     $block->getData(), RouterInterface::ABSOLUTE_URL),
-            )),
-        ));
+            ]),
+        ]);
     }
 
     /**
@@ -83,13 +83,13 @@ class LookupType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'view_property_path' => function (Options $options) {
                 return $options['property_path'];
             },
             'route_name' => null,
-            'route_parameters' => array(),
-        ));
+            'route_parameters' => [],
+        ]);
 
         $resolver->setRequired('route_name');
         $resolver->setRequired('route_parameters');

@@ -51,18 +51,18 @@ class TableColumnSelectType extends AbstractType
     public function buildBlock(BlockBuilderInterface $builder, array $options)
     {
         if ($options['multiple']) {
-            $builder->add(BlockUtil::createUniqueName(), FormType::class, array(
+            $builder->add(BlockUtil::createUniqueName(), FormType::class, [
                 'type' => CheckboxType::class,
-                'options' => array(
+                'options' => [
                     'required' => false,
                     'label' => ' ',
                     'data' => $options['selected'],
                     'style' => $options['style'],
-                    'attr' => array(
+                    'attr' => [
                         'data-multi-selectable-all' => 'true',
-                    ),
-                ),
-            ));
+                    ],
+                ],
+            ]);
         }
     }
 
@@ -87,28 +87,28 @@ class TableColumnSelectType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'multiple' => false,
             'selected' => false,
             'max_selection' => null,
             'style' => 'accent',
-            'options' => array(),
+            'options' => [],
             'max_width' => 34,
             'width' => 34,
             'formatter' => TwigType::class,
-            'footable' => array(
+            'footable' => [
                 'ignore' => true,
-            ),
-        ));
+            ],
+        ]);
 
         $resolver->addAllowedTypes('multiple', 'bool');
         $resolver->addAllowedTypes('selected', 'bool');
-        $resolver->addAllowedTypes('max_selection', array('null', 'int'));
-        $resolver->addAllowedTypes('style', array('null', 'string'));
+        $resolver->addAllowedTypes('max_selection', ['null', 'int']);
+        $resolver->addAllowedTypes('style', ['null', 'string']);
         $resolver->addAllowedTypes('options', 'array');
 
         $resolver->setNormalizer('formatter_options', function (Options $options, $value) {
-            $variables = isset($value['variables']) ? $value['variables'] : array();
+            $variables = isset($value['variables']) ? $value['variables'] : [];
             $variables['multiple'] = $options['multiple'];
             $variables['options'] = $options['options'];
             $variables['options']['data'] = $options['selected'];

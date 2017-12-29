@@ -53,7 +53,7 @@ class ButtonNavbarType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'style' => 'navbar',
             'render_id' => function (Options $options) {
                 return $options['sidebar_toggle'] || $options['sidebar_locked_toggle'];
@@ -66,13 +66,13 @@ class ButtonNavbarType extends AbstractType
                 return $options['sidebar_toggle'] || $options['sidebar_locked_toggle'];
             },
             'group_attr' => null,
-        ));
+        ]);
 
         $resolver->setAllowedTypes('sidebar_toggle', 'bool');
         $resolver->setAllowedTypes('sidebar_locked_toggle', 'bool');
         $resolver->setAllowedTypes('render_id', 'bool');
         $resolver->setAllowedTypes('home', 'bool');
-        $resolver->setAllowedTypes('group_attr', array('null', 'array'));
+        $resolver->setAllowedTypes('group_attr', ['null', 'array']);
 
         $resolver->setNormalizer('navbar_group', function (Options $options, $value) {
             if (null === $value) {

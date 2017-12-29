@@ -35,20 +35,20 @@ class PanelSectionType extends AbstractType
     public function buildBlock(BlockBuilderInterface $builder, array $options)
     {
         if (!BlockUtil::isEmpty($options['label'])) {
-            $builder->add('_heading', HeadingType::class, array(
+            $builder->add('_heading', HeadingType::class, [
                 'size' => 6,
                 'label' => $options['label'],
-            ));
+            ]);
         }
 
         if ($options['collapsible']) {
-            $builder->add('_panel_section_actions', PanelActionsType::class, array());
-            $builder->get('_panel_section_actions')->add('_button_collapse', ButtonType::class, array(
+            $builder->add('_panel_section_actions', PanelActionsType::class, []);
+            $builder->get('_panel_section_actions')->add('_button_collapse', ButtonType::class, [
                 'label' => '',
-                'attr' => array('class' => 'btn-panel-collapse'),
+                'attr' => ['class' => 'btn-panel-collapse'],
                 'style' => 'default',
                 'prepend' => '<span class="caret"></span>',
-            ));
+            ]);
         }
     }
 
@@ -86,7 +86,7 @@ class PanelSectionType extends AbstractType
                 $block->setAttribute('already_actions', $child->getName());
             }
         } elseif (BlockUtil::isBlockType($child, PanelRowType::class)) {
-            $cOptions = array();
+            $cOptions = [];
 
             if (null !== $block->getOption('column')) {
                 $cOptions['column'] = $block->getOption('column');
@@ -122,7 +122,7 @@ class PanelSectionType extends AbstractType
      */
     public function buildView(BlockView $view, BlockInterface $block, array $options)
     {
-        $view->vars = array_replace($view->vars, array(
+        $view->vars = array_replace($view->vars, [
             'collapsible' => $options['collapsible'],
             'collapsed' => $options['collapsed'],
             'hidden_if_empty' => $options['hidden_if_empty'],
@@ -131,7 +131,7 @@ class PanelSectionType extends AbstractType
             'layout_size' => $options['layout_size'],
             'layout_style' => $options['layout_style'],
             'cell_label_style' => $options['cell_label_style'],
-        ));
+        ]);
     }
 
     /**
@@ -179,7 +179,7 @@ class PanelSectionType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'inherit_data' => true,
             'collapsible' => false,
             'collapsed' => false,
@@ -189,16 +189,16 @@ class PanelSectionType extends AbstractType
             'layout_size' => null,
             'layout_style' => null,
             'cell_label_style' => null,
-        ));
+        ]);
 
         $resolver->addAllowedTypes('collapsible', 'bool');
         $resolver->addAllowedTypes('collapsed', 'bool');
         $resolver->addAllowedTypes('hidden_if_empty', 'bool');
-        $resolver->addAllowedTypes('column', array('null', 'int'));
-        $resolver->addAllowedTypes('layout_max', array('null', 'int'));
-        $resolver->addAllowedTypes('layout_size', array('null', 'string'));
-        $resolver->addAllowedTypes('layout_style', array('null', 'string'));
-        $resolver->addAllowedTypes('cell_label_style', array('null', 'string'));
+        $resolver->addAllowedTypes('column', ['null', 'int']);
+        $resolver->addAllowedTypes('layout_max', ['null', 'int']);
+        $resolver->addAllowedTypes('layout_size', ['null', 'string']);
+        $resolver->addAllowedTypes('layout_style', ['null', 'string']);
+        $resolver->addAllowedTypes('cell_label_style', ['null', 'string']);
     }
 
     /**

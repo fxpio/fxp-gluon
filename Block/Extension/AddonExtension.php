@@ -48,13 +48,13 @@ class AddonExtension extends AbstractTypeExtension
         $prepend = $options['prepend'];
         $append = $options['append'];
 
-        $view->vars = array_replace($view->vars, array(
+        $view->vars = array_replace($view->vars, [
             'addon_attr' => $options['addon_attr'],
             'prepend_attr' => $options['prepend_attr'],
             'append_attr' => $options['append_attr'],
             'prepend_type' => $this->definedType($prepend, $options['prepend_type']),
             'append_type' => $this->definedType($append, $options['append_type']),
-        ));
+        ]);
 
         // prepend
         if (is_string($prepend)) {
@@ -77,27 +77,27 @@ class AddonExtension extends AbstractTypeExtension
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(
-            array(
+            [
                 'prepend' => null,
                 'append' => null,
-                'addon_attr' => array(),
-                'prepend_attr' => array(),
-                'append_attr' => array(),
+                'addon_attr' => [],
+                'prepend_attr' => [],
+                'append_attr' => [],
                 'prepend_type' => null,
                 'append_type' => null,
-            )
+            ]
         );
 
-        $resolver->addAllowedTypes('prepend', array('null', 'string', 'Fxp\Component\Block\BlockInterface'));
-        $resolver->addAllowedTypes('append', array('null', 'string', 'Fxp\Component\Block\BlockInterface'));
+        $resolver->addAllowedTypes('prepend', ['null', 'string', 'Fxp\Component\Block\BlockInterface']);
+        $resolver->addAllowedTypes('append', ['null', 'string', 'Fxp\Component\Block\BlockInterface']);
         $resolver->addAllowedTypes('addon_attr', 'array');
         $resolver->addAllowedTypes('prepend_attr', 'array');
         $resolver->addAllowedTypes('append_attr', 'array');
-        $resolver->addAllowedTypes('prepend_type', array('null', 'string'));
-        $resolver->addAllowedTypes('append_type', array('null', 'string'));
+        $resolver->addAllowedTypes('prepend_type', ['null', 'string']);
+        $resolver->addAllowedTypes('append_type', ['null', 'string']);
 
-        $resolver->addAllowedValues('prepend_type', array(null, 'addon', 'btn'));
-        $resolver->addAllowedValues('append_type', array(null, 'addon', 'btn'));
+        $resolver->addAllowedValues('prepend_type', [null, 'addon', 'btn']);
+        $resolver->addAllowedValues('append_type', [null, 'addon', 'btn']);
     }
 
     /**

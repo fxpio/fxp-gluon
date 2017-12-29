@@ -35,9 +35,9 @@ class PanelCellPrefType extends AbstractType
             unset($view->vars['control_attr']['tabindex']);
         }
 
-        $view->vars = array_replace($view->vars, array(
+        $view->vars = array_replace($view->vars, [
             'disabled' => $options['disabled'],
-        ));
+        ]);
     }
 
     /**
@@ -45,12 +45,12 @@ class PanelCellPrefType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'src' => null,
             'disabled' => false,
-        ));
+        ]);
 
-        $resolver->setAllowedTypes('src', array('null', 'string'));
+        $resolver->setAllowedTypes('src', ['null', 'string']);
         $resolver->setAllowedTypes('disabled', 'bool');
     }
 

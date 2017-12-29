@@ -29,10 +29,10 @@ class SidebarGroupType extends AbstractType
      */
     public function buildView(BlockView $view, BlockInterface $block, array $options)
     {
-        $view->vars = array_replace($view->vars, array(
+        $view->vars = array_replace($view->vars, [
             'group_attr' => $options['group_attr'],
             'context_menu' => $options['context_menu'],
-        ));
+        ]);
 
         if ($options['no_bar']) {
             BlockUtil::addAttributeClass($view, 'no-bar', false, 'group_attr');
@@ -44,11 +44,11 @@ class SidebarGroupType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
-            'group_attr' => array(),
+        $resolver->setDefaults([
+            'group_attr' => [],
             'context_menu' => false,
             'no_bar' => false,
-        ));
+        ]);
 
         $resolver->setAllowedTypes('group_attr', 'array');
         $resolver->setAllowedTypes('context_menu', 'bool');

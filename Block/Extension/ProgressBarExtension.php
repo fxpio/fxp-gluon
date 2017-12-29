@@ -29,11 +29,11 @@ class ProgressBarExtension extends AbstractTypeExtension
      */
     public function buildView(BlockView $view, BlockInterface $block, array $options)
     {
-        $view->vars = array_replace($view->vars, array(
+        $view->vars = array_replace($view->vars, [
             'indeterminate' => $options['indeterminate'],
             'floating_label' => $options['floating_label'],
             'large' => $options['large'],
-        ));
+        ]);
     }
 
     /**
@@ -41,18 +41,18 @@ class ProgressBarExtension extends AbstractTypeExtension
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'indeterminate' => false,
             'floating_label' => false,
             'large' => false,
-        ));
+        ]);
 
         $resolver->addAllowedTypes('indeterminate', 'bool');
-        $resolver->addAllowedTypes('floating_label', array('bool', 'string'));
+        $resolver->addAllowedTypes('floating_label', ['bool', 'string']);
         $resolver->addAllowedTypes('large', 'bool');
 
-        $resolver->addAllowedValues('style', array('accent'));
-        $resolver->addAllowedValues('floating_label', array(true, false, 'hover'));
+        $resolver->addAllowedValues('style', ['accent']);
+        $resolver->addAllowedValues('floating_label', [true, false, 'hover']);
     }
 
     /**

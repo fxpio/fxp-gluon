@@ -42,7 +42,7 @@ class AjaxDataSourceHelper
      */
     public static function generateResponse(Request $request, $source, $format = 'json', $prefix = '')
     {
-        $formats = array('xml', 'json');
+        $formats = ['xml', 'json'];
 
         if (!in_array($format, $formats)) {
             $msg = "The '%s' format is not allowed. Try with '%s'";
@@ -60,8 +60,8 @@ class AjaxDataSourceHelper
         /* @var DataSourceInterface $source */
         $data = static::getData($request, $source, $prefix);
 
-        $encoders = array(new XmlEncoder(), new JsonEncoder());
-        $normalizers = array(new GetSetMethodNormalizer());
+        $encoders = [new XmlEncoder(), new JsonEncoder()];
+        $normalizers = [new GetSetMethodNormalizer()];
         $serializer = new Serializer($normalizers, $encoders);
 
         $response = new Response();
@@ -84,16 +84,16 @@ class AjaxDataSourceHelper
     {
         $source->setPageSize((int) ($request->get($prefix.'ps', $source->getPageSize())));
         $source->setPageNumber((int) ($request->get($prefix.'pn', $source->getPageNumber())));
-        $source->setSortColumns((array) $request->get($prefix.'sc', array()));
-        $source->setParameters((array) $request->get($prefix.'p', array()));
+        $source->setSortColumns((array) $request->get($prefix.'sc', []));
+        $source->setParameters((array) $request->get($prefix.'p', []));
 
-        return array(
+        return [
             'rows' => $source->getRows(),
             'size' => $source->getSize(),
             'pageSize' => $source->getPageSize(),
             'pageNumber' => $source->getPageNumber(),
             'pageCount' => $source->getPageCount(),
             'sortColumns' => $source->getSortColumns(),
-        );
+        ];
     }
 }

@@ -35,7 +35,7 @@ class CollectionExtension extends AbstractTypeExtension
         /* @var FormView $selectorView */
         $selectorView = $view->vars['selector'];
 
-        $selectorView->vars = array_replace($selectorView->vars, array(
+        $selectorView->vars = array_replace($selectorView->vars, [
             'row_attr' => $view->vars['row_attr'],
             'display_label' => $view->vars['display_label'],
             'size' => $view->vars['size'],
@@ -48,7 +48,7 @@ class CollectionExtension extends AbstractTypeExtension
             'static_control_empty' => $view->vars['static_control_empty'],
             'help_text' => $view->vars['help_text'],
             'help_attr' => $view->vars['help_attr'],
-        ));
+        ]);
     }
 
     /**

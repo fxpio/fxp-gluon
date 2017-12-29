@@ -27,11 +27,11 @@ class FabDropdownItemType extends AbstractType
      */
     public function buildView(BlockView $view, BlockInterface $block, array $options)
     {
-        $view->vars = array_replace($view->vars, array(
+        $view->vars = array_replace($view->vars, [
             'style' => $options['style'],
             'size' => $options['size'],
             'fab_label' => $options['fab_label'],
-        ));
+        ]);
     }
 
     /**
@@ -39,20 +39,20 @@ class FabDropdownItemType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'style' => null,
             'size' => null,
             'fab_label' => null,
-        ));
+        ]);
 
-        $resolver->setAllowedTypes('style', array('null', 'string'));
-        $resolver->setAllowedTypes('size', array('null', 'string'));
-        $resolver->setAllowedTypes('fab_label', array('null', 'string'));
+        $resolver->setAllowedTypes('style', ['null', 'string']);
+        $resolver->setAllowedTypes('size', ['null', 'string']);
+        $resolver->setAllowedTypes('fab_label', ['null', 'string']);
 
-        $resolver->setAllowedValues('style', array(
+        $resolver->setAllowedValues('style', [
             null, 'default', 'primary', 'accent', 'success', 'info', 'warning', 'danger',
-        ));
-        $resolver->setAllowedValues('size', array(null, 'xs', 'sm', 'lg'));
+        ]);
+        $resolver->setAllowedValues('size', [null, 'xs', 'sm', 'lg']);
     }
 
     /**

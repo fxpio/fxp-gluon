@@ -39,11 +39,11 @@ class PanelButtonsType extends AbstractType
     {
         if ($options['scrollable']) {
             $builder->add('_nav_scrollable', NavScrollableType::class);
-            $builder->get('_nav_scrollable')->add('_navButtonGroup', BlockType::class, array(
-                'attr' => array(
+            $builder->get('_nav_scrollable')->add('_navButtonGroup', BlockType::class, [
+                'attr' => [
                     'class' => $options['class_nav'],
-                ),
-            ));
+                ],
+            ]);
         }
     }
 
@@ -74,7 +74,7 @@ class PanelButtonsType extends AbstractType
             // button
         } elseif (BlockUtil::isBlockType($child, ButtonType::class)
                 || (BlockUtil::isBlockType($child, FormType::class)
-                    && FormUtil::isFormType($child->getForm(), array(\Symfony\Component\Form\Extension\Core\Type\FormType::class, FormButtonType::class, SubmitType::class)))) {
+                    && FormUtil::isFormType($child->getForm(), [\Symfony\Component\Form\Extension\Core\Type\FormType::class, FormButtonType::class, SubmitType::class]))) {
             $parent = $this->findParentButtons($block);
 
             if ($parent !== $block) {
@@ -84,7 +84,7 @@ class PanelButtonsType extends AbstractType
             if (null === $child->getOption('size')) {
                 if (null !== $child->getForm() && FormUtil::isFormType($child->getForm(), \Symfony\Component\Form\Extension\Core\Type\FormType::class)) {
                     /* @var array $fOtps */
-                    $fOtps = $child->getOption('options', array());
+                    $fOtps = $child->getOption('options', []);
                     $fOtps['size'] = $options['button_size'];
                     $child->setOption('options', $fOtps);
                 } else {
@@ -104,9 +104,9 @@ class PanelButtonsType extends AbstractType
      */
     public function buildView(BlockView $view, BlockInterface $block, array $options)
     {
-        $view->vars = array_replace($view->vars, array(
+        $view->vars = array_replace($view->vars, [
             'scrollable' => $options['scrollable'],
-        ));
+        ]);
     }
 
     /**
@@ -124,16 +124,16 @@ class PanelButtonsType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'inherit_data' => true,
             'scrollable' => true,
             'class_nav' => 'nav-btn-group',
             'button_size' => null,
-        ));
+        ]);
 
         $resolver->setAllowedTypes('scrollable', 'bool');
         $resolver->setAllowedTypes('class_nav', 'string');
-        $resolver->setAllowedTypes('button_size', array('null', 'string'));
+        $resolver->setAllowedTypes('button_size', ['null', 'string']);
     }
 
     /**

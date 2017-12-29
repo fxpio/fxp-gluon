@@ -42,9 +42,9 @@ class TableListType extends AbstractType
      */
     public function addChild(BlockInterface $child, BlockInterface $block, array $options)
     {
-        if (BlockUtil::isBlockType($child, array(TableColumnListSortableType::class))) {
+        if (BlockUtil::isBlockType($child, [TableColumnListSortableType::class])) {
             $block->getData()->addColumn($child);
-        } elseif (!BlockUtil::isBlockType($child, array(TableHeaderType::class, TableColumnSelectType::class, TablePagerType::class, TableColumnListAdapterType::class))) {
+        } elseif (!BlockUtil::isBlockType($child, [TableHeaderType::class, TableColumnSelectType::class, TablePagerType::class, TableColumnListAdapterType::class])) {
             $msg = 'The "%s" child block (name: "%s") must be a "%s" or "%s" block type ("%s" type given)';
             throw new InvalidConfigurationException(sprintf($msg, get_class($block->getConfig()->getType()->getInnerType()),
                 $child->getName(), TableColumnListAdapterType::class, TableColumnListSortableType::class,
@@ -84,7 +84,7 @@ class TableListType extends AbstractType
         }
 
         /* @var BlockView[] $sortColumns */
-        $sortColumns = array();
+        $sortColumns = [];
 
         foreach ($view->children as $name => $child) {
             if (in_array('table_column_list_sort', $child->vars['block_prefixes'])) {
@@ -96,16 +96,16 @@ class TableListType extends AbstractType
         if (count($sortColumns) > 0) {
             /* @var BlockFactoryInterface $factory */
             $factory = $block->getConfig()->getAttribute('block_factory');
-            $sortDropdown = $factory->create(DropdownType::class, null, array('ripple' => true, 'wrapper' => false, 'attr' => array('class' => 'table-pager-list-sort-menu')));
+            $sortDropdown = $factory->create(DropdownType::class, null, ['ripple' => true, 'wrapper' => false, 'attr' => ['class' => 'table-pager-list-sort-menu']]);
 
             foreach ($sortColumns as $sortColumn) {
-                $colOptions = array(
+                $colOptions = [
                     'label' => $sortColumn->vars['label'],
                     'translation_domain' => $sortColumn->vars['translation_domain'],
-                    'link_attr' => array_replace($sortColumn->vars['label_attr'], array(
+                    'link_attr' => array_replace($sortColumn->vars['label_attr'], [
                         'data-col-name' => $sortColumn->vars['name'],
-                    )),
-                );
+                    ]),
+                ];
                 $sortDropdown->add($sortColumn->vars['name'], DropdownItemType::class, $colOptions);
             }
 
@@ -120,9 +120,9 @@ class TableListType extends AbstractType
     {
         if (in_array('footable', $resolver->getDefinedOptions())) {
             $resolver->setNormalizer('footable', function () {
-                return array(
+                return [
                     'enabled' => false,
-                );
+                ];
             });
         }
     }

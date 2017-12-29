@@ -40,7 +40,7 @@ class PanelListType extends AbstractType
     public function addChild(BlockInterface $child, BlockInterface $block, array $options)
     {
         if (BlockUtil::isBlockType($child, PanelType::class)) {
-            $panels = $block->getAttribute('panels', array());
+            $panels = $block->getAttribute('panels', []);
 
             $block->remove($child->getName());
             $panels[$child->getName()] = $child;
@@ -56,10 +56,10 @@ class PanelListType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'selected' => null,
-            'groups' => array(),
-        ));
+            'groups' => [],
+        ]);
 
         $resolver->setAllowedTypes('groups', 'array');
     }

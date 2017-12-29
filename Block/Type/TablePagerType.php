@@ -69,7 +69,7 @@ class TablePagerType extends AbstractType
     {
         $url = $this->request->getRequestUri();
         $source = $block->getParent()->getData();
-        $sortOrder = array();
+        $sortOrder = [];
 
         if (null === $options['route']) {
             $event = new GetAjaxTableEvent($view->parent->vars['id'], $this->request, $source);
@@ -84,10 +84,10 @@ class TablePagerType extends AbstractType
             $sortOrder[] = $def['name'];
         }
 
-        $view->vars = array_replace($view->vars, array(
+        $view->vars = array_replace($view->vars, [
             'tabindex' => $options['tab_index'],
             'source' => $source,
-            'attr' => array_replace($view->vars['attr'], array(
+            'attr' => array_replace($view->vars['attr'], [
                 'data-table-pager' => 'true',
                 'data-table-id' => $view->parent->vars['id'],
                 'data-locale' => $source->getLocale(),
@@ -99,8 +99,8 @@ class TablePagerType extends AbstractType
                 'data-url' => $url,
                 'data-multi-sortable' => $options['multi_sortable'] ? 'true' : 'false',
                 'data-sort-order' => json_encode($sortOrder),
-            )),
-        ));
+            ]),
+        ]);
 
         if (null !== $options['affix_target']) {
             BlockUtil::addAttribute($view, 'data-affix-target', $options['affix_target']);
@@ -137,12 +137,12 @@ class TablePagerType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'locale' => \Locale::getDefault(),
             'page_size' => null,
             'page_number' => null,
             'route' => null,
-            'route_parameters' => array(),
+            'route_parameters' => [],
             'route_reference_type' => (bool) RouterInterface::ABSOLUTE_PATH,
             'multi_sortable' => false,
             'affix_target' => null,
@@ -156,17 +156,17 @@ class TablePagerType extends AbstractType
 
                 return $value;
             },
-            'empty_options' => array(),
-        ));
+            'empty_options' => [],
+        ]);
 
         $resolver->addAllowedTypes('locale', 'string');
-        $resolver->addAllowedTypes('page_size', array('null', 'int'));
-        $resolver->addAllowedTypes('page_number', array('null', 'int'));
-        $resolver->addAllowedTypes('route', array('null', 'string'));
+        $resolver->addAllowedTypes('page_size', ['null', 'int']);
+        $resolver->addAllowedTypes('page_number', ['null', 'int']);
+        $resolver->addAllowedTypes('route', ['null', 'string']);
         $resolver->addAllowedTypes('route_parameters', 'array');
         $resolver->addAllowedTypes('route_reference_type', 'bool');
         $resolver->addAllowedTypes('multi_sortable', 'bool');
-        $resolver->setAllowedTypes('empty_type', array('null', 'string'));
+        $resolver->setAllowedTypes('empty_type', ['null', 'string']);
         $resolver->setAllowedTypes('empty_options', 'array');
 
         $resolver->setNormalizer('empty_options', function (Options $options, $value) {

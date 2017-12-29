@@ -50,10 +50,10 @@ class TableColumnPagerExtension extends AbstractTypeExtension
             $attr['data-table-pager-sortable'] = 'true';
         }
 
-        $view->vars = array_replace($view->vars, array(
+        $view->vars = array_replace($view->vars, [
             'sortable' => $options['sortable'],
             'label_attr' => $attr,
-        ));
+        ]);
 
         if ($options['sortable'] && !isset($attr['data-table-sort'])) {
             $view->vars['value'] = is_string($view->vars['value']) ? $view->vars['value'] : '';
@@ -66,9 +66,9 @@ class TableColumnPagerExtension extends AbstractTypeExtension
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'sortable' => false,
-        ));
+        ]);
 
         $resolver->addAllowedTypes('sortable', 'bool');
     }

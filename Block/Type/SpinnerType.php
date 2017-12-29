@@ -28,12 +28,12 @@ class SpinnerType extends AbstractType
      */
     public function buildView(BlockView $view, BlockInterface $block, array $options)
     {
-        $view->vars = array_replace($view->vars, array(
+        $view->vars = array_replace($view->vars, [
             'floating' => $options['mini'],
             'mini' => $options['mini'],
             'spinner_c' => $options['size'] + 2,
             'spinner_r' => $options['size'],
-        ));
+        ]);
     }
 
     /**
@@ -41,11 +41,11 @@ class SpinnerType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'floating' => false,
             'mini' => false,
             'size' => 20,
-        ));
+        ]);
 
         $resolver->setAllowedTypes('floating', 'bool');
         $resolver->setAllowedTypes('mini', 'bool');

@@ -28,9 +28,9 @@ class SidebarDividerItemType extends AbstractType
      */
     public function buildView(BlockView $view, BlockInterface $block, array $options)
     {
-        $view->vars = array_replace($view->vars, array(
+        $view->vars = array_replace($view->vars, [
             'context_menu' => $options['context_menu'],
-        ));
+        ]);
     }
 
     /**
@@ -38,9 +38,9 @@ class SidebarDividerItemType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'context_menu' => false,
-        ));
+        ]);
 
         $resolver->setAllowedTypes('context_menu', 'bool');
     }

@@ -37,9 +37,9 @@ class PanelRowSpacerType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'hidden_if_empty' => false,
-        ));
+        ]);
     }
 
     /**

@@ -36,10 +36,10 @@ class TableExtension extends AbstractTypeExtension
         }
 
         if ($options['selectable']) {
-            $builder->add('_selectable', TableColumnSelectType::class, array(
+            $builder->add('_selectable', TableColumnSelectType::class, [
                 'multiple' => $options['multi_selectable'],
                 'selected' => $options['selected'],
-            ));
+            ]);
         }
     }
 
@@ -48,14 +48,14 @@ class TableExtension extends AbstractTypeExtension
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'render_id' => true,
             'responsive' => true,
             'row_number' => true,
             'selectable' => false,
             'multi_selectable' => false,
             'selected' => false,
-        ));
+        ]);
 
         $resolver->addAllowedTypes('row_number', 'bool');
         $resolver->addAllowedTypes('selectable', 'bool');

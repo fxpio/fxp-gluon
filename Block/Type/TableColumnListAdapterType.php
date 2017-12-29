@@ -43,17 +43,17 @@ class TableColumnListAdapterType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'resource' => null,
             'resource_block' => null,
             'formatter' => TwigType::class,
-        ));
+        ]);
 
         $resolver->setAllowedTypes('resource', 'string');
-        $resolver->setAllowedTypes('resource_block', array('null', 'string'));
+        $resolver->setAllowedTypes('resource_block', ['null', 'string']);
 
         $resolver->setNormalizer('formatter_options', function (Options $options, $value) {
-            $variables = isset($value['variables']) ? $value['variables'] : array();
+            $variables = isset($value['variables']) ? $value['variables'] : [];
             $value['variables'] = $variables;
             $value['resource'] = $options['resource'];
             $value['resource_block'] = $options['resource_block'];

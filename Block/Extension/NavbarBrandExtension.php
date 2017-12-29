@@ -29,9 +29,9 @@ class NavbarBrandExtension extends AbstractTypeExtension
      */
     public function buildView(BlockView $view, BlockInterface $block, array $options)
     {
-        $view->vars = array_replace($view->vars, array(
+        $view->vars = array_replace($view->vars, [
             'switchable' => $options['switchable'],
-        ));
+        ]);
     }
 
     /**
@@ -39,9 +39,9 @@ class NavbarBrandExtension extends AbstractTypeExtension
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'switchable' => false,
-        ));
+        ]);
 
         $resolver->addAllowedTypes('switchable', 'bool');
     }

@@ -31,15 +31,15 @@ class FootableExtension extends AbstractTypeExtension
     public function buildView(BlockView $view, BlockInterface $block, array $options)
     {
         if ($options['footable']['enabled']) {
-            $fOptions = array(
-                'breakpoints' => array(
+            $fOptions = [
+                'breakpoints' => [
                     'phone' => $options['footable']['breakpoints_phone'],
                     'tablet' => $options['footable']['breakpoints_tablet'],
-                ),
-                'striped' => array(
+                ],
+                'striped' => [
                     'enabled' => $options['striped'],
-                ),
-            );
+                ],
+            ];
 
             if (null !== $options['footable']['delay']) {
                 $fOptions['delay'] = $options['footable']['delay'];
@@ -49,9 +49,9 @@ class FootableExtension extends AbstractTypeExtension
                 $fOptions['addRowToggle'] = $options['footable']['add_row_toggle'];
             }
 
-            $view->vars = array_replace($view->vars, array(
+            $view->vars = array_replace($view->vars, [
                 'footable_options' => $fOptions,
-            ));
+            ]);
         }
     }
 
@@ -60,28 +60,28 @@ class FootableExtension extends AbstractTypeExtension
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
-            'footable' => array(),
-        ));
+        $resolver->setDefaults([
+            'footable' => [],
+        ]);
 
         $resolver->addAllowedTypes('footable', 'array');
 
         $resolver->setNormalizer('footable', function (Options $options, $value) {
             $footableResolver = new OptionsResolver();
 
-            $footableResolver->setDefaults(array(
+            $footableResolver->setDefaults([
                 'enabled' => true,
                 'delay' => null,
                 'breakpoints_phone' => 767,
                 'breakpoints_tablet' => 991,
                 'add_row_toggle' => null,
-            ));
+            ]);
 
             $footableResolver->setAllowedTypes('enabled', 'bool');
-            $footableResolver->setAllowedTypes('delay', array('null', 'int'));
+            $footableResolver->setAllowedTypes('delay', ['null', 'int']);
             $footableResolver->setAllowedTypes('breakpoints_phone', 'int');
             $footableResolver->setAllowedTypes('breakpoints_tablet', 'int');
-            $footableResolver->setAllowedTypes('add_row_toggle', array('null', 'bool'));
+            $footableResolver->setAllowedTypes('add_row_toggle', ['null', 'bool']);
 
             return $footableResolver->resolve($value);
         });

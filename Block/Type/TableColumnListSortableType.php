@@ -42,9 +42,9 @@ class TableColumnListSortableType extends AbstractType
      */
     public function buildView(BlockView $view, BlockInterface $block, array $options)
     {
-        $view->vars = array_replace($view->vars, array(
+        $view->vars = array_replace($view->vars, [
             'index' => $options['index'],
-        ));
+        ]);
     }
 
     /**
@@ -60,11 +60,11 @@ class TableColumnListSortableType extends AbstractType
             return $value;
         };
 
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'index' => $index,
             'enabled' => false,
             'sortable' => true,
-        ));
+        ]);
 
         $resolver->setAllowedValues('enabled', false);
 

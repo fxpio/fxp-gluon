@@ -52,9 +52,9 @@ class PanelRowType extends AbstractType
             throw new InvalidConfigurationException(sprintf($msg, $block->getName(), $options['column']));
         }
 
-        $cOptions = array(
+        $cOptions = [
             'layout' => $block->getOption('layout_max') / $block->getOption('column'),
-        );
+        ];
 
         if (null !== $block->getOption('layout_size')) {
             $cOptions['layout_size'] = $block->getOption('layout_size');
@@ -76,14 +76,14 @@ class PanelRowType extends AbstractType
      */
     public function buildView(BlockView $view, BlockInterface $block, array $options)
     {
-        $view->vars = array_replace($view->vars, array(
+        $view->vars = array_replace($view->vars, [
             'hidden_if_empty' => $options['hidden_if_empty'],
             'column' => $options['column'],
             'layout_max' => $options['layout_max'],
             'layout_size' => $options['layout_size'],
             'layout_style' => $options['layout_style'],
             'cell_label_style' => $options['cell_label_style'],
-        ));
+        ]);
     }
 
     /**
@@ -120,7 +120,7 @@ class PanelRowType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'inherit_data' => true,
             'hidden_if_empty' => true,
             'column' => 1,
@@ -128,14 +128,14 @@ class PanelRowType extends AbstractType
             'layout_size' => null,
             'layout_style' => null,
             'cell_label_style' => null,
-        ));
+        ]);
 
         $resolver->addAllowedTypes('hidden_if_empty', 'bool');
         $resolver->addAllowedTypes('column', 'int');
         $resolver->addAllowedTypes('layout_max', 'int');
-        $resolver->addAllowedTypes('layout_size', array('null', 'string'));
-        $resolver->addAllowedTypes('layout_style', array('null', 'string'));
-        $resolver->addAllowedTypes('cell_label_style', array('null', 'string'));
+        $resolver->addAllowedTypes('layout_size', ['null', 'string']);
+        $resolver->addAllowedTypes('layout_style', ['null', 'string']);
+        $resolver->addAllowedTypes('cell_label_style', ['null', 'string']);
 
         $resolver->setNormalizer('column', function (Options $options, $value) {
             $colNumMax = $options['layout_max'];

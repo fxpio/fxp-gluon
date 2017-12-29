@@ -66,14 +66,14 @@ class SidebarItemType extends AbstractType
             unset($linkAttr['tabindex']);
         }
 
-        $view->vars = array_replace($view->vars, array(
+        $view->vars = array_replace($view->vars, [
             'link_attr' => $linkAttr,
             'active' => $options['active'],
             'disabled' => $options['disabled'],
             'mini' => $options['mini'],
             'context_menu' => $options['context_menu'],
             'data_item' => $options['data_item'],
-        ));
+        ]);
     }
 
     /**
@@ -81,24 +81,24 @@ class SidebarItemType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'src' => '#',
-            'link_attr' => array(),
+            'link_attr' => [],
             'active' => false,
             'disabled' => false,
             'chained_block' => true,
             'mini' => false,
             'context_menu' => false,
             'data_item' => null,
-        ));
+        ]);
 
-        $resolver->setAllowedTypes('src', array('null', 'string'));
+        $resolver->setAllowedTypes('src', ['null', 'string']);
         $resolver->setAllowedTypes('link_attr', 'array');
         $resolver->setAllowedTypes('active', 'bool');
         $resolver->setAllowedTypes('disabled', 'bool');
         $resolver->setAllowedTypes('mini', 'bool');
         $resolver->setAllowedTypes('context_menu', 'bool');
-        $resolver->setAllowedTypes('data_item', array('null', 'string'));
+        $resolver->setAllowedTypes('data_item', ['null', 'string']);
 
         $resolver->setNormalizer('src', function (Options $options, $value = null) {
             if (isset($options['data'])) {

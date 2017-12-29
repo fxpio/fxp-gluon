@@ -43,9 +43,9 @@ class RippleExtension extends AbstractTypeExtension
      */
     public function buildView(BlockView $view, BlockInterface $block, array $options)
     {
-        $view->vars = array_replace($view->vars, array(
+        $view->vars = array_replace($view->vars, [
             'ripple' => $options['ripple'],
-        ));
+        ]);
     }
 
     /**
@@ -53,9 +53,9 @@ class RippleExtension extends AbstractTypeExtension
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'ripple' => false,
-        ));
+        ]);
 
         $resolver->setAllowedTypes('ripple', 'bool');
     }

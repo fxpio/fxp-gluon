@@ -60,18 +60,18 @@ class TableColumnExtension extends AbstractTypeExtension
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'align' => null,
             'min_width' => null,
             'max_width' => null,
             'width' => null,
-        ));
+        ]);
 
-        $resolver->addAllowedTypes('align', array('null', 'string'));
-        $resolver->addAllowedTypes('min_width', array('null', 'int'));
-        $resolver->addAllowedTypes('max_width', array('null', 'int'));
+        $resolver->addAllowedTypes('align', ['null', 'string']);
+        $resolver->addAllowedTypes('min_width', ['null', 'int']);
+        $resolver->addAllowedTypes('max_width', ['null', 'int']);
 
-        $resolver->addAllowedValues('align', array(null, 'left', 'center', 'right'));
+        $resolver->addAllowedValues('align', [null, 'left', 'center', 'right']);
 
         $resolver->setNormalizer('label_attr', function (Options $options, $value) {
             $class = isset($value['class']) ? $value['class'] : '';

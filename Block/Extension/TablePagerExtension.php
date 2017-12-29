@@ -56,10 +56,10 @@ class TablePagerExtension extends AbstractTypeExtension
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'pager' => true,
-            'pager_options' => array(),
-        ));
+            'pager_options' => [],
+        ]);
 
         $resolver->addAllowedTypes('pager', 'bool');
         $resolver->addAllowedTypes('pager_options', 'array');

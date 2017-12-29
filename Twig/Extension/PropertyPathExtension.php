@@ -43,9 +43,9 @@ class PropertyPathExtension extends \Twig_Extension
      */
     public function getFunctions()
     {
-        return array(
-            new \Twig_Function('property_path', array($this, 'propertyPath')),
-        );
+        return [
+            new \Twig_Function('property_path', [$this, 'propertyPath']),
+        ];
     }
 
     /**

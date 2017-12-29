@@ -30,7 +30,7 @@ class DateExtension extends AbstractTypeExtension
      */
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
-        if (in_array($options['widget'], array('text', 'choice'))) {
+        if (in_array($options['widget'], ['text', 'choice'])) {
             BlockUtil::addAttributeClass($view, 'date-'.$options['widget'].'-wrapper');
 
             if ($options['text_block']) {
@@ -80,10 +80,10 @@ class DateExtension extends AbstractTypeExtension
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
-            'text_attr' => array(),
+        $resolver->setDefaults([
+            'text_attr' => [],
             'text_block' => true,
-        ));
+        ]);
 
         $resolver->setAllowedTypes('text_attr', 'array');
         $resolver->setAllowedTypes('text_block', 'bool');

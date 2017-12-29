@@ -59,9 +59,9 @@ class FootableColumnExtension extends AbstractTypeExtension
                 $labelAttr['data-type'] = $options['footable']['type'];
             }
 
-            $view->vars = array_replace($view->vars, array(
+            $view->vars = array_replace($view->vars, [
                 'label_attr' => $labelAttr,
-            ));
+            ]);
         }
     }
 
@@ -70,33 +70,33 @@ class FootableColumnExtension extends AbstractTypeExtension
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
-            'footable' => array(),
-        ));
+        $resolver->setDefaults([
+            'footable' => [],
+        ]);
 
         $resolver->addAllowedTypes('footable', 'array');
 
         $resolver->setNormalizer('footable', function (Options $options, $value) {
             $footableResolver = new OptionsResolver();
 
-            $footableResolver->setDefaults(array(
+            $footableResolver->setDefaults([
                 'hide' => null,
                 'ignore' => null,
                 'toggle' => null,
                 'name' => null,
                 'type' => null,
-            ));
+            ]);
 
-            $footableResolver->setAllowedTypes('hide', array('null', 'string', 'array'));
-            $footableResolver->setAllowedTypes('ignore', array('null', 'bool'));
-            $footableResolver->setAllowedTypes('toggle', array('null', 'bool'));
-            $footableResolver->setAllowedTypes('name', array('null', 'string'));
-            $footableResolver->setAllowedTypes('type', array('null', 'string'));
+            $footableResolver->setAllowedTypes('hide', ['null', 'string', 'array']);
+            $footableResolver->setAllowedTypes('ignore', ['null', 'bool']);
+            $footableResolver->setAllowedTypes('toggle', ['null', 'bool']);
+            $footableResolver->setAllowedTypes('name', ['null', 'string']);
+            $footableResolver->setAllowedTypes('type', ['null', 'string']);
 
-            $footableResolver->addAllowedValues('type', array(null, 'alpha', 'numeric'));
+            $footableResolver->addAllowedValues('type', [null, 'alpha', 'numeric']);
 
             $footableResolver->setNormalizer('hide', function (Options $options, $value) {
-                $allowed = array('phone', 'tablet', 'default', 'all');
+                $allowed = ['phone', 'tablet', 'default', 'all'];
                 $value = (array) $value;
 
                 foreach ($value as $type) {

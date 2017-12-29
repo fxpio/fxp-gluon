@@ -56,14 +56,14 @@ class PanelCellType extends AbstractType
         $builder->setAttribute('form_name', $options['form_name']);
 
         if (null !== $options['help']) {
-            $hOpts = array_replace($options['help_options'], array(
+            $hOpts = array_replace($options['help_options'], [
                 'label' => '?',
                 'translation_domain' => false,
                 'style' => 'info',
                 'size' => 'xs',
-                'attr' => array('class' => 'panel-cell-help'),
+                'attr' => ['class' => 'panel-cell-help'],
                 'popover' => $options['help'],
-            ));
+            ]);
 
             $builder->add($builder->getName().'_help', ButtonType::class, $hOpts);
         }
@@ -74,7 +74,7 @@ class PanelCellType extends AbstractType
      */
     public function addParent(BlockInterface $parent, BlockInterface $block, array $options)
     {
-        if (!BlockUtil::isBlockType($parent, array(PanelSectionType::class, PanelRowType::class))) {
+        if (!BlockUtil::isBlockType($parent, [PanelSectionType::class, PanelRowType::class])) {
             $msg = 'The "panel_cell" parent block (name: "%s") must be a "panel_section" block type';
             throw new InvalidConfigurationException(sprintf($msg, $block->getName()));
         }
@@ -88,10 +88,10 @@ class PanelCellType extends AbstractType
         if ($options['property_path'] && (is_object($block->getData()) || is_array($block->getData()))) {
             $value = $this->propertyAccessor->getValue($block->getData(), $options['property_path']);
 
-            $view->vars = array_replace($view->vars, array(
+            $view->vars = array_replace($view->vars, [
                 'data' => $value,
                 'value' => $value,
-            ));
+            ]);
         }
 
         BlockUtil::addAttributeClass($view, 'control-label', true, 'label_attr');
@@ -100,7 +100,7 @@ class PanelCellType extends AbstractType
             BlockUtil::addAttributeClass($view, 'control-label-'.$options['label_style'], false, 'label_attr');
         }
 
-        $view->vars = array_replace($view->vars, array(
+        $view->vars = array_replace($view->vars, [
             'control_attr' => $options['control_attr'],
             'layout_col_size' => $options['layout_size'],
             'layout_col_width' => $options['layout'],
@@ -110,7 +110,7 @@ class PanelCellType extends AbstractType
             'hidden' => $options['hidden'],
             'value_formatter' => $options['formatter'],
             'value_formatter_options' => $options['formatter_options'],
-        ));
+        ]);
 
         if ($view->vars['value'] === $options['empty_message']) {
             $view->vars['value_formatter'] = null;
@@ -165,13 +165,13 @@ class PanelCellType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'inherit_data' => function (Options $options) {
                 return null !== $options['property_path'];
             },
             'formatter' => null,
-            'formatter_options' => array(),
-            'control_attr' => array(),
+            'formatter_options' => [],
+            'control_attr' => [],
             'layout_size' => 'sm',
             'layout' => 12,
             'layout_max' => 12,
@@ -179,30 +179,30 @@ class PanelCellType extends AbstractType
             'label_style' => null,
             'hidden' => false,
             'help' => null,
-            'help_options' => array(),
+            'help_options' => [],
             'form_name' => function (Options $options) {
                 return is_string($options['property_path'])
                     ? $options['property_path']
                     : null;
             },
-        ));
+        ]);
 
-        $resolver->addAllowedTypes('formatter', array('null', 'string', 'Fxp\Component\Block\BlockTypeInterface'));
+        $resolver->addAllowedTypes('formatter', ['null', 'string', 'Fxp\Component\Block\BlockTypeInterface']);
         $resolver->addAllowedTypes('formatter_options', 'array');
         $resolver->addAllowedTypes('control_attr', 'array');
         $resolver->addAllowedTypes('layout_size', 'string');
         $resolver->addAllowedTypes('layout', 'int');
         $resolver->addAllowedTypes('layout_max', 'int');
-        $resolver->addAllowedTypes('layout_size', array('null', 'string'));
-        $resolver->addAllowedTypes('label_style', array('null', 'string'));
+        $resolver->addAllowedTypes('layout_size', ['null', 'string']);
+        $resolver->addAllowedTypes('label_style', ['null', 'string']);
         $resolver->addAllowedTypes('hidden', 'bool');
-        $resolver->addAllowedTypes('help', array('null', 'string', 'array'));
+        $resolver->addAllowedTypes('help', ['null', 'string', 'array']);
         $resolver->addAllowedTypes('help_options', 'array');
-        $resolver->addAllowedTypes('form_name', array('null', 'string'));
+        $resolver->addAllowedTypes('form_name', ['null', 'string']);
 
-        $resolver->addAllowedValues('layout_size', array('sm', 'md', 'lg'));
-        $resolver->addAllowedValues('layout_style', array(null, 'horizontal', 'vertical'));
-        $resolver->addAllowedValues('label_style', array(
+        $resolver->addAllowedValues('layout_size', ['sm', 'md', 'lg']);
+        $resolver->addAllowedValues('layout_style', [null, 'horizontal', 'vertical']);
+        $resolver->addAllowedValues('label_style', [
             null,
             'default',
             'primary',
@@ -211,7 +211,7 @@ class PanelCellType extends AbstractType
             'info',
             'warning',
             'danger',
-        ));
+        ]);
 
         $resolver->setNormalizer('layout', function (Options $options, $value) {
             $value = max($value, 1);
@@ -223,15 +223,15 @@ class PanelCellType extends AbstractType
             if (null === $value) {
                 return $value;
             } elseif (is_string($value)) {
-                $value = array(
+                $value = [
                     'content' => $value,
-                );
+                ];
             }
 
-            $value = array_replace(array(
+            $value = array_replace([
                 'html' => true,
                 'placement' => 'auto top',
-            ), $value);
+            ], $value);
 
             return $value;
         });

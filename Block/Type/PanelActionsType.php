@@ -42,7 +42,7 @@ class PanelActionsType extends AbstractType
      */
     public function addParent(BlockInterface $parent, BlockInterface $block, array $options)
     {
-        if (!BlockUtil::isBlockType($parent, array(PanelHeaderType::class, PanelSectionType::class))) {
+        if (!BlockUtil::isBlockType($parent, [PanelHeaderType::class, PanelSectionType::class])) {
             $msg = 'The "panel_actions" parent block (name: "%s") must be a "panel_header" or "panel_section" block type';
             throw new InvalidConfigurationException(sprintf($msg, $block->getName()));
         }
@@ -76,9 +76,9 @@ class PanelActionsType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'inherit_data' => true,
-        ));
+        ]);
     }
 
     /**

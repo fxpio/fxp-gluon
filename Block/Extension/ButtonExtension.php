@@ -30,12 +30,12 @@ class ButtonExtension extends AbstractTypeExtension
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'navbar_group' => null,
-        ));
+        ]);
 
-        $resolver->addAllowedValues('style', array('accent', 'navbar'));
-        $resolver->addAllowedTypes('navbar_group', array('null', 'bool'));
+        $resolver->addAllowedValues('style', ['accent', 'navbar']);
+        $resolver->addAllowedTypes('navbar_group', ['null', 'bool']);
     }
 
     /**

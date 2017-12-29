@@ -43,9 +43,9 @@ class RaisedExtension extends AbstractTypeExtension
      */
     public function buildView(BlockView $view, BlockInterface $block, array $options)
     {
-        $view->vars = array_replace($view->vars, array(
+        $view->vars = array_replace($view->vars, [
             'raised' => $options['raised'],
-        ));
+        ]);
     }
 
     /**
@@ -53,12 +53,12 @@ class RaisedExtension extends AbstractTypeExtension
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'raised' => false,
-        ));
+        ]);
 
-        $resolver->addAllowedTypes('raised', array('bool', 'string'));
-        $resolver->addAllowedValues('raised', array(true, false, 'flat'));
+        $resolver->addAllowedTypes('raised', ['bool', 'string']);
+        $resolver->addAllowedValues('raised', [true, false, 'flat']);
     }
 
     /**

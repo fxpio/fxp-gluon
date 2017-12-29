@@ -28,7 +28,7 @@ class GoogleFontsExtension extends \Twig_Extension
      *
      * @param array $fonts The font links
      */
-    public function __construct($fonts = array())
+    public function __construct($fonts = [])
     {
         $this->fonts = $fonts;
     }
@@ -38,9 +38,9 @@ class GoogleFontsExtension extends \Twig_Extension
      */
     public function getFunctions()
     {
-        return array(
-            new \Twig_Function('stylesheet_google_fonts', array($this, 'addStylesheetGoogleFonts'), array('is_safe' => array('html'))),
-        );
+        return [
+            new \Twig_Function('stylesheet_google_fonts', [$this, 'addStylesheetGoogleFonts'], ['is_safe' => ['html']]),
+        ];
     }
 
     /**

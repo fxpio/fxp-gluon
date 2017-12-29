@@ -35,19 +35,19 @@ class PanelExtension extends AbstractTypeExtension
     public function addChild(BlockInterface $child, BlockInterface $block, array $options)
     {
         if ($options['collapsible'] && BlockUtil::isBlockType($child, PanelHeaderType::class)) {
-            $child->add('_panel_actions', PanelActionsType::class, array());
-            $child->get('_panel_actions')->add('_button_collapse', ButtonType::class, array(
+            $child->add('_panel_actions', PanelActionsType::class, []);
+            $child->get('_panel_actions')->add('_button_collapse', ButtonType::class, [
                 'label' => '',
-                'attr' => array('class' => 'btn-panel-collapse'),
+                'attr' => ['class' => 'btn-panel-collapse'],
                 'style' => 'default',
                 'prepend' => '<span class="caret"></span>',
-            ));
+            ]);
         } elseif (BlockUtil::isBlockType($child, PanelType::class)) {
             if ($block->getOption('recursive_style')) {
                 $child->setOption('style', $block->getOption('style'));
             }
         } elseif (BlockUtil::isBlockType($child, PanelSectionType::class)) {
-            $cOptions = array();
+            $cOptions = [];
 
             if (null !== $block->getOption('cell_label_style') && null === $child->getOption('cell_label_style')) {
                 $cOptions['cell_label_style'] = $block->getOption('cell_label_style');
@@ -68,7 +68,7 @@ class PanelExtension extends AbstractTypeExtension
      */
     public function buildView(BlockView $view, BlockInterface $block, array $options)
     {
-        $view->vars = array_replace($view->vars, array(
+        $view->vars = array_replace($view->vars, [
             'border_top_style' => $options['border_top_style'],
             'collapsible' => $options['collapsible'],
             'collapsed' => $options['collapsed'],
@@ -76,7 +76,7 @@ class PanelExtension extends AbstractTypeExtension
             'hidden_if_empty' => $options['hidden_if_empty'],
             'recursive_style' => $options['recursive_style'],
             'panel_main' => $options['main'],
-        ));
+        ]);
     }
 
     /**
@@ -84,7 +84,7 @@ class PanelExtension extends AbstractTypeExtension
      */
     public function finishView(BlockView $view, BlockInterface $block, array $options)
     {
-        $relatedPanels = array();
+        $relatedPanels = [];
 
         foreach ($view->children as $name => $child) {
             if (in_array('panel', $child->vars['block_prefixes'])) {
@@ -101,7 +101,7 @@ class PanelExtension extends AbstractTypeExtension
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'border_top_style' => null,
             'cell_label_style' => null,
             'cell_layout_size' => null,
@@ -111,11 +111,11 @@ class PanelExtension extends AbstractTypeExtension
             'hidden_if_empty' => true,
             'recursive_style' => false,
             'main' => false,
-        ));
+        ]);
 
-        $resolver->addAllowedTypes('border_top_style', array('null', 'string'));
-        $resolver->addAllowedTypes('cell_label_style', array('null', 'string'));
-        $resolver->addAllowedTypes('cell_layout_size', array('null', 'string'));
+        $resolver->addAllowedTypes('border_top_style', ['null', 'string']);
+        $resolver->addAllowedTypes('cell_label_style', ['null', 'string']);
+        $resolver->addAllowedTypes('cell_layout_size', ['null', 'string']);
         $resolver->addAllowedTypes('collapsible', 'bool');
         $resolver->addAllowedTypes('collapsed', 'bool');
         $resolver->addAllowedTypes('panels_rendered', 'bool');
@@ -123,7 +123,7 @@ class PanelExtension extends AbstractTypeExtension
         $resolver->addAllowedTypes('recursive_style', 'bool');
         $resolver->addAllowedTypes('main', 'bool');
 
-        $resolver->addAllowedValues('style', array(
+        $resolver->addAllowedValues('style', [
             null,
             'accent',
             'primary-box',
@@ -160,8 +160,8 @@ class PanelExtension extends AbstractTypeExtension
             'info-pref',
             'warning-pref',
             'danger-pref',
-        ));
-        $resolver->addAllowedValues('border_top_style', array(
+        ]);
+        $resolver->addAllowedValues('border_top_style', [
             null,
             'default',
             'primary',
@@ -170,7 +170,7 @@ class PanelExtension extends AbstractTypeExtension
             'info',
             'warning',
             'danger',
-        ));
+        ]);
     }
 
     /**

@@ -38,7 +38,7 @@ class NavbarExtension extends AbstractTypeExtension
             BlockUtil::addAttribute($view, 'data-navbar-sidebar', 'true');
         }
 
-        if (in_array($options['sidebar_locked'], array('left', 'right'))) {
+        if (in_array($options['sidebar_locked'], ['left', 'right'])) {
             BlockUtil::addAttributeClass($view, 'navbar-sidebar-locked-'.$options['sidebar_locked']);
         } elseif ('full_left' === $options['sidebar_locked']) {
             BlockUtil::addAttributeClass($view, 'navbar-sidebar-full-locked-left');
@@ -52,15 +52,15 @@ class NavbarExtension extends AbstractTypeExtension
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'hidden' => false,
             'sidebar_locked' => null,
-        ));
+        ]);
 
         $resolver->addAllowedTypes('hidden', 'bool');
-        $resolver->addAllowedTypes('sidebar_locked', array('null', 'string'));
+        $resolver->addAllowedTypes('sidebar_locked', ['null', 'string']);
 
-        $resolver->setAllowedValues('sidebar_locked', array(null, 'left', 'right', 'full_left', 'full_right'));
+        $resolver->setAllowedValues('sidebar_locked', [null, 'left', 'right', 'full_left', 'full_right']);
     }
 
     /**

@@ -43,9 +43,9 @@ class PanelContentExtension extends AbstractTypeExtension
      */
     public function buildView(BlockView $view, BlockInterface $block, array $options)
     {
-        $view->vars = array_replace($view->vars, array(
+        $view->vars = array_replace($view->vars, [
             'style' => $options['style'],
-        ));
+        ]);
     }
 
     /**
@@ -53,13 +53,13 @@ class PanelContentExtension extends AbstractTypeExtension
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'style' => null,
-        ));
+        ]);
 
-        $resolver->addAllowedTypes('style', array('null', 'string'));
+        $resolver->addAllowedTypes('style', ['null', 'string']);
 
-        $resolver->addAllowedValues('style', array(
+        $resolver->addAllowedValues('style', [
             null,
             'primary-box',
             'accent-box',
@@ -67,7 +67,7 @@ class PanelContentExtension extends AbstractTypeExtension
             'info-box',
             'warning-box',
             'danger-box',
-        ));
+        ]);
     }
 
     /**

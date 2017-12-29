@@ -29,9 +29,9 @@ class CheckboxExtension extends AbstractTypeExtension
      */
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
-        $view->vars = array_replace($view->vars, array(
+        $view->vars = array_replace($view->vars, [
             'style' => $options['style'],
-        ));
+        ]);
     }
 
     /**
@@ -39,13 +39,13 @@ class CheckboxExtension extends AbstractTypeExtension
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'style' => null,
-        ));
+        ]);
 
-        $resolver->setAllowedTypes('style', array('null', 'string'));
+        $resolver->setAllowedTypes('style', ['null', 'string']);
 
-        $resolver->setAllowedValues('style', array(null, 'default', 'primary', 'accent', 'success', 'info', 'warning', 'danger', 'link'));
+        $resolver->setAllowedValues('style', [null, 'default', 'primary', 'accent', 'success', 'info', 'warning', 'danger', 'link']);
     }
 
     /**

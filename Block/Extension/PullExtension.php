@@ -58,22 +58,22 @@ class PullExtension extends AbstractTypeExtension
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'pull' => null,
             'pull_prefix' => null,
-        ));
+        ]);
 
-        $resolver->setAllowedTypes('pull', array('null', 'string', 'array'));
-        $resolver->setAllowedTypes('pull_prefix', array('null', 'string'));
+        $resolver->setAllowedTypes('pull', ['null', 'string', 'array']);
+        $resolver->setAllowedTypes('pull_prefix', ['null', 'string']);
 
         $resolver->setNormalizer('pull', function (Options $options, $value) {
             if (is_string($value)) {
-                $value = array($value);
+                $value = [$value];
             }
 
             if (is_array($value)) {
                 foreach ($value as $pull) {
-                    if (!in_array($pull, array('top', 'right'))) {
+                    if (!in_array($pull, ['top', 'right'])) {
                         $msg = 'The option "pull" with value "%s" is invalid';
                         throw new InvalidOptionsException(sprintf($msg, $pull));
                     }

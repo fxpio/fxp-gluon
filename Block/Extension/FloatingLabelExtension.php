@@ -44,9 +44,9 @@ class FloatingLabelExtension extends AbstractTypeExtension
      */
     public function buildView(BlockView $view, BlockInterface $form, array $options)
     {
-        $view->vars = array_replace($view->vars, array(
+        $view->vars = array_replace($view->vars, [
             'floating_label' => $options['floating_label'],
-        ));
+        ]);
     }
 
     /**
@@ -54,9 +54,9 @@ class FloatingLabelExtension extends AbstractTypeExtension
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'floating_label' => false,
-        ));
+        ]);
 
         $resolver->setAllowedTypes('floating_label', 'bool');
     }

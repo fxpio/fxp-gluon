@@ -82,31 +82,31 @@ class HeadroomExtension extends AbstractTypeExtension
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
-            'headroom' => array(),
-        ));
+        $resolver->setDefaults([
+            'headroom' => [],
+        ]);
 
-        $resolver->setAllowedTypes('headroom', array('bool', 'array'));
+        $resolver->setAllowedTypes('headroom', ['bool', 'array']);
 
         $resolver->setNormalizer('headroom', function (Options $options, $value) {
             $headroomResolver = new OptionsResolver();
 
-            $headroomResolver->setDefaults(array(
+            $headroomResolver->setDefaults([
                 'enabled' => false,
                 'offset' => null,
                 'tolerance' => null,
                 'classes' => null,
                 'scroller' => null,
-            ));
+            ]);
 
             $headroomResolver->setAllowedTypes('enabled', 'bool');
-            $headroomResolver->setAllowedTypes('offset', array('null', 'int'));
-            $headroomResolver->setAllowedTypes('tolerance', array('null', 'int', 'array'));
-            $headroomResolver->setAllowedTypes('classes', array('null', 'array'));
-            $headroomResolver->setAllowedTypes('scroller', array('null', 'string'));
+            $headroomResolver->setAllowedTypes('offset', ['null', 'int']);
+            $headroomResolver->setAllowedTypes('tolerance', ['null', 'int', 'array']);
+            $headroomResolver->setAllowedTypes('classes', ['null', 'array']);
+            $headroomResolver->setAllowedTypes('scroller', ['null', 'string']);
 
             if (is_bool($value)) {
-                $value = array('enabled' => $value);
+                $value = ['enabled' => $value];
             } elseif (is_array($value) && !array_key_exists('enabled', $value) && count($value) > 0) {
                 $value['enabled'] = true;
             }
