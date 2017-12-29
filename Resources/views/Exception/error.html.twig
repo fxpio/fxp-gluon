@@ -1,12 +1,12 @@
-{% extends "@SonatraGluon/base.html.twig" %}
+{% extends "@FxpGluon/base.html.twig" %}
 
 {%- set is_server_error = false -%}
 {%- set status_text_exclamation = status_text_exclamation|default('!') -%}
 {%- set btn_style = btn_style|default('default') -%}
 {%- set btn_text = btn_text|default('Return to the homepage') -%}
 {%- set btn_ref = btn_ref|default('/') -%}
-{%- set logo_src = logo_src|default('bundles/sonatragluon/logo_black.svg') -%}
-{%- set logo_alt = logo_alt|default('Sonatra') -%}
+{%- set logo_src = logo_src|default('bundles/fxpgluon/logo_black.svg') -%}
+{%- set logo_alt = logo_alt|default('Fxp') -%}
 
 {%- if status_code >= 500 and status_code <= 520 -%}
     {%- set is_server_error = true -%}

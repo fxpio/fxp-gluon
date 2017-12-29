@@ -1,27 +1,27 @@
 <?php
 
 /*
- * This file is part of the Sonatra package.
+ * This file is part of the Fxp package.
  *
- * (c) François Pluchino <francois.pluchino@sonatra.com>
+ * (c) François Pluchino <francois.pluchino@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Sonatra\Component\Gluon\Block\Extension;
+namespace Fxp\Component\Gluon\Block\Extension;
 
-use Sonatra\Component\Block\AbstractTypeExtension;
-use Sonatra\Component\Block\BlockInterface;
-use Sonatra\Component\Block\BlockView;
-use Sonatra\Component\Block\Util\BlockUtil;
-use Sonatra\Component\Bootstrap\Block\Type\PanelHeaderType;
-use Sonatra\Component\Gluon\Block\Type\PanelActionsType;
+use Fxp\Component\Block\AbstractTypeExtension;
+use Fxp\Component\Block\BlockInterface;
+use Fxp\Component\Block\BlockView;
+use Fxp\Component\Block\Util\BlockUtil;
+use Fxp\Component\Bootstrap\Block\Type\PanelHeaderType;
+use Fxp\Component\Gluon\Block\Type\PanelActionsType;
 
 /**
  * Panel Header Block Extension.
  *
- * @author François Pluchino <francois.pluchino@sonatra.com>
+ * @author François Pluchino <francois.pluchino@gmail.com>
  */
 class PanelHeaderExtension extends AbstractTypeExtension
 {

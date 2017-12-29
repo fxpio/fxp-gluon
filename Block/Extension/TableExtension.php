@@ -1,28 +1,28 @@
 <?php
 
 /*
- * This file is part of the Sonatra package.
+ * This file is part of the Fxp package.
  *
- * (c) François Pluchino <francois.pluchino@sonatra.com>
+ * (c) François Pluchino <francois.pluchino@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Sonatra\Component\Gluon\Block\Extension;
+namespace Fxp\Component\Gluon\Block\Extension;
 
-use Sonatra\Component\Block\AbstractTypeExtension;
-use Sonatra\Component\Block\BlockBuilderInterface;
-use Sonatra\Component\Bootstrap\Block\Type\TableType;
-use Sonatra\Component\Gluon\Block\Type\TableColumnRowNumberType;
-use Sonatra\Component\Gluon\Block\Type\TableColumnSelectType;
+use Fxp\Component\Block\AbstractTypeExtension;
+use Fxp\Component\Block\BlockBuilderInterface;
+use Fxp\Component\Bootstrap\Block\Type\TableType;
+use Fxp\Component\Gluon\Block\Type\TableColumnRowNumberType;
+use Fxp\Component\Gluon\Block\Type\TableColumnSelectType;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * Table Block Extension.
  *
- * @author François Pluchino <francois.pluchino@sonatra.com>
+ * @author François Pluchino <francois.pluchino@gmail.com>
  */
 class TableExtension extends AbstractTypeExtension
 {

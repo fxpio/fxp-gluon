@@ -1,25 +1,25 @@
 <?php
 
 /*
- * This file is part of the Sonatra package.
+ * This file is part of the Fxp package.
  *
- * (c) François Pluchino <francois.pluchino@sonatra.com>
+ * (c) François Pluchino <francois.pluchino@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Sonatra\Component\Gluon\Block\Type;
+namespace Fxp\Component\Gluon\Block\Type;
 
-use Sonatra\Component\Block\AbstractType;
-use Sonatra\Component\Block\BlockBuilderInterface;
-use Sonatra\Component\Block\BlockInterface;
-use Sonatra\Component\Block\BlockView;
-use Sonatra\Component\Block\Exception\InvalidConfigurationException;
-use Sonatra\Component\Block\Util\BlockFormUtil;
-use Sonatra\Component\Block\Util\BlockUtil;
-use Sonatra\Component\Block\Util\BlockViewUtil;
-use Sonatra\Component\Bootstrap\Block\Type\ButtonType;
+use Fxp\Component\Block\AbstractType;
+use Fxp\Component\Block\BlockBuilderInterface;
+use Fxp\Component\Block\BlockInterface;
+use Fxp\Component\Block\BlockView;
+use Fxp\Component\Block\Exception\InvalidConfigurationException;
+use Fxp\Component\Block\Util\BlockFormUtil;
+use Fxp\Component\Block\Util\BlockUtil;
+use Fxp\Component\Block\Util\BlockViewUtil;
+use Fxp\Component\Bootstrap\Block\Type\ButtonType;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -29,7 +29,7 @@ use Symfony\Component\PropertyAccess\PropertyAccessorInterface;
 /**
  * Panel Cell Block Type.
  *
- * @author François Pluchino <francois.pluchino@sonatra.com>
+ * @author François Pluchino <francois.pluchino@gmail.com>
  */
 class PanelCellType extends AbstractType
 {
@@ -187,7 +187,7 @@ class PanelCellType extends AbstractType
             },
         ));
 
-        $resolver->addAllowedTypes('formatter', array('null', 'string', 'Sonatra\Component\Block\BlockTypeInterface'));
+        $resolver->addAllowedTypes('formatter', array('null', 'string', 'Fxp\Component\Block\BlockTypeInterface'));
         $resolver->addAllowedTypes('formatter_options', 'array');
         $resolver->addAllowedTypes('control_attr', 'array');
         $resolver->addAllowedTypes('layout_size', 'string');

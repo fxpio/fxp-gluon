@@ -1,25 +1,25 @@
 {
-    "name": "sonatra/gluon",
+    "name": "fxp/gluon",
     "type": "library",
     "description": "A complete web responsive interface using Twitter Bootstrap",
     "keywords": ["web interface", "ui", "responsive", "admin", "landing", "twitter", "bootstrap", "website"],
-    "homepage": "https://github.com/sonatra/sonatra-gluon",
+    "homepage": "https://github.com/fxpio/fxp-gluon",
     "license": "MIT",
     "authors": [
         {
             "name": "François Pluchino",
-            "email": "francois.pluchino@sonatra.com"
+            "email": "francois.pluchino@gmail.com"
         }
     ],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
         "php": "^7.1.0",
-        "sonatra/block": "^1.0.0",
-        "sonatra/bootstrap": "^1.0.0",
-        "sonatra/ajax": "^1.0.0",
-        "sonatra/form-extensions": "^1.0.0",
-        "sonatra/routing-extra": "^1.0.0"
+        "fxp/block": "^1.0.0",
+        "fxp/bootstrap": "^1.0.0",
+        "fxp/ajax": "^1.0.0",
+        "fxp/form-extensions": "^1.0.0",
+        "fxp/routing-extra": "^1.0.0"
     },
     "require-dev" : {
         "foxy/foxy": "^1.0.0"
@@ -30,7 +30,7 @@
         }
     },
     "autoload": {
-        "psr-4": { "Sonatra\\Component\\Gluon\\": "" },
+        "psr-4": { "Fxp\\Component\\Gluon\\": "" },
         "exclude-from-classmap": [
             "/Tests/"
         ]

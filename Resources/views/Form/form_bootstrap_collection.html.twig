@@ -34,11 +34,11 @@
         <script>
             $(document).appPjax('addUnregister', function () {
                 {%- if btn_add is defined and prototype is defined -%}
-                    $('#{{ btn_add.vars.id }}').off('click.st.bootstrap');
+                    $('#{{ btn_add.vars.id }}').off('click.fxp.bootstrap');
                 {%- endif -%}
 
                 {%- if allow_delete and prototype is defined -%}
-                    $('#{{ id }}').off('click.st.bootstrap', 'button.btn-remove');
+                    $('#{{ id }}').off('click.fxp.bootstrap', 'button.btn-remove');
                 {%- endif -%}
             });
         </script>
