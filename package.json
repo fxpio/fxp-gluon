@@ -1,6 +1,6 @@
 {
     "license": "MIT",
     "dependencies": {
-        "@fxp/theme-gluon-pjax": "git://github.com/fxpio/fxp-theme-gluon-pjax.git#master"
+        "@fxp/theme-gluon-pjax": "github:fxpio/fxp-theme-gluon-pjax#master"
     }
 }
