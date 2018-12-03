@@ -14,37 +14,23 @@ namespace Fxp\Component\Gluon\Form\Extension;
 use Symfony\Component\Form\AbstractTypeExtension;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
+use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
- * Ripple Form Extension.
+ * Static Floating Label Form Extension.
  *
  * @author François Pluchino <francois.pluchino@gmail.com>
  */
-class RippleExtension extends AbstractTypeExtension
+abstract class AbstractStaticFloatingLabelExtension extends AbstractTypeExtension
 {
-    /**
-     * @var string
-     */
-    protected $extendedType;
-
-    /**
-     * Constructor.
-     *
-     * @param string $extendedType The extended block type
-     */
-    public function __construct($extendedType)
-    {
-        $this->extendedType = $extendedType;
-    }
-
     /**
      * {@inheritdoc}
      */
     public function buildView(FormView $view, FormInterface $block, array $options)
     {
         $view->vars = array_replace($view->vars, [
-            'ripple' => $options['ripple'],
+            'floating_label' => $options['floating_label'],
         ]);
     }
 
@@ -54,17 +40,15 @@ class RippleExtension extends AbstractTypeExtension
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'ripple' => false,
+            'floating_label' => false,
         ]);
 
-        $resolver->setAllowedTypes('ripple', 'bool');
-    }
+        $resolver->setAllowedTypes('floating_label', 'bool');
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getExtendedType()
-    {
-        return $this->extendedType;
+        $resolver->setNormalizer('floating_label', function (Options $options, $value) {
+            return 'horizontal' === $options['layout']
+                ? false
+                : $value;
+        });
     }
 }

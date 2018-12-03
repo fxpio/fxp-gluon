@@ -11,30 +11,20 @@
 
 namespace Fxp\Component\Gluon\Form\Extension;
 
-use Symfony\Component\Form\AbstractTypeExtension;
-use Symfony\Component\Form\Extension\Core\Type\ButtonType;
-use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 
 /**
- * Button Form Extension.
+ * Number Floating Label Form Extension.
  *
  * @author François Pluchino <francois.pluchino@gmail.com>
  */
-class ButtonExtension extends AbstractTypeExtension
+class NumberFloatingLabelExtension extends AbstractFloatingLabelExtension
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function configureOptions(OptionsResolver $resolver)
-    {
-        $resolver->addAllowedValues('style', ['accent']);
-    }
-
     /**
      * {@inheritdoc}
      */
     public static function getExtendedTypes()
     {
-        return [ButtonType::class];
+        return [NumberType::class];
     }
 }

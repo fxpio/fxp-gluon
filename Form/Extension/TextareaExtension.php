@@ -49,8 +49,8 @@ class TextareaExtension extends AbstractTypeExtension
     /**
      * {@inheritdoc}
      */
-    public function getExtendedType()
+    public static function getExtendedTypes()
     {
-        return TextareaType::class;
+        return [TextareaType::class];
     }
 }

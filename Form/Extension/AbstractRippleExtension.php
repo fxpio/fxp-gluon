@@ -11,30 +11,37 @@
 
 namespace Fxp\Component\Gluon\Form\Extension;
 
-use Fxp\Component\Block\Util\BlockUtil;
+use Symfony\Component\Form\AbstractTypeExtension;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
- * Floating Label Form Extension.
+ * Ripple Form Extension.
  *
  * @author François Pluchino <francois.pluchino@gmail.com>
  */
-class FloatingLabelExtension extends StaticFloatingLabelExtension
+abstract class AbstractRippleExtension extends AbstractTypeExtension
 {
     /**
      * {@inheritdoc}
      */
     public function buildView(FormView $view, FormInterface $block, array $options)
     {
-        if ($options['floating_label']) {
-            BlockUtil::addAttribute($view, 'data-floating-label', 'true');
+        $view->vars = array_replace($view->vars, [
+            'ripple' => $options['ripple'],
+        ]);
+    }
 
-            if (!BlockUtil::isEmpty($view->vars['value']) && !\is_object($view->vars['value'])) {
-                BlockUtil::addAttributeClass($view, 'has-floating-content');
-            }
-        }
+    /**
+     * {@inheritdoc}
+     */
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults([
+            'ripple' => false,
+        ]);
 
-        parent::buildView($view, $block, $options);
+        $resolver->setAllowedTypes('ripple', 'bool');
     }
 }
