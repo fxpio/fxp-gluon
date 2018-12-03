@@ -15,11 +15,11 @@
     "prefer-stable": true,
     "require": {
         "php": "^7.1.0",
-        "fxp/block": "^1.0.0",
-        "fxp/bootstrap": "^1.0.0",
-        "fxp/ajax": "^1.0.0",
-        "fxp/form-extensions": "^1.0.0",
-        "fxp/routing-extra": "^1.0.0"
+        "fxp/block": "^1.1.0",
+        "fxp/bootstrap": "^1.1.0",
+        "fxp/ajax": "^1.1.0",
+        "fxp/form-extensions": "^1.1.0",
+        "fxp/routing-extra": "^1.1.0"
     },
     "require-dev" : {
         "foxy/foxy": "^1.0.0"
@@ -37,7 +37,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.0-dev"
+            "dev-master": "1.1-dev"
         }
     }
 }

@@ -49,8 +49,8 @@ class NavbarBrandExtension extends AbstractTypeExtension
     /**
      * {@inheritdoc}
      */
-    public function getExtendedType()
+    public static function getExtendedTypes()
     {
-        return NavbarBrandType::class;
+        return [NavbarBrandType::class];
     }
 }

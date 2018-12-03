@@ -11,30 +11,20 @@
 
 namespace Fxp\Component\Gluon\Block\Extension;
 
-use Fxp\Component\Block\AbstractTypeExtension;
-use Fxp\Component\Bootstrap\Block\Type\LabelType;
-use Symfony\Component\OptionsResolver\OptionsResolver;
+use Fxp\Component\Gluon\Block\Type\FabType;
 
 /**
- * Label Block Extension.
+ * Fab Headroom Block Extension.
  *
  * @author François Pluchino <francois.pluchino@gmail.com>
  */
-class LabelExtension extends AbstractTypeExtension
+class FabHeadroomExtension extends AbstractHeadroomExtension
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function configureOptions(OptionsResolver $resolver)
-    {
-        $resolver->addAllowedValues('style', ['accent']);
-    }
-
     /**
      * {@inheritdoc}
      */
     public static function getExtendedTypes()
     {
-        return [LabelType::class];
+        return [FabType::class];
     }
 }

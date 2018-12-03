@@ -24,23 +24,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
  *
  * @author François Pluchino <francois.pluchino@gmail.com>
  */
-class PullExtension extends AbstractTypeExtension
+abstract class AbstractPullExtension extends AbstractTypeExtension
 {
-    /**
-     * @var string
-     */
-    protected $extendedType;
-
-    /**
-     * Constructor.
-     *
-     * @param string $extendedType The extended block type
-     */
-    public function __construct($extendedType)
-    {
-        $this->extendedType = $extendedType;
-    }
-
     /**
      * {@inheritdoc}
      */
@@ -82,13 +67,5 @@ class PullExtension extends AbstractTypeExtension
 
             return $value;
         });
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getExtendedType()
-    {
-        return $this->extendedType;
     }
 }

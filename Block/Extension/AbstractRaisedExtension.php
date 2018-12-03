@@ -17,34 +17,19 @@ use Fxp\Component\Block\BlockView;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
- * Panel Content Block Extension.
+ * Raised Block Extension.
  *
  * @author François Pluchino <francois.pluchino@gmail.com>
  */
-class PanelContentExtension extends AbstractTypeExtension
+abstract class AbstractRaisedExtension extends AbstractTypeExtension
 {
-    /**
-     * @var string
-     */
-    protected $extendedType;
-
-    /**
-     * Constructor.
-     *
-     * @param string $extendedType The extended block type
-     */
-    public function __construct($extendedType)
-    {
-        $this->extendedType = $extendedType;
-    }
-
     /**
      * {@inheritdoc}
      */
     public function buildView(BlockView $view, BlockInterface $block, array $options)
     {
         $view->vars = array_replace($view->vars, [
-            'style' => $options['style'],
+            'raised' => $options['raised'],
         ]);
     }
 
@@ -54,27 +39,10 @@ class PanelContentExtension extends AbstractTypeExtension
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'style' => null,
+            'raised' => false,
         ]);
 
-        $resolver->addAllowedTypes('style', ['null', 'string']);
-
-        $resolver->addAllowedValues('style', [
-            null,
-            'primary-box',
-            'accent-box',
-            'success-box',
-            'info-box',
-            'warning-box',
-            'danger-box',
-        ]);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getExtendedType()
-    {
-        return $this->extendedType;
+        $resolver->addAllowedTypes('raised', ['bool', 'string']);
+        $resolver->addAllowedValues('raised', [true, false, 'flat']);
     }
 }

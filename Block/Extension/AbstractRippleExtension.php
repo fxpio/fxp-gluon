@@ -17,34 +17,19 @@ use Fxp\Component\Block\BlockView;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
- * Raised Block Extension.
+ * Ripple Block Extension.
  *
  * @author François Pluchino <francois.pluchino@gmail.com>
  */
-class RaisedExtension extends AbstractTypeExtension
+abstract class AbstractRippleExtension extends AbstractTypeExtension
 {
-    /**
-     * @var string
-     */
-    protected $extendedType;
-
-    /**
-     * Constructor.
-     *
-     * @param string $extendedType The extended block type
-     */
-    public function __construct($extendedType)
-    {
-        $this->extendedType = $extendedType;
-    }
-
     /**
      * {@inheritdoc}
      */
     public function buildView(BlockView $view, BlockInterface $block, array $options)
     {
         $view->vars = array_replace($view->vars, [
-            'raised' => $options['raised'],
+            'ripple' => $options['ripple'],
         ]);
     }
 
@@ -54,18 +39,9 @@ class RaisedExtension extends AbstractTypeExtension
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'raised' => false,
+            'ripple' => false,
         ]);
 
-        $resolver->addAllowedTypes('raised', ['bool', 'string']);
-        $resolver->addAllowedValues('raised', [true, false, 'flat']);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getExtendedType()
-    {
-        return $this->extendedType;
+        $resolver->setAllowedTypes('ripple', 'bool');
     }
 }

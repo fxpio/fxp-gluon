@@ -14,7 +14,7 @@ namespace Fxp\Component\Gluon\Block\Extension;
 use Fxp\Component\Block\AbstractTypeExtension;
 use Fxp\Component\Block\BlockInterface;
 use Fxp\Component\Block\BlockView;
-use Fxp\Component\Bootstrap\Block\Type\TableColumnType;
+use Fxp\Component\Gluon\Block\Type\TableColumnListSortableType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
@@ -24,21 +24,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
  */
 class TableColumnPagerExtension extends AbstractTypeExtension
 {
-    /**
-     * @var string
-     */
-    protected $extendedType;
-
-    /**
-     * Constructor.
-     *
-     * @param string $extendedType The extended block type
-     */
-    public function __construct($extendedType = TableColumnType::class)
-    {
-        $this->extendedType = $extendedType;
-    }
-
     /**
      * {@inheritdoc}
      */
@@ -76,8 +61,8 @@ class TableColumnPagerExtension extends AbstractTypeExtension
     /**
      * {@inheritdoc}
      */
-    public function getExtendedType()
+    public static function getExtendedTypes()
     {
-        return $this->extendedType;
+        return [TableColumnListSortableType::class];
     }
 }

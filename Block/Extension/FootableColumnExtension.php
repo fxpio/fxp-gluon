@@ -116,8 +116,8 @@ class FootableColumnExtension extends AbstractTypeExtension
     /**
      * {@inheritdoc}
      */
-    public function getExtendedType()
+    public static function getExtendedTypes()
     {
-        return TableColumnType::class;
+        return [TableColumnType::class];
     }
 }

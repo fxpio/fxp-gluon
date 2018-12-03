@@ -66,8 +66,8 @@ class NavbarExtension extends AbstractTypeExtension
     /**
      * {@inheritdoc}
      */
-    public function getExtendedType()
+    public static function getExtendedTypes()
     {
-        return NavbarType::class;
+        return [NavbarType::class];
     }
 }

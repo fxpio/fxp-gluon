@@ -23,23 +23,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
  *
  * @author François Pluchino <francois.pluchino@gmail.com>
  */
-class AddonExtension extends AbstractTypeExtension
+abstract class AbstractAddonExtension extends AbstractTypeExtension
 {
-    /**
-     * @var string
-     */
-    protected $extendedType;
-
-    /**
-     * Constructor.
-     *
-     * @param string $extendedType The extended block type
-     */
-    public function __construct($extendedType)
-    {
-        $this->extendedType = $extendedType;
-    }
-
     /**
      * {@inheritdoc}
      */
@@ -98,14 +83,6 @@ class AddonExtension extends AbstractTypeExtension
 
         $resolver->addAllowedValues('prepend_type', [null, 'addon', 'btn']);
         $resolver->addAllowedValues('append_type', [null, 'addon', 'btn']);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getExtendedType()
-    {
-        return $this->extendedType;
     }
 
     /**

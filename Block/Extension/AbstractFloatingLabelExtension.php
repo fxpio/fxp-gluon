@@ -14,7 +14,6 @@ namespace Fxp\Component\Gluon\Block\Extension;
 use Fxp\Component\Block\AbstractTypeExtension;
 use Fxp\Component\Block\BlockInterface;
 use Fxp\Component\Block\BlockView;
-use Fxp\Component\Block\Extension\Core\Type\FieldType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
@@ -22,23 +21,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
  *
  * @author François Pluchino <francois.pluchino@gmail.com>
  */
-class FloatingLabelExtension extends AbstractTypeExtension
+abstract class AbstractFloatingLabelExtension extends AbstractTypeExtension
 {
-    /**
-     * @var string
-     */
-    protected $extendedType;
-
-    /**
-     * Constructor.
-     *
-     * @param string $extendedType The extended block type
-     */
-    public function __construct($extendedType = FieldType::class)
-    {
-        $this->extendedType = $extendedType;
-    }
-
     /**
      * {@inheritdoc}
      */
@@ -59,13 +43,5 @@ class FloatingLabelExtension extends AbstractTypeExtension
         ]);
 
         $resolver->setAllowedTypes('floating_label', 'bool');
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getExtendedType()
-    {
-        return $this->extendedType;
     }
 }

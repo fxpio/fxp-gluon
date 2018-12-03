@@ -23,13 +23,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
  *
  * @author François Pluchino <francois.pluchino@gmail.com>
  */
-class HeadroomExtension extends AbstractTypeExtension
+abstract class AbstractHeadroomExtension extends AbstractTypeExtension
 {
-    /**
-     * @var string
-     */
-    protected $extendedType;
-
     /**
      * @var string
      */
@@ -38,12 +33,10 @@ class HeadroomExtension extends AbstractTypeExtension
     /**
      * Constructor.
      *
-     * @param string $extendedType The extended block type
-     * @param string $dataAttr     The name of data attributes in block view
+     * @param string $dataAttr The name of data attributes in block view
      */
-    public function __construct($extendedType, $dataAttr = 'attr')
+    public function __construct($dataAttr = 'attr')
     {
-        $this->extendedType = $extendedType;
         $this->dataAttr = $dataAttr;
     }
 
@@ -113,13 +106,5 @@ class HeadroomExtension extends AbstractTypeExtension
 
             return $headroomResolver->resolve($value);
         });
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getExtendedType()
-    {
-        return $this->extendedType;
     }
 }

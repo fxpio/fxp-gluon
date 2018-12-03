@@ -51,8 +51,8 @@ class CheckboxExtension extends AbstractTypeExtension
     /**
      * {@inheritdoc}
      */
-    public function getExtendedType()
+    public static function getExtendedTypes()
     {
-        return CheckboxType::class;
+        return [CheckboxType::class];
     }
 }

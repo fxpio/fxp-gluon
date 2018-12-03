@@ -65,8 +65,8 @@ class PanelHeaderExtension extends AbstractTypeExtension
     /**
      * {@inheritdoc}
      */
-    public function getExtendedType()
+    public static function getExtendedTypes()
     {
-        return PanelHeaderType::class;
+        return [PanelHeaderType::class];
     }
 }

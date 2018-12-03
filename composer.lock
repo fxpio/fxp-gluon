@@ -64,12 +64,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fxpio/fxp-block.git",
-                "reference": "71b5678c85b5b2742b368b7be90bf047e88e69f6"
+                "reference": "a4fefb24de37bec5cc202181fd20cc7d3a4aa59b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fxpio/fxp-block/zipball/71b5678c85b5b2742b368b7be90bf047e88e69f6",
-                "reference": "71b5678c85b5b2742b368b7be90bf047e88e69f6",
+                "url": "https://api.github.com/repos/fxpio/fxp-block/zipball/a4fefb24de37bec5cc202181fd20cc7d3a4aa59b",
+                "reference": "a4fefb24de37bec5cc202181fd20cc7d3a4aa59b",
                 "shasum": ""
             },
             "require": {
@@ -122,7 +122,7 @@
                 "ui",
                 "user interface"
             ],
-            "time": "2018-12-02T15:21:25+00:00"
+            "time": "2018-12-03T12:12:40+00:00"
         },
         {
             "name": "fxp/bootstrap",
@@ -130,12 +130,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fxpio/fxp-bootstrap.git",
-                "reference": "438cc376a7a010c23f19ce32472b411b58a1479b"
+                "reference": "4ff1408018c71d18b6951b1f8d7c5ad0b684eadb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fxpio/fxp-bootstrap/zipball/438cc376a7a010c23f19ce32472b411b58a1479b",
-                "reference": "438cc376a7a010c23f19ce32472b411b58a1479b",
+                "url": "https://api.github.com/repos/fxpio/fxp-bootstrap/zipball/4ff1408018c71d18b6951b1f8d7c5ad0b684eadb",
+                "reference": "4ff1408018c71d18b6951b1f8d7c5ad0b684eadb",
                 "shasum": ""
             },
             "require": {
@@ -180,7 +180,7 @@
                 "block",
                 "template"
             ],
-            "time": "2018-12-03T10:08:18+00:00"
+            "time": "2018-12-03T13:35:44+00:00"
         },
         {
             "name": "fxp/form-extensions",

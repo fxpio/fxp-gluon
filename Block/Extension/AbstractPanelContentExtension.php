@@ -17,34 +17,19 @@ use Fxp\Component\Block\BlockView;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
- * Ripple Block Extension.
+ * Panel Content Block Extension.
  *
  * @author François Pluchino <francois.pluchino@gmail.com>
  */
-class RippleExtension extends AbstractTypeExtension
+abstract class AbstractPanelContentExtension extends AbstractTypeExtension
 {
-    /**
-     * @var string
-     */
-    protected $extendedType;
-
-    /**
-     * Constructor.
-     *
-     * @param string $extendedType The extended block type
-     */
-    public function __construct($extendedType)
-    {
-        $this->extendedType = $extendedType;
-    }
-
     /**
      * {@inheritdoc}
      */
     public function buildView(BlockView $view, BlockInterface $block, array $options)
     {
         $view->vars = array_replace($view->vars, [
-            'ripple' => $options['ripple'],
+            'style' => $options['style'],
         ]);
     }
 
@@ -54,17 +39,19 @@ class RippleExtension extends AbstractTypeExtension
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'ripple' => false,
+            'style' => null,
         ]);
 
-        $resolver->setAllowedTypes('ripple', 'bool');
-    }
+        $resolver->addAllowedTypes('style', ['null', 'string']);
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getExtendedType()
-    {
-        return $this->extendedType;
+        $resolver->addAllowedValues('style', [
+            null,
+            'primary-box',
+            'accent-box',
+            'success-box',
+            'info-box',
+            'warning-box',
+            'danger-box',
+        ]);
     }
 }
