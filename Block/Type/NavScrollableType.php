@@ -28,7 +28,7 @@ class NavScrollableType extends AbstractType
      */
     public function buildView(BlockView $view, BlockInterface $block, array $options)
     {
-        if (null !== $view->parent && in_array('navbar', $view->parent->vars['block_prefixes'])) {
+        if (null !== $view->parent && \in_array('navbar', $view->parent->vars['block_prefixes'])) {
             BlockUtil::addAttributeClass($view->parent, 'has-nav-scrollable');
         }
     }
@@ -39,7 +39,7 @@ class NavScrollableType extends AbstractType
     public function finishView(BlockView $view, BlockInterface $block, array $options)
     {
         foreach ($view->children as $child) {
-            if (in_array('nav', $child->vars['block_prefixes'])) {
+            if (\in_array('nav', $child->vars['block_prefixes'])) {
                 BlockUtil::addAttributeClass($view, 'is-nav-'.$child->vars['style'], true);
             }
         }

@@ -62,7 +62,7 @@ class PropertyPathExtension extends \Twig_Extension
             $propertyPath = new PropertyPath($propertyPath);
         }
 
-        if ($propertyPath instanceof PropertyPathInterface && (is_object($data) || $data instanceof \ArrayAccess)) {
+        if ($propertyPath instanceof PropertyPathInterface && (\is_object($data) || $data instanceof \ArrayAccess)) {
             $data = $this->propertyAccessor->getValue($data, $propertyPath);
         }
 

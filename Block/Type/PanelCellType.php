@@ -85,7 +85,7 @@ class PanelCellType extends AbstractType
      */
     public function buildView(BlockView $view, BlockInterface $block, array $options)
     {
-        if ($options['property_path'] && (is_object($block->getData()) || is_array($block->getData()))) {
+        if ($options['property_path'] && (\is_object($block->getData()) || \is_array($block->getData()))) {
             $value = $this->propertyAccessor->getValue($block->getData(), $options['property_path']);
 
             $view->vars = array_replace($view->vars, [
@@ -125,7 +125,7 @@ class PanelCellType extends AbstractType
         $this->injectFormCell($view, $block);
 
         foreach ($view->children as $name => $child) {
-            if (in_array('button', $child->vars['block_prefixes'])) {
+            if (\in_array('button', $child->vars['block_prefixes'])) {
                 $view->vars['button_help'] = $child;
                 unset($view->children[$name]);
             }
@@ -136,12 +136,12 @@ class PanelCellType extends AbstractType
             $view->vars['has_form'] = $form;
             $form->vars['label'] = ' ';
 
-            if (count($form->children) > 0) {
+            if (\count($form->children) > 0) {
                 $keys = array_keys($form->children);
                 $view->vars['has_form'] = $form->children[$keys[0]];
             }
 
-            if (count($form->vars['errors']) > 0) {
+            if (\count($form->vars['errors']) > 0) {
                 BlockUtil::addAttributeClass($view, 'has-error', false, 'control_attr');
             }
 
@@ -149,7 +149,7 @@ class PanelCellType extends AbstractType
                 BlockUtil::addAttributeClass($view, 'required', false, 'label_attr');
             }
 
-            if (in_array('repeated', $form->vars['block_prefixes'])) {
+            if (\in_array('repeated', $form->vars['block_prefixes'])) {
                 BlockUtil::addAttributeClass($view, 'block-repeated', false, 'control_attr');
 
                 foreach ($form->children as $childForm) {
@@ -181,7 +181,7 @@ class PanelCellType extends AbstractType
             'help' => null,
             'help_options' => [],
             'form_name' => function (Options $options) {
-                return is_string($options['property_path'])
+                return \is_string($options['property_path'])
                     ? $options['property_path']
                     : null;
             },
@@ -222,7 +222,7 @@ class PanelCellType extends AbstractType
         $resolver->setNormalizer('help', function (Options $options, $value) {
             if (null === $value) {
                 return $value;
-            } elseif (is_string($value)) {
+            } elseif (\is_string($value)) {
                 $value = [
                     'content' => $value,
                 ];

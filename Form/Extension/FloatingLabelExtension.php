@@ -30,7 +30,7 @@ class FloatingLabelExtension extends StaticFloatingLabelExtension
         if ($options['floating_label']) {
             BlockUtil::addAttribute($view, 'data-floating-label', 'true');
 
-            if (!BlockUtil::isEmpty($view->vars['value']) && !is_object($view->vars['value'])) {
+            if (!BlockUtil::isEmpty($view->vars['value']) && !\is_object($view->vars['value'])) {
                 BlockUtil::addAttributeClass($view, 'has-floating-content');
             }
         }

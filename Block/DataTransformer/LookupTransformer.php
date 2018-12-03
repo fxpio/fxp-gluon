@@ -53,7 +53,7 @@ class LookupTransformer implements DataTransformerInterface
      */
     public function transform($data)
     {
-        if ($this->propertyPath instanceof PropertyPathInterface && (is_object($data) || $data instanceof \ArrayAccess)) {
+        if ($this->propertyPath instanceof PropertyPathInterface && (\is_object($data) || $data instanceof \ArrayAccess)) {
             $data = $this->propertyAccessor->getValue($data, $this->propertyPath);
         }
 

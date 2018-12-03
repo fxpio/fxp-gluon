@@ -105,9 +105,9 @@ class HeadroomExtension extends AbstractTypeExtension
             $headroomResolver->setAllowedTypes('classes', ['null', 'array']);
             $headroomResolver->setAllowedTypes('scroller', ['null', 'string']);
 
-            if (is_bool($value)) {
+            if (\is_bool($value)) {
                 $value = ['enabled' => $value];
-            } elseif (is_array($value) && !array_key_exists('enabled', $value) && count($value) > 0) {
+            } elseif (\is_array($value) && !array_key_exists('enabled', $value) && \count($value) > 0) {
                 $value['enabled'] = true;
             }
 

@@ -51,8 +51,8 @@ class PanelHeaderExtension extends AbstractTypeExtension
     public function finishView(BlockView $view, BlockInterface $block, array $options)
     {
         foreach ($view->children as $name => $child) {
-            if (in_array('panel_actions', $child->vars['block_prefixes'])) {
-                if (count($child->children) > 0 || isset($child->vars['panel_button_collapse'])) {
+            if (\in_array('panel_actions', $child->vars['block_prefixes'])) {
+                if (\count($child->children) > 0 || isset($child->vars['panel_button_collapse'])) {
                     $view->vars['panel_actions'] = $child;
                 }
 

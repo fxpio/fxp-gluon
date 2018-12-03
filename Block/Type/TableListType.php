@@ -46,9 +46,9 @@ class TableListType extends AbstractType
             $block->getData()->addColumn($child);
         } elseif (!BlockUtil::isBlockType($child, [TableHeaderType::class, TableColumnSelectType::class, TablePagerType::class, TableColumnListAdapterType::class])) {
             $msg = 'The "%s" child block (name: "%s") must be a "%s" or "%s" block type ("%s" type given)';
-            throw new InvalidConfigurationException(sprintf($msg, get_class($block->getConfig()->getType()->getInnerType()),
+            throw new InvalidConfigurationException(sprintf($msg, \get_class($block->getConfig()->getType()->getInnerType()),
                 $child->getName(), TableColumnListAdapterType::class, TableColumnListSortableType::class,
-                get_class($child->getConfig()->getType()->getInnerType())));
+                \get_class($child->getConfig()->getType()->getInnerType())));
         }
     }
 
@@ -87,13 +87,13 @@ class TableListType extends AbstractType
         $sortColumns = [];
 
         foreach ($view->children as $name => $child) {
-            if (in_array('table_column_list_sort', $child->vars['block_prefixes'])) {
+            if (\in_array('table_column_list_sort', $child->vars['block_prefixes'])) {
                 $sortColumns[] = $child;
                 unset($view->children[$name]);
             }
         }
 
-        if (count($sortColumns) > 0) {
+        if (\count($sortColumns) > 0) {
             /* @var BlockFactoryInterface $factory */
             $factory = $block->getConfig()->getAttribute('block_factory');
             $sortDropdown = $factory->create(DropdownType::class, null, ['ripple' => true, 'wrapper' => false, 'attr' => ['class' => 'table-pager-list-sort-menu']]);
@@ -118,7 +118,7 @@ class TableListType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        if (in_array('footable', $resolver->getDefinedOptions())) {
+        if (\in_array('footable', $resolver->getDefinedOptions())) {
             $resolver->setNormalizer('footable', function () {
                 return [
                     'enabled' => false,

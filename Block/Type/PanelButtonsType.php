@@ -71,7 +71,7 @@ class PanelButtonsType extends AbstractType
             $attr['data-content-selector'] = '.nav-btn-group';
             $child->setOption('attr', $attr);
 
-            // button
+        // button
         } elseif (BlockUtil::isBlockType($child, ButtonType::class)
                 || (BlockUtil::isBlockType($child, FormType::class)
                     && FormUtil::isFormType($child->getForm(), [\Symfony\Component\Form\Extension\Core\Type\FormType::class, FormButtonType::class, SubmitType::class]))) {

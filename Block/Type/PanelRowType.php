@@ -47,7 +47,7 @@ class PanelRowType extends AbstractType
             throw new InvalidConfigurationException(sprintf($msg, $child->getName()));
         }
 
-        if (count($block->all()) >= $block->getOption('column')) {
+        if (\count($block->all()) >= $block->getOption('column')) {
             $msg = 'The "panel_row" block (name: "%s") can only have %s column(s)';
             throw new InvalidConfigurationException(sprintf($msg, $block->getName(), $options['column']));
         }
@@ -95,7 +95,7 @@ class PanelRowType extends AbstractType
         $hasRenderedCell = false;
 
         foreach ($view->children as $child) {
-            if (in_array('panel_cell', $child->vars['block_prefixes'])) {
+            if (\in_array('panel_cell', $child->vars['block_prefixes'])) {
                 ++$hasCell;
 
                 if (!$hasRenderedCell && !$child->vars['hidden'] && $child->vars['rendered']) {
@@ -109,7 +109,7 @@ class PanelRowType extends AbstractType
         }
 
         if ($view->vars['hidden_if_empty'] && BlockUtil::isEmpty($view->vars['value'])
-            && $hasCell === count($view->children)
+            && $hasCell === \count($view->children)
             && !$hasRenderedCell) {
             $view->vars['rendered'] = false;
         }

@@ -57,7 +57,7 @@ class PanelExtension extends AbstractTypeExtension
                 $cOptions['layout_size'] = $block->getOption('cell_layout_size');
             }
 
-            if (count($cOptions) > 0) {
+            if (\count($cOptions) > 0) {
                 $child->setOptions($cOptions);
             }
         }
@@ -87,7 +87,7 @@ class PanelExtension extends AbstractTypeExtension
         $relatedPanels = [];
 
         foreach ($view->children as $name => $child) {
-            if (in_array('panel', $child->vars['block_prefixes'])) {
+            if (\in_array('panel', $child->vars['block_prefixes'])) {
                 $relatedPanels[] = $child;
                 unset($view->children[$name]);
             }

@@ -44,7 +44,7 @@ class AjaxDataSourceHelper
     {
         $formats = ['xml', 'json'];
 
-        if (!in_array($format, $formats)) {
+        if (!\in_array($format, $formats)) {
             $msg = "The '%s' format is not allowed. Try with '%s'";
             throw new InvalidArgumentException(sprintf($msg, $format, implode("', '", $formats)));
         }

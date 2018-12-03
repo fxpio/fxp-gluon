@@ -57,14 +57,14 @@ class AddonExtension extends AbstractTypeExtension
         ]);
 
         // prepend
-        if (is_string($prepend)) {
+        if (\is_string($prepend)) {
             $view->vars['prepend_string'] = $prepend;
         } elseif ($prepend instanceof BlockInterface) {
             $view->vars['prepend_block'] = $prepend->createView($view);
         }
 
         // append
-        if (is_string($append)) {
+        if (\is_string($append)) {
             $view->vars['append_string'] = $append;
         } elseif ($append instanceof BlockInterface) {
             $view->vars['append_block'] = $append->createView($view);
@@ -116,7 +116,7 @@ class AddonExtension extends AbstractTypeExtension
      */
     protected function definedType($addon, $type)
     {
-        if (is_string($addon)) {
+        if (\is_string($addon)) {
             return null !== $type ? $type : 'addon';
         } elseif ($addon instanceof BlockInterface) {
             if (null === $type && BlockUtil::isBlockType($addon, ButtonType::class)) {

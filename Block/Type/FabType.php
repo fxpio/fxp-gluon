@@ -39,7 +39,7 @@ class FabType extends AbstractType
      */
     public function finishView(BlockView $view, BlockInterface $block, array $options)
     {
-        if (isset($view->vars['dropdown']) && in_array($options['absolute_position'], ['top_right', 'bottom_right'])) {
+        if (isset($view->vars['dropdown']) && \in_array($options['absolute_position'], ['top_right', 'bottom_right'])) {
             /* @var BlockView $dropView */
             $dropView = $view->vars['dropdown'];
             BlockUtil::addAttributeClass($dropView, 'fab-pull-right');
@@ -54,7 +54,7 @@ class FabType extends AbstractType
         $resolver->setDefaults([
             'absolute_position' => null,
             'dropup' => function (Options $options) {
-                return in_array($options['absolute_position'], ['bottom_left', 'bottom_right'])
+                return \in_array($options['absolute_position'], ['bottom_left', 'bottom_right'])
                     ? true
                     : false;
             },

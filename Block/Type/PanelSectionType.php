@@ -143,18 +143,18 @@ class PanelSectionType extends AbstractType
         $hasRenderedRow = false;
 
         foreach ($view->children as $name => $child) {
-            if (in_array('heading', $child->vars['block_prefixes'])) {
+            if (\in_array('heading', $child->vars['block_prefixes'])) {
                 BlockUtil::addAttributeClass($child, 'panel-section-title');
 
                 $view->vars['panel_section_heading'] = $child;
                 unset($view->children[$name]);
-            } elseif (in_array('panel_actions', $child->vars['block_prefixes'])) {
-                if (count($child->children) > 0 || isset($child->vars['panel_button_collapse'])) {
+            } elseif (\in_array('panel_actions', $child->vars['block_prefixes'])) {
+                if (\count($child->children) > 0 || isset($child->vars['panel_button_collapse'])) {
                     $view->vars['panel_section_actions'] = $child;
                 }
 
                 unset($view->children[$name]);
-            } elseif (in_array('panel_row', $child->vars['block_prefixes'])) {
+            } elseif (\in_array('panel_row', $child->vars['block_prefixes'])) {
                 ++$hasRow;
 
                 if (!$hasRenderedRow && $child->vars['rendered']) {
@@ -168,7 +168,7 @@ class PanelSectionType extends AbstractType
         }
 
         if ($view->vars['hidden_if_empty'] && BlockUtil::isEmpty($view->vars['value'])
-            && $hasRow === count($view->children)
+            && $hasRow === \count($view->children)
             && !$hasRenderedRow) {
             $view->vars['rendered'] = false;
         }
@@ -235,7 +235,7 @@ class PanelSectionType extends AbstractType
             $row = $block->get($block->getAttribute('last_row'));
 
             // return current row
-            if (count($row) < $row->getOption('column')) {
+            if (\count($row) < $row->getOption('column')) {
                 return $row;
             }
         }

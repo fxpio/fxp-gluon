@@ -71,7 +71,7 @@ class TableColumnSelectType extends AbstractType
      */
     public function buildView(BlockView $view, BlockInterface $block, array $options)
     {
-        if (null !== $view->parent && in_array('table', $view->parent->vars['block_prefixes'])) {
+        if (null !== $view->parent && \in_array('table', $view->parent->vars['block_prefixes'])) {
             $view->parent->vars['attr']['data-table-select'] = 'true';
             $view->parent->vars['attr']['data-col-selectable'] = $block->getName();
             $view->parent->vars['column_selection_stype'] = $options['style'];

@@ -46,7 +46,7 @@ class PullExtension extends AbstractTypeExtension
      */
     public function buildView(BlockView $view, BlockInterface $block, array $options)
     {
-        if (is_array($options['pull'])) {
+        if (\is_array($options['pull'])) {
             foreach ($options['pull'] as $pull) {
                 BlockUtil::addAttributeClass($view, $options['pull_prefix'].'pull-'.$pull);
             }
@@ -67,13 +67,13 @@ class PullExtension extends AbstractTypeExtension
         $resolver->setAllowedTypes('pull_prefix', ['null', 'string']);
 
         $resolver->setNormalizer('pull', function (Options $options, $value) {
-            if (is_string($value)) {
+            if (\is_string($value)) {
                 $value = [$value];
             }
 
-            if (is_array($value)) {
+            if (\is_array($value)) {
                 foreach ($value as $pull) {
-                    if (!in_array($pull, ['top', 'right'])) {
+                    if (!\in_array($pull, ['top', 'right'])) {
                         $msg = 'The option "pull" with value "%s" is invalid';
                         throw new InvalidOptionsException(sprintf($msg, $pull));
                     }

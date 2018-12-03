@@ -31,7 +31,7 @@ class SidebarType extends AbstractType
     {
         $attr = $view->vars['attr'];
         $attr['data-sidebar'] = $this->formatBoolean(true);
-        $attr['data-force-toggle'] = is_bool($options['force_toggle']) ? $this->formatBoolean($options['force_toggle']) : $options['force_toggle'];
+        $attr['data-force-toggle'] = \is_bool($options['force_toggle']) ? $this->formatBoolean($options['force_toggle']) : $options['force_toggle'];
         $attr['data-toggle-on-click'] = $this->formatBoolean($options['toggle_on_click']);
         $attr['data-save-config'] = $this->formatBoolean($options['save_config']);
         $attr['data-locked'] = $this->formatBoolean($options['locked']);

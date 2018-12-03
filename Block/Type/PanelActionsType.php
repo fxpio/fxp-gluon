@@ -54,7 +54,7 @@ class PanelActionsType extends AbstractType
     public function finishView(BlockView $view, BlockInterface $block, array $options)
     {
         foreach ($view->children as $name => $child) {
-            if (in_array('button', $child->vars['block_prefixes'])) {
+            if (\in_array('button', $child->vars['block_prefixes'])) {
                 $class = isset($child->vars['attr']['class']) ? $child->vars['attr']['class'] : '';
 
                 if (false !== strpos($class, 'btn-panel-collapse')) {

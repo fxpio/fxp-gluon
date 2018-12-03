@@ -56,7 +56,7 @@ class TableColumnPagerExtension extends AbstractTypeExtension
         ]);
 
         if ($options['sortable'] && !isset($attr['data-table-sort'])) {
-            $view->vars['value'] = is_string($view->vars['value']) ? $view->vars['value'] : '';
+            $view->vars['value'] = \is_string($view->vars['value']) ? $view->vars['value'] : '';
             $view->vars['value'] .= '<i class="table-sort-icon fa"></i>';
         }
     }

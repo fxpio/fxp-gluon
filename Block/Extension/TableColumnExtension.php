@@ -50,7 +50,7 @@ class TableColumnExtension extends AbstractTypeExtension
 
         if (null !== $sort) {
             $view->vars['label_attr']['data-table-sort'] = $sort;
-            $view->vars['value'] = is_string($view->vars['value']) ? $view->vars['value'] : '';
+            $view->vars['value'] = \is_string($view->vars['value']) ? $view->vars['value'] : '';
             $view->vars['value'] .= '<i class="table-sort-icon fa"></i>';
         }
     }

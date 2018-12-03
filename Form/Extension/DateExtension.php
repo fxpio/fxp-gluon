@@ -30,7 +30,7 @@ class DateExtension extends AbstractTypeExtension
      */
     public function buildView(FormView $view, FormInterface $form, array $options)
     {
-        if (in_array($options['widget'], ['text', 'choice'])) {
+        if (\in_array($options['widget'], ['text', 'choice'])) {
             BlockUtil::addAttributeClass($view, 'date-'.$options['widget'].'-wrapper');
 
             if ($options['text_block']) {

@@ -38,7 +38,7 @@ class NavbarExtension extends AbstractTypeExtension
             BlockUtil::addAttribute($view, 'data-navbar-sidebar', 'true');
         }
 
-        if (in_array($options['sidebar_locked'], ['left', 'right'])) {
+        if (\in_array($options['sidebar_locked'], ['left', 'right'])) {
             BlockUtil::addAttributeClass($view, 'navbar-sidebar-locked-'.$options['sidebar_locked']);
         } elseif ('full_left' === $options['sidebar_locked']) {
             BlockUtil::addAttributeClass($view, 'navbar-sidebar-full-locked-left');

@@ -31,7 +31,7 @@ class FootableColumnExtension extends AbstractTypeExtension
      */
     public function buildView(BlockView $view, BlockInterface $block, array $options)
     {
-        if (null !== $view->parent && in_array('table', $view->parent->vars['block_prefixes']) && isset($view->parent->vars['footable_options'])) {
+        if (null !== $view->parent && \in_array('table', $view->parent->vars['block_prefixes']) && isset($view->parent->vars['footable_options'])) {
             $labelAttr = $view->vars['label_attr'];
             $attr = $view->vars['attr'];
 
@@ -100,7 +100,7 @@ class FootableColumnExtension extends AbstractTypeExtension
                 $value = (array) $value;
 
                 foreach ($value as $type) {
-                    if (!in_array($type, $allowed)) {
+                    if (!\in_array($type, $allowed)) {
                         $msg = 'The option "hide" has the value "%s", but is expected to be one of "%s"';
                         throw new InvalidConfigurationException(sprintf($msg, implode('", "', $value), implode('", "', $allowed)));
                     }

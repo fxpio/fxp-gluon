@@ -67,7 +67,7 @@ class TableColumnListAdapterType extends AbstractType
             return;
         });
 
-        if (in_array('sortable', $resolver->getDefinedOptions())) {
+        if (\in_array('sortable', $resolver->getDefinedOptions())) {
             $resolver->setNormalizer('sortable', function () {
                 return false;
             });
