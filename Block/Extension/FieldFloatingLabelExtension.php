@@ -18,7 +18,7 @@ use Fxp\Component\Block\Extension\Core\Type\FieldType;
  *
  * @author François Pluchino <francois.pluchino@gmail.com>
  */
-abstract class FieldFloatingLabelExtension extends AbstractFloatingLabelExtension
+class FieldFloatingLabelExtension extends AbstractFloatingLabelExtension
 {
     /**
      * {@inheritdoc}
