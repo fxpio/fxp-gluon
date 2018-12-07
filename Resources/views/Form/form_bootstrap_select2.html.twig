@@ -1,0 +1,13 @@
+{% block select2_widget_content -%}
+    {%- set attr = attr|merge({'data-select2-scroller': 'true', 'data-select2-responsive': 'true'}) -%}
+    {{- block('base_select2_widget_content') -}}
+
+    {%- inline_script -%}
+        <script>
+            $(document).appPjax('addUnregister', function () {
+                $('#{{ id }}').off('change.fxp_select2');
+                $('#{{ id }}').select2('destroy');
+            });
+        </script>
+    {%- endinline_script -%}
+{%- endblock select2_widget_content %}
