@@ -11,58 +11,20 @@
 
 namespace Fxp\Component\Gluon\Block\Extension;
 
-use Fxp\Component\Block\AbstractTypeExtension;
-use Fxp\Component\Block\BlockInterface;
-use Fxp\Component\Block\BlockView;
-use Fxp\Component\Gluon\Block\Type\TableColumnListSortableType;
-use Symfony\Component\OptionsResolver\OptionsResolver;
+use Fxp\Component\Bootstrap\Block\Type\TableColumnType;
 
 /**
  * Table Column Pager Block Extension.
  *
  * @author François Pluchino <francois.pluchino@gmail.com>
  */
-class TableColumnPagerExtension extends AbstractTypeExtension
+class TableColumnPagerExtension extends AbstractTableColumnPagerExtension
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function buildView(BlockView $view, BlockInterface $block, array $options)
-    {
-        $attr = $view->vars['label_attr'];
-
-        if ($options['sortable']) {
-            $attr['data-table-pager-sortable'] = 'true';
-        }
-
-        $view->vars = array_replace($view->vars, [
-            'sortable' => $options['sortable'],
-            'label_attr' => $attr,
-        ]);
-
-        if ($options['sortable'] && !isset($attr['data-table-sort'])) {
-            $view->vars['value'] = \is_string($view->vars['value']) ? $view->vars['value'] : '';
-            $view->vars['value'] .= '<i class="table-sort-icon fa"></i>';
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function configureOptions(OptionsResolver $resolver)
-    {
-        $resolver->setDefaults([
-            'sortable' => false,
-        ]);
-
-        $resolver->addAllowedTypes('sortable', 'bool');
-    }
-
     /**
      * {@inheritdoc}
      */
     public static function getExtendedTypes()
     {
-        return [TableColumnListSortableType::class];
+        return [TableColumnType::class];
     }
 }

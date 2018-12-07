@@ -11,20 +11,20 @@
 
 namespace Fxp\Component\Gluon\Block\Extension;
 
-use Fxp\Component\Bootstrap\Block\Type\TableColumnType;
+use Fxp\Component\Gluon\Block\Type\TableColumnListSortableType;
 
 /**
- * Table Column Block Extension.
+ * Table Column Pager Block Extension.
  *
  * @author François Pluchino <francois.pluchino@gmail.com>
  */
-class TableColumnExtension extends AbstractTableColumnExtension
+class TableColumnListSortablePagerExtension extends AbstractTableColumnPagerExtension
 {
     /**
      * {@inheritdoc}
      */
     public static function getExtendedTypes()
     {
-        return [TableColumnType::class];
+        return [TableColumnListSortableType::class];
     }
 }
